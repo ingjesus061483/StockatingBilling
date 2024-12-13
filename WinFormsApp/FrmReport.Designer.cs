@@ -37,21 +37,21 @@
             customPanel2.BorderRadius = 30;
             customPanel2.ForeColor = Color.Black;
             customPanel2.GradientAngle = 90F;
-            customPanel2.GradientBottomColor = Color.FromArgb(224, 224, 224);
-            customPanel2.GradientTopColor = Color.FromArgb(224, 224, 224);
+            customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
+            customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel2.Location = new Point(9, 10);
             customPanel2.Name = "customPanel2";
             customPanel2.Size = new Size(457, 410);
             customPanel2.TabIndex = 4;
             // 
-            // FrmProduct
+            // FrmReport
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(476, 430);
             Controls.Add(customPanel2);
-            Name = "FrmProduct";
+            Name = "FrmReport";
             Text = "Form1";
             ResumeLayout(false);
         }

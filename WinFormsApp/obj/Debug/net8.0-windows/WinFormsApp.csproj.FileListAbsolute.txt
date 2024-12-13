@@ -379,3 +379,4 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debu
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.ClientUser.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.RoleUser.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmMain.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.sourcelink.json

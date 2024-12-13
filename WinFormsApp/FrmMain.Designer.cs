@@ -38,30 +38,34 @@
             toolStripButtonClient = new ToolStripButton();
             panel1 = new Panel();
             pnlSecond = new Panel();
-            customPanel1 = new RoundedBorders.CustomPanel();
-            label5 = new Label();
             customPanel2 = new RoundedBorders.CustomPanel();
-            cmbfields = new ComboBox();
+            panel3 = new Panel();
             label6 = new Label();
+            cmbfields = new ComboBox();
             txtValue = new TextBox();
             label3 = new Label();
+            panel2 = new Panel();
+            label5 = new Label();
             pnlDatagrid = new RoundedBorders.CustomPanel();
             pnlPrincipal = new Panel();
+            toolStripButton1 = new ToolStripButton();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             pnlSecond.SuspendLayout();
-            customPanel1.SuspendLayout();
             customPanel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
-            toolStrip1.BackColor = Color.FromArgb(42, 46, 50);
+            toolStrip1.BackColor = Color.FromArgb(36, 113, 163);
             toolStrip1.ImageScalingSize = new Size(40, 40);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(560, 47);
+            toolStrip1.Padding = new Padding(0, 0, 3, 0);
+            toolStrip1.Size = new Size(800, 49);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -135,83 +139,50 @@
             panel1.Controls.Add(pnlSecond);
             panel1.Controls.Add(pnlPrincipal);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 47);
-            panel1.Margin = new Padding(2);
+            panel1.Location = new Point(0, 49);
             panel1.Name = "panel1";
-            panel1.Size = new Size(560, 223);
+            panel1.Size = new Size(800, 401);
             panel1.TabIndex = 1;
             // 
             // pnlSecond
             // 
             pnlSecond.BackColor = Color.Black;
-            pnlSecond.Controls.Add(customPanel1);
             pnlSecond.Controls.Add(customPanel2);
             pnlSecond.Controls.Add(pnlDatagrid);
             pnlSecond.Dock = DockStyle.Fill;
-            pnlSecond.Location = new Point(393, 0);
-            pnlSecond.Margin = new Padding(2);
+            pnlSecond.Location = new Point(561, 0);
             pnlSecond.Name = "pnlSecond";
-            pnlSecond.Size = new Size(167, 223);
+            pnlSecond.Size = new Size(239, 401);
             pnlSecond.TabIndex = 1;
-            // 
-            // customPanel1
-            // 
-            customPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            customPanel1.BackColor = Color.White;
-            customPanel1.BorderRadius = 30;
-            customPanel1.Controls.Add(label5);
-            customPanel1.ForeColor = Color.Black;
-            customPanel1.GradientAngle = 90F;
-            customPanel1.GradientBottomColor = Color.FromArgb(42, 46, 50);
-            customPanel1.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel1.Location = new Point(16, 11);
-            customPanel1.Margin = new Padding(2);
-            customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(139, 46);
-            customPanel1.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(99, 8);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(127, 29);
-            label5.TabIndex = 0;
-            label5.Text = "Filtrar por";
             // 
             // customPanel2
             // 
             customPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             customPanel2.BackColor = Color.White;
             customPanel2.BorderRadius = 30;
-            customPanel2.Controls.Add(cmbfields);
-            customPanel2.Controls.Add(label6);
-            customPanel2.Controls.Add(txtValue);
-            customPanel2.Controls.Add(label3);
+            customPanel2.Controls.Add(panel3);
+            customPanel2.Controls.Add(panel2);
             customPanel2.ForeColor = Color.Black;
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(16, 60);
-            customPanel2.Margin = new Padding(2);
+            customPanel2.Location = new Point(23, 18);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(140, 78);
+            customPanel2.Size = new Size(200, 212);
             customPanel2.TabIndex = 9;
             // 
-            // cmbfields
+            // panel3
             // 
-            cmbfields.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            cmbfields.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbfields.FormattingEnabled = true;
-            cmbfields.Location = new Point(84, 15);
-            cmbfields.Margin = new Padding(2);
-            cmbfields.Name = "cmbfields";
-            cmbfields.Size = new Size(45, 23);
-            cmbfields.TabIndex = 18;
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(cmbfields);
+            panel3.Controls.Add(txtValue);
+            panel3.Controls.Add(label3);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 64);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 148);
+            panel3.TabIndex = 20;
             // 
             // label6
             // 
@@ -219,20 +190,28 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 10F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(16, 19);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(21, 42);
             label6.Name = "label6";
-            label6.Size = new Size(63, 16);
+            label6.Size = new Size(87, 24);
             label6.TabIndex = 17;
             label6.Text = "Campos";
+            // 
+            // cmbfields
+            // 
+            cmbfields.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cmbfields.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbfields.FormattingEnabled = true;
+            cmbfields.Location = new Point(118, 35);
+            cmbfields.Name = "cmbfields";
+            cmbfields.Size = new Size(63, 33);
+            cmbfields.TabIndex = 18;
             // 
             // txtValue
             // 
             txtValue.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtValue.Location = new Point(84, 40);
-            txtValue.Margin = new Padding(2);
+            txtValue.Location = new Point(118, 77);
             txtValue.Name = "txtValue";
-            txtValue.Size = new Size(45, 23);
+            txtValue.Size = new Size(63, 31);
             txtValue.TabIndex = 9;
             // 
             // label3
@@ -241,12 +220,33 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 10F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(37, 43);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(51, 82);
             label3.Name = "label3";
-            label3.Size = new Size(42, 16);
+            label3.Size = new Size(58, 24);
             label3.TabIndex = 8;
             label3.Text = "Valor";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(36, 113, 163);
+            panel2.Controls.Add(label5);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 64);
+            panel2.TabIndex = 19;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(39, 11);
+            label5.Name = "label5";
+            label5.Size = new Size(188, 43);
+            label5.TabIndex = 0;
+            label5.Text = "Filtrar por";
             // 
             // pnlDatagrid
             // 
@@ -257,9 +257,10 @@
             pnlDatagrid.GradientAngle = 90F;
             pnlDatagrid.GradientBottomColor = Color.FromArgb(42, 46, 50);
             pnlDatagrid.GradientTopColor = Color.FromArgb(42, 46, 50);
-            pnlDatagrid.Location = new Point(16, 143);
+            pnlDatagrid.Location = new Point(23, 238);
+            pnlDatagrid.Margin = new Padding(4, 5, 4, 5);
             pnlDatagrid.Name = "pnlDatagrid";
-            pnlDatagrid.Size = new Size(139, 70);
+            pnlDatagrid.Size = new Size(199, 146);
             pnlDatagrid.TabIndex = 0;
             // 
             // pnlPrincipal
@@ -267,19 +268,26 @@
             pnlPrincipal.BackColor = Color.Black;
             pnlPrincipal.Dock = DockStyle.Left;
             pnlPrincipal.Location = new Point(0, 0);
-            pnlPrincipal.Margin = new Padding(2);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(393, 223);
+            pnlPrincipal.Size = new Size(561, 401);
             pnlPrincipal.TabIndex = 0;
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(44, 44);
+            toolStripButton1.Text = "toolStripButton1";
             // 
             // FrmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(toolStrip1);
-            Margin = new Padding(2);
             Name = "FrmMain";
             Text = "FrmPrincipal";
             WindowState = FormWindowState.Maximized;
@@ -287,10 +295,11 @@
             toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             pnlSecond.ResumeLayout(false);
-            customPanel1.ResumeLayout(false);
-            customPanel1.PerformLayout();
             customPanel2.ResumeLayout(false);
-            customPanel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -308,12 +317,14 @@
         private ToolStripButton toolStripButtonClient;
         private ToolStripButton toolStripButtonRole;
         private RoundedBorders.CustomPanel pnlDatagrid;
-        private RoundedBorders.CustomPanel customPanel1;
         private Label label5;
         private RoundedBorders.CustomPanel customPanel2;
         private ComboBox cmbfields;
         private Label label6;
         private TextBox txtValue;
         private Label label3;
+        private Panel panel2;
+        private Panel panel3;
+        private ToolStripButton toolStripButton1;
     }
 }

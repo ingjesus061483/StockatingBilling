@@ -1,5 +1,6 @@
 ﻿using DataAccess.Repositories;
 using DTO;
+using Factory;
 using K4os.Hash.xxHash;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace WinFormsApp
     public partial class WarehouseUser : UserControl
     {
         int id;
+        public ComboBox CmbFilter { get; set; }
+        public TextBox TxtValue { get; set; }
         WarehouseDTO WarehouseDTO;
         public DataGridView DataGridView { get; set; }
         public Form Form { get; set; }
@@ -29,7 +32,23 @@ namespace WinFormsApp
         private void WarehouseUser_Load(object sender, EventArgs e)
         {
             DataGridView.CellContentClick += DataGridView_CellContentClick;
+            TxtValue.TextChanged += TxtValue_TextChanged;
             NewWarehouse();
+            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView );
+            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
+        }
+
+        private void TxtValue_TextChanged(object? sender, EventArgs e)
+        {
+            DataGridView.DataSource = warehouseRepository.Values.Select(x => new
+            {
+                x.Id,
+                Codigo = x.Code,
+                Nombre = x.Name,
+                StockMinmo = x.StockMinimo,
+                Stockmaximo = x.StockMaximo,
+                limitado = x.limitado ? "Si" : "No"
+            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList(); ;
         }
 
         private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)

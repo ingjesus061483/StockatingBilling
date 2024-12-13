@@ -17,7 +17,8 @@ namespace WinFormsApp
     public partial class CategoryUser : UserControl
     {
         CategoryDTO categoryDTO;
-
+        public ComboBox CmbFilter {  get; set; }
+        public TextBox TxtValue {  get; set; }
         public CategoryRepository repository { get; set; }
         public DataGridView DataGridView { get; set; }
         public Form Form { get; set; }
@@ -26,7 +27,6 @@ namespace WinFormsApp
         public CategoryUser()
         {
             InitializeComponent();
-
         }
         private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
@@ -46,7 +46,13 @@ namespace WinFormsApp
         {
             IdCategory = 0;
             categoryDTO = null;
-            DataGridView.DataSource = repository.Values.ToList();
+            DataGridView.DataSource = repository.Values.Select (x=>new 
+            {
+                x.Id ,
+                Nombre = x.Name,
+                Descripcion=x.Description,
+
+            }). ToList();
             txtName.Clear();
             txtDescription.Clear();
             txtName.Focus();
@@ -64,7 +70,7 @@ namespace WinFormsApp
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            categoryDTO = repository.GetById(IdCategory);
+           // categoryDTO = repository.GetById(IdCategory);
             if(string .IsNullOrEmpty( txtName .Text ))
             {
                 ControlForm .GetMessage("El campo nnombre no puede ser vacio","",MessageBoxButtons.OK ,MessageBoxIcon.Warning);
@@ -98,8 +104,22 @@ namespace WinFormsApp
         private void CategoryUser_Load(object sender, EventArgs e)
         {
             DataGridView.CellContentClick += DataGridView_CellContentClick;
+            TxtValue.TextChanged += TxtValue_TextChanged;
             NewCategory();
+            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
+            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter );
 
+        }
+
+        private void TxtValue_TextChanged(object? sender, EventArgs e)
+        {
+            DataGridView.DataSource = repository.Values.Select(x => new
+            {
+                x.Id,
+                Nombre = x.Name,
+                Descripcion = x.Description,
+            
+            }).ToList(). Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
         }
     }
 }

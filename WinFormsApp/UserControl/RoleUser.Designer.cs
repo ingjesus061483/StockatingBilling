@@ -34,16 +34,16 @@
             btnSalir = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
-            customPanel1 = new RoundedBorders.CustomPanel();
             label5 = new Label();
             customPanel2 = new RoundedBorders.CustomPanel();
             txtDescription = new TextBox();
             label2 = new Label();
             txtName = new TextBox();
             label1 = new Label();
+            panel2 = new Panel();
             customPanel3.SuspendLayout();
-            customPanel1.SuspendLayout();
             customPanel2.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // customPanel3
@@ -59,10 +59,9 @@
             customPanel3.GradientAngle = 90F;
             customPanel3.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel3.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel3.Location = new Point(10, 231);
-            customPanel3.Margin = new Padding(2);
+            customPanel3.Location = new Point(14, 385);
             customPanel3.Name = "customPanel3";
-            customPanel3.Size = new Size(316, 47);
+            customPanel3.Size = new Size(451, 78);
             customPanel3.TabIndex = 13;
             // 
             // btnNevo
@@ -71,10 +70,9 @@
             btnNevo.BackgroundImage = (Image)resources.GetObject("btnNevo.BackgroundImage");
             btnNevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnNevo.FlatStyle = FlatStyle.Flat;
-            btnNevo.Location = new Point(125, 4);
-            btnNevo.Margin = new Padding(2);
+            btnNevo.Location = new Point(179, 7);
             btnNevo.Name = "btnNevo";
-            btnNevo.Size = new Size(40, 40);
+            btnNevo.Size = new Size(57, 67);
             btnNevo.TabIndex = 7;
             btnNevo.UseVisualStyleBackColor = false;
             btnNevo.Click += btnNevo_Click;
@@ -85,10 +83,9 @@
             btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
             btnSalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(256, 4);
-            btnSalir.Margin = new Padding(2);
+            btnSalir.Location = new Point(366, 7);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(40, 40);
+            btnSalir.Size = new Size(57, 67);
             btnSalir.TabIndex = 4;
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
@@ -99,10 +96,9 @@
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Location = new Point(168, 4);
-            btnGuardar.Margin = new Padding(2);
+            btnGuardar.Location = new Point(240, 7);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(40, 40);
+            btnGuardar.Size = new Size(57, 67);
             btnGuardar.TabIndex = 6;
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
@@ -113,29 +109,12 @@
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(212, 4);
-            btnEliminar.Margin = new Padding(2);
+            btnEliminar.Location = new Point(303, 7);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(40, 40);
+            btnEliminar.Size = new Size(57, 67);
             btnEliminar.TabIndex = 5;
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
-            // 
-            // customPanel1
-            // 
-            customPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            customPanel1.BackColor = Color.White;
-            customPanel1.BorderRadius = 30;
-            customPanel1.Controls.Add(label5);
-            customPanel1.ForeColor = Color.Black;
-            customPanel1.GradientAngle = 90F;
-            customPanel1.GradientBottomColor = Color.FromArgb(42, 46, 50);
-            customPanel1.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel1.Location = new Point(10, 13);
-            customPanel1.Margin = new Padding(2);
-            customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(316, 46);
-            customPanel1.TabIndex = 12;
             // 
             // label5
             // 
@@ -143,10 +122,9 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(71, 9);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(102, 12);
             label5.Name = "label5";
-            label5.Size = new Size(217, 29);
+            label5.Size = new Size(321, 43);
             label5.TabIndex = 0;
             label5.Text = "Registro de Roles";
             // 
@@ -155,6 +133,7 @@
             customPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             customPanel2.BackColor = Color.White;
             customPanel2.BorderRadius = 30;
+            customPanel2.Controls.Add(panel2);
             customPanel2.Controls.Add(txtDescription);
             customPanel2.Controls.Add(label2);
             customPanel2.Controls.Add(txtName);
@@ -163,21 +142,19 @@
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(10, 63);
-            customPanel2.Margin = new Padding(2);
+            customPanel2.Location = new Point(14, 18);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(316, 163);
+            customPanel2.Size = new Size(451, 359);
             customPanel2.TabIndex = 11;
             // 
             // txtDescription
             // 
             txtDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtDescription.Location = new Point(116, 37);
-            txtDescription.Margin = new Padding(2);
+            txtDescription.Location = new Point(167, 132);
             txtDescription.Multiline = true;
             txtDescription.Name = "txtDescription";
             txtDescription.ScrollBars = ScrollBars.Both;
-            txtDescription.Size = new Size(180, 116);
+            txtDescription.Size = new Size(255, 191);
             txtDescription.TabIndex = 3;
             // 
             // label2
@@ -186,20 +163,18 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 10F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 40);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(28, 137);
             label2.Name = "label2";
-            label2.Size = new Size(91, 16);
+            label2.Size = new Size(122, 24);
             label2.TabIndex = 2;
             label2.Text = "Descripcion";
             // 
             // txtName
             // 
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtName.Location = new Point(116, 12);
-            txtName.Margin = new Padding(2);
+            txtName.Location = new Point(167, 90);
             txtName.Name = "txtName";
-            txtName.Size = new Size(180, 23);
+            txtName.Size = new Size(255, 31);
             txtName.TabIndex = 1;
             // 
             // label1
@@ -208,29 +183,38 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 10F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(45, 14);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(65, 93);
             label1.Name = "label1";
-            label1.Size = new Size(62, 16);
+            label1.Size = new Size(84, 24);
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(36, 113, 163);
+            panel2.Controls.Add(label5);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(451, 64);
+            panel2.TabIndex = 24;
+            // 
             // RoleUser
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             Controls.Add(customPanel3);
-            Controls.Add(customPanel1);
             Controls.Add(customPanel2);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "RoleUser";
-            Size = new Size(337, 290);
+            Size = new Size(481, 483);
             Load += RoleUser_Load;
             customPanel3.ResumeLayout(false);
-            customPanel1.ResumeLayout(false);
-            customPanel1.PerformLayout();
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -241,12 +225,12 @@
         private Button btnSalir;
         private Button btnGuardar;
         private Button btnEliminar;
-        private RoundedBorders.CustomPanel customPanel1;
         private Label label5;
         private RoundedBorders.CustomPanel customPanel2;
         private TextBox txtDescription;
         private Label label2;
         private TextBox txtName;
         private Label label1;
+        private Panel panel2;
     }
 }

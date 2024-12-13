@@ -1,5 +1,6 @@
 ﻿using DataAccess.Repositories;
 using DTO;
+using Factory;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,9 @@ namespace WinFormsApp
     public partial class UnitMeasurementUser : UserControl
     {
         int idUnitMeasurement;
+        public ComboBox CmbFilter { get; set; }
+        public TextBox TxtValue { get; set; }
+
         public UnitMeasurementRepository UnitMeasurementRepository { get; set; }
         public DataGridView DataGridView { get; set; }
         UnitMeasurementDTO unitMeasurementDTO;
@@ -29,7 +33,12 @@ namespace WinFormsApp
             txtName.Clear();
             txtDescription.Clear();
             txtName.Focus();
-            DataGridView.DataSource = UnitMeasurementRepository.Values.ToList();            DataGridView.CellContentClick += DataGridView_CellContentClick;
+            DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x=> new {
+                x.Id,
+                Nombre = x.Name,
+                Descripcion = x.Description,
+            }). ToList();           
+            
 
             unitMeasurementDTO = null;
         }
@@ -78,7 +87,21 @@ namespace WinFormsApp
 
         private void UnitMeasurementUser_Load(object sender, EventArgs e)
         {
+            DataGridView.CellContentClick += DataGridView_CellContentClick;
+            TxtValue.TextChanged += TxtValue_TextChanged;
             newUnit();
+            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
+            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
+        }
+
+        private void TxtValue_TextChanged(object? sender, EventArgs e)
+        {
+
+            DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x => new {
+                x.Id,
+                Nombre = x.Name,
+                Descripcion = x.Description,
+            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
         }
 
         private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)

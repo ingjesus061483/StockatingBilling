@@ -22,6 +22,8 @@ namespace WinFormsApp
         string path;
         ProductDTO productDTO;
         public Form Form { get; set; }
+        public ComboBox CmbFilter { get; set; }
+        public TextBox TxtValue { get; set; }
         public DataGridView dgProduct { get; set; }
         public WarehouseRepository WarehouseRepository { get; set; }
         public UnitMeasurementRepository unitMeasurementRepository;
@@ -194,11 +196,32 @@ namespace WinFormsApp
 
         private void ProductUser_Load(object sender, EventArgs e)
         {
+            TxtValue.TextChanged += TxtValue_TextChanged;
             dgProduct.CellContentClick += dgProduct_CellContentClick;
             Utilities<UnitMeasurementDTO>.FillCombo(unitMeasurementRepository.Values.ToList(), arr, cmbUnitMeasurement);
             Utilities<CategoryDTO>.FillCombo(categoryRepository.Values.ToList(), arr, cmbCategory);
             NewProduct();
+            var cols = Utilities<DataGridViewColumn>.GetValues(dgProduct);
+            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
 
+        }
+
+        private void TxtValue_TextChanged(object? sender, EventArgs e)
+        {
+            dgProduct.DataSource = repository.Values.Select(x => new
+            {
+                x.Id,
+                Codigo = x.Code,
+                Nombre = x.Name,
+                Costo = x.UnitCost,
+                Precio = x.Price,
+                Descripcion = x.Description,
+                Categoria = x.Category.Name,
+                Unidad = x.UnitMeasurement.Name,
+                Entrada = x.Entrance,
+                Salida = x.Out,
+                x.Total
+            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
         }
 
         private void btnStock_Click(object sender, EventArgs e)

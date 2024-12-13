@@ -28,6 +28,7 @@ namespace WinFormsApp
         }
         public static void FillCombo(List<T> values,System.Windows.Forms.ComboBox combo)
         {
+            combo.Items.Clear();
             foreach (var item in values) 
             {
                 PropertyInfo propertyInfo = item.GetType().GetRuntimeProperties().FirstOrDefault(x=>x.Name=="Name");                

@@ -1,5 +1,6 @@
 ﻿using DataAccess.Repositories;
 using DTO;
+using Factory;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace WinFormsApp
     public partial class RoleUser : UserControl
     {
         int id;
+        public ComboBox CmbFilter { get; set; }
+        public TextBox TxtValue { get; set; }
         public RoleRepository RoleRepository { get; set; }
         public DataGridView DataGridView { get; set; }
         RoleDTO RoleDTO;
@@ -25,7 +28,12 @@ namespace WinFormsApp
             txtName.Clear();
             txtDescription.Clear();
             txtName.Focus();
-            DataGridView.DataSource = RoleRepository.Values.ToList();
+            DataGridView.DataSource = RoleRepository.Values.Select(x=> new
+            {
+                x.Id,
+              Nombre=  x.Name,
+              Descripcion= x.Description,
+            }) .ToList();
 
             RoleDTO = null;
         }
@@ -50,7 +58,21 @@ namespace WinFormsApp
         private void RoleUser_Load(object sender, EventArgs e)
         {
             DataGridView.CellContentClick += DataGridView_CellContentClick;
+            TxtValue.TextChanged += TxtValue_TextChanged;
             NewRole();
+            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView );
+            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
+        }
+
+        private void TxtValue_TextChanged(object? sender, EventArgs e)
+        {
+            DataGridView.DataSource = RoleRepository.Values.Select(x => new
+            {
+                x.Id,
+                Nombre = x.Name,
+                Descripcion = x.Description,
+            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList(); ;
+
         }
 
         private void btnNevo_Click(object sender, EventArgs e)

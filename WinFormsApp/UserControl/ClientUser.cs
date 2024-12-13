@@ -15,6 +15,8 @@ namespace WinFormsApp
 {
     public partial class ClientUser : UserControl
     {
+        public ComboBox CmbFilter { get; set; }
+        public TextBox TxtValue { get; set; }
         public ClientRepository ClientRepository { get; set; }
         public IdentificationTypeRepository IdentificationTypeRepository { get; set; }
         public DataGridView DataGridView { get; set; }
@@ -52,9 +54,26 @@ namespace WinFormsApp
         }
         private void ClientUser_Load(object sender, EventArgs e)
         {
-            DataGridView.CellContentClick += DataGridView_CellContentClick;
+            DataGridView.CellContentClick += DataGridView_CellContentClick;   
+            TxtValue.TextChanged += TxtValue_TextChanged;
             Utilities<IdentificationTypeDTO>.FillCombo(IdentificationTypeRepository.Values.ToList(), arr, cmbIdentificationType);
             NewClient();
+            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
+            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
+        }
+
+        private void TxtValue_TextChanged(object? sender, EventArgs e)
+        {
+            DataGridView.DataSource = ClientRepository.Values.Select(x => new
+            {
+                x.Id,
+                TipoIdentificacion = x.IdentificationType.Name,
+                Identificion = x.Identification,
+                NombreCompleto = x.CompleteName,
+                Direccion = x.Address,
+                Telefono = x.Phone,
+                x.Email,
+            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
         }
 
         private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
@@ -118,8 +137,6 @@ namespace WinFormsApp
                 ControlForm.GetMessage("Tipo Idntificacion no puede ser vacio", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
-
             if (ClientDTO == null)
             {
                 ClientDTO = new ClientDTO

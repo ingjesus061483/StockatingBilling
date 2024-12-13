@@ -33,8 +33,7 @@ namespace WinFormsApp
                             StockRepository _stockRepository,
                             ClientRepository _clientRepository,
                             IdentificationTypeRepository _identificationTypeRepository,
-                            RoleRepository _roleRepository 
-            )
+                            RoleRepository _roleRepository)
 
         {
             roleRepository= _roleRepository;
@@ -53,11 +52,14 @@ namespace WinFormsApp
         private void toolStripButtonCategory_Click(object sender, EventArgs e)
         {
             DataGridView = null;
+           
             DataGridView = ControlForm.GetDatagrid();
             pnlPrincipal.Controls.Clear();
             pnlDatagrid.Controls.Clear();
             CategoryUser category = new()
             {
+                CmbFilter = cmbfields,
+                TxtValue=txtValue,
                 repository = categoryRepository,
                 DataGridView = DataGridView,
                 Form = this,
@@ -75,6 +77,8 @@ namespace WinFormsApp
             {
                 repository = productRepository,
                 pictureRepository = pictureRepository,
+                CmbFilter=cmbfields,
+                TxtValue=txtValue,
                 categoryRepository = categoryRepository,
                 unitMeasurementRepository = unitMeasurementRepository,
                 WarehouseRepository = warehouseRepository,
@@ -97,6 +101,8 @@ namespace WinFormsApp
             UnitMeasurementUser unitMeasurement = new()
             {
                 UnitMeasurementRepository = unitMeasurementRepository,
+                CmbFilter = cmbfields,
+                TxtValue = txtValue,
                 DataGridView = DataGridView,
                 Form = this,
                 Dock = DockStyle.Fill
@@ -114,6 +120,8 @@ namespace WinFormsApp
             pnlPrincipal.Controls.Clear();
             WarehouseUser warehouse = new()
             {
+                CmbFilter = cmbfields,
+                TxtValue = txtValue,
                 ProductRepository = productRepository,
                 StockRepository = StockRepository,
                 warehouseRepository = warehouseRepository,
@@ -133,6 +141,8 @@ namespace WinFormsApp
             pnlPrincipal.Controls.Clear();
             RoleUser role = new()
             {
+                CmbFilter=cmbfields ,
+                TxtValue=txtValue ,
                 RoleRepository = roleRepository,                
                 DataGridView = DataGridView,
                 Dock = DockStyle.Fill,
@@ -154,6 +164,8 @@ namespace WinFormsApp
             pnlPrincipal.Controls.Clear();
             ClientUser client = new()
             {
+                CmbFilter=cmbfields,
+                TxtValue=txtValue,
                 ClientRepository = clientRepository,
                 IdentificationTypeRepository = IdentificationTypeRepository,
                 DataGridView = DataGridView,
