@@ -11,27 +11,27 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Factory
 {
-    [Index(nameof(Nit ), IsUnique = true)]
+    [Index(nameof(Nit), IsUnique = true)]
 
     public class Company
     {
         public int Id { get; set; }
-        
+
         [Required]
         [StringLength(50)]
         public string Nit { get; set; }
-        
+
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
-        
+
         [Required]
         [StringLength(50)]
         public string TradeCamera { get; set; }
-        
+
         [Required]
         [StringLength(50)]
-        public string Direction { get; set; }
+        public string Address    { get; set; }
         
         [Required]
         [StringLength(50)]
@@ -45,7 +45,7 @@ namespace Factory
         [StringLength(50)]
         public string Contact { get; set; }
        
-        public string slogan { get; set; }
+        public string Slogan { get; set; }
 
         [Required]
         public int  RegimenTypeId     { get; set; }

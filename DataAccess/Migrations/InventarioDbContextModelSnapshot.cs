@@ -97,12 +97,12 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Contact")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Direction")
+                    b.Property<string>("Contact")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
@@ -130,14 +130,14 @@ namespace DataAccess.Migrations
                     b.Property<int>("RegimenTypeId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Slogan")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("TradeCamera")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
-
-                    b.Property<string>("slogan")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -152,15 +152,15 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
+                            Address = "b / quilla",
                             Contact = "pepito perez",
-                            Direction = "b / quilla",
                             Email = "alguien@ejempo.com",
                             Name = "Empresa de prueba",
                             Nit = "11111 - 1",
                             Phone = "5444555",
                             RegimenTypeId = 1,
-                            TradeCamera = "0001",
-                            slogan = ""
+                            Slogan = "",
+                            TradeCamera = "0001"
                         });
                 });
 

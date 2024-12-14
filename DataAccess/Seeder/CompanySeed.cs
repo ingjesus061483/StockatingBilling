@@ -21,11 +21,11 @@ namespace DataAccess.Seeder
                     Nit = "11111 - 1",
                     Name = "Empresa de prueba",
                     TradeCamera = "0001",
-                    Direction = "b / quilla",
+                    Address = "b / quilla",
                     Phone = "5444555",
                     Email = "alguien@ejempo.com",
                     Contact = "pepito perez",
-                    slogan = "",
+                    Slogan = "",
                     RegimenTypeId = 1
                 });
         }

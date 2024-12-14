@@ -15,6 +15,7 @@ namespace WinFormsApp
     {
         public List<ProductDTO> ProductDTOs { get; set; }
         public List<WarehouseDTO> WarehouseDTOs { get; set; }
+        public List<CompanyDTO>CompanyDTOs { get; set; }
         public int Id { get; set; }
         string[] arr = ["Index", "Name"];
 
@@ -45,7 +46,17 @@ namespace WinFormsApp
                 x.Name,
                 limite = x.limitado ? "Si" : "No"
 
-            }).ToList() : null;
+            }).ToList() :CompanyDTOs!=null?CompanyDTOs.Select(x=>new { 
+                x.Id,
+                x.Nit,
+               Nombre= x.Name,
+               Direccion= x.Address,
+              Telefono=  x.Phone,
+                x.Email,
+               CamaraComercio= x.TradeCamera,
+               Contacto= x.Contact,
+              TipoRegimen=  x.RegimenType.Name,          
+            }).ToList(): null;
 
             var cols = Utilities<DataGridViewColumn>.GetValues(dataGridView1);
             Utilities<DataGridViewColumn>.FillCombo(cols, cmbfields);
@@ -67,8 +78,8 @@ namespace WinFormsApp
         {
             if (ProductDTOs != null)
             {
-               dataGridView1.DataSource= ProductDTOs.Select(x => new
-               {
+                dataGridView1.DataSource = ProductDTOs.Select(x => new
+                {
                     x.Id,
                     Codigo = x.Code,
                     Nombre = x.Name,
@@ -80,18 +91,33 @@ namespace WinFormsApp
                     Entrada = x.Entrance,
                     Salida = x.Out,
                     x.Total
-                }).Where(z =>Utilities<object>. GetValue(z, cmbfields.Text, txtValue.Text)).ToList();
+                }).Where(z => Utilities<object>.GetValue(z, cmbfields.Text, txtValue.Text)).ToList();
 
             }
-            else if (WarehouseDTOs != null) 
+            else if (WarehouseDTOs != null)
             {
-                dataGridView1.DataSource=  WarehouseDTOs.Select(x => new
+                dataGridView1.DataSource = WarehouseDTOs.Select(x => new
                 {
                     x.Id,
                     x.Code,
                     x.Name,
                     limite = x.limitado ? "Si" : "No"
-                }).Where(z =>Utilities<object>. GetValue(z,cmbfields.Text ,txtValue .Text )).ToList();
+                }).Where(z => Utilities<object>.GetValue(z, cmbfields.Text, txtValue.Text)).ToList();
+            }
+            else if (CompanyDTOs != null)
+            {
+                dataGridView1.DataSource = CompanyDTOs.Select(x => new
+                {
+                    x.Id,
+                    x.Nit,
+                    Nombre = x.Name,
+                    Direccion = x.Address,
+                    Telefono = x.Phone,
+                    x.Email,
+                    CamaraComercio = x.TradeCamera,
+                    Contacto = x.Contact,
+                    TipoRegimen = x.RegimenType.Name,
+                }).Where(z => Utilities<object>.GetValue(z, cmbfields.Text, txtValue.Text)).ToList();
             }
         }      
     }

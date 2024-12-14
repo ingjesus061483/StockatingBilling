@@ -3,104 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\provideruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\provideruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\frmimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\frmstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\usercontrol\\productuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\productuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\usercontrol\\warehouseuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\warehouseuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\warehouseuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\warehouseuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\provideruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\provideruser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\clientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\clientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\productuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\productuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CFC211EB-DD1B-4F07-84D4-B51F6395A275}|DataAccess\\DataAccess.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\dataaccess\\repositories\\providerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFC211EB-DD1B-4F07-84D4-B51F6395A275}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repositories\\providerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\unitmeasurementuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\unitmeasurementuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\usercontrol\\unitmeasurementuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\unitmeasurementuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\roleuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\roleuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\usercontrol\\roleuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\roleuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\winformsapp\\usercontrol\\clientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\clientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\clientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\controlform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\controlform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\categoryuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\categoryuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\categoryuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\categoryuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFC211EB-DD1B-4F07-84D4-B51F6395A275}|DataAccess\\DataAccess.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\dataaccess\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFC211EB-DD1B-4F07-84D4-B51F6395A275}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\employeeuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\employeeuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A91A158-BF72-4236-A33A-3E3C05E93875}|DTO\\DTO.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\dto\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A91A158-BF72-4236-A33A-3E3C05E93875}|DTO\\DTO.csproj|solutionrelative:dto\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFC211EB-DD1B-4F07-84D4-B51F6395A275}|DataAccess\\DataAccess.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\dataaccess\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFC211EB-DD1B-4F07-84D4-B51F6395A275}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A379E9BA-3A96-4854-AB6E-79201BD48114}|Factory\\Factory.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\factory\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A379E9BA-3A96-4854-AB6E-79201BD48114}|Factory\\Factory.csproj|solutionrelative:factory\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A91A158-BF72-4236-A33A-3E3C05E93875}|DTO\\DTO.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\dto\\providerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A91A158-BF72-4236-A33A-3E3C05E93875}|DTO\\DTO.csproj|solutionrelative:dto\\providerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\categoryuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\categoryuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\companyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\companyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\companyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\companyuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\frmsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\jesus\\onedrive\\documentos\\github\\stockatingbilling\\winformsapp\\usercontrol\\employeeuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AC0B5CB-B83F-4ED0-BFFE-9C0B3C9E0BAD}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\usercontrol\\employeeuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -119,311 +99,252 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmReport.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmReport.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\FrmReport.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmReport.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\FrmReport.cs [Dise\u00F1o]",
+              "Title": "ProviderUser.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProviderUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ProviderUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProviderUser.cs",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\ProviderUser.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAmwI0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T16:09:09.21Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "WarehouseUser.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\WarehouseUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\WarehouseUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\WarehouseUser.cs",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\WarehouseUser.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwDIAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T15:47:06.355Z",
+              "WhenOpened": "2024-12-14T17:12:04.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ClientUser.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ClientUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ClientUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ClientUser.cs",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\ClientUser.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAIoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T13:40:53.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProviderUser.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProviderUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ProviderUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProviderUser.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\ProviderUser.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T16:15:00.604Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "FrmMain.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.cs",
               "RelativeDocumentMoniker": "WinFormsApp\\FrmMain.cs",
               "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp\\FrmMain.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:22:53.176Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ControlForm.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\ControlForm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\ControlForm.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\ControlForm.cs",
-              "RelativeToolTip": "WinFormsApp\\ControlForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:53:07.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmStock.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmStock.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\frmStock.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmStock.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\frmStock.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T04:38:10.57Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "frmSearch.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\frmSearch.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs",
-              "RelativeToolTip": "WinFormsApp\\frmSearch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T04:50:57.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CategoryUser.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CategoryUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\CategoryUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CategoryUser.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\CategoryUser.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:06:34.072Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CategoryUser.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CategoryUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\CategoryUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CategoryUser.cs",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\CategoryUser.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHkAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:09:42.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FrmMain.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\FrmMain.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.cs",
-              "RelativeToolTip": "WinFormsApp\\FrmMain.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAnwHsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:23:02.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmSearch.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\frmSearch.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\frmSearch.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T04:36:44.362Z",
+              "WhenOpened": "2024-12-14T13:18:18.291Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProductUser.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProductUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ProductUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProductUser.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\ProductUser.cs [Dise\u00F1o]",
+              "Title": "FrmMain.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\FrmMain.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.cs",
+              "RelativeToolTip": "WinFormsApp\\FrmMain.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAANMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:41:38.321Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-12-14T13:20:07.716Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 5,
               "Title": "ClientUser.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ClientUser.cs",
               "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ClientUser.cs",
               "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ClientUser.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp\\UserControl\\ClientUser.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:09:20.629Z",
+              "WhenOpened": "2024-12-14T14:52:51.67Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RoleUser.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\RoleUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\RoleUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\RoleUser.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\RoleUser.cs [Dise\u00F1o]",
+              "DocumentIndex": 3,
+              "Title": "ProviderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DataAccess\\Repositories\\ProviderRepository.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Repositories\\ProviderRepository.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DataAccess\\Repositories\\ProviderRepository.cs",
+              "RelativeToolTip": "DataAccess\\Repositories\\ProviderRepository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAhwCcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:13:07.858Z",
+              "WhenOpened": "2024-12-14T16:46:26.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmployeeUser.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\EmployeeUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\EmployeeUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\EmployeeUser.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\EmployeeUser.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T13:16:58.518Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\Program.cs",
               "RelativeDocumentMoniker": "WinFormsApp\\Program.cs",
               "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\Program.cs",
               "RelativeToolTip": "WinFormsApp\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAowCQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAACsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:23:21.651Z"
+              "WhenOpened": "2024-12-14T17:05:28.497Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UnitMeasurementUser.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\UnitMeasurementUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\UnitMeasurementUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\UnitMeasurementUser.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\UnitMeasurementUser.cs [Dise\u00F1o]",
+              "DocumentIndex": 10,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\Factory\\Company.cs",
+              "RelativeDocumentMoniker": "Factory\\Company.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\Factory\\Company.cs",
+              "RelativeToolTip": "Factory\\Company.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T21:42:33.826Z",
+              "WhenOpened": "2024-12-14T17:05:16.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmMain.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\FrmMain.Designer.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.Designer.cs",
+              "RelativeToolTip": "WinFormsApp\\FrmMain.Designer.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAhwHMBAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T13:52:19.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProviderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DTO\\ProviderDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ProviderDTO.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DTO\\ProviderDTO.cs",
+              "RelativeToolTip": "DTO\\ProviderDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T16:38:22.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CompanyUser.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CompanyUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\CompanyUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CompanyUser.cs",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\CompanyUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T13:45:24.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FrmLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp\\FrmLogin.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T14:51:34.759Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "FrmImage.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmImage.cs",
               "RelativeDocumentMoniker": "WinFormsApp\\FrmImage.cs",
               "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmImage.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp\\FrmImage.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T21:05:00.254Z",
+              "WhenOpened": "2024-12-14T15:05:55.881Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WarehouseUser.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\WarehouseUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\WarehouseUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\WarehouseUser.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\WarehouseUser.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:13:54.951Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "RoleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DataAccess\\Repositories\\RoleRepository.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Repositories\\RoleRepository.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DataAccess\\Repositories\\RoleRepository.cs",
-              "RelativeToolTip": "DataAccess\\Repositories\\RoleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T22:12:49.645Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UnitMeasurementUser.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\UnitMeasurementUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\UnitMeasurementUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\UnitMeasurementUser.cs",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\UnitMeasurementUser.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAnwGcAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T22:46:31.873Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "RoleUser.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\RoleUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\RoleUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\RoleUser.cs",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\RoleUser.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEkAAABrAAAAAAAAAA==",
+              "Title": "CategoryUser.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CategoryUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\CategoryUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CategoryUser.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\CategoryUser.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:17:20.249Z",
+              "WhenOpened": "2024-12-14T14:53:07.381Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EmployeeUser.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\EmployeeUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\EmployeeUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\EmployeeUser.cs",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\EmployeeUser.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAhwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T13:58:58.469Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "FrmMain.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.Designer.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\FrmMain.Designer.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\FrmMain.Designer.cs",
-              "RelativeToolTip": "WinFormsApp\\FrmMain.Designer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAnwBYAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "frmSearch.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\frmSearch.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp\\frmSearch.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:32:13.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T14:17:51.569Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "RoleDTO.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DTO\\RoleDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\RoleDTO.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DTO\\RoleDTO.cs",
-              "RelativeToolTip": "DTO\\RoleDTO.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "CompanyUser.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CompanyUser.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\CompanyUser.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\CompanyUser.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp\\UserControl\\CompanyUser.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T22:14:46.816Z"
+              "WhenOpened": "2024-12-14T13:03:52.443Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductUser.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProductUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ProductUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ProductUser.cs",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\ProductUser.cs",
-              "ViewState": "AgIAAL8AAAAAAAAAAAAYwMwAAABFAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "frmSearch.cs",
+              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\frmSearch.cs",
+              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\frmSearch.cs",
+              "RelativeToolTip": "WinFormsApp\\frmSearch.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAHcAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:41:41.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ClientRepository.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DataAccess\\Repositories\\ClientRepository.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Repositories\\ClientRepository.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\DataAccess\\Repositories\\ClientRepository.cs",
-              "RelativeToolTip": "DataAccess\\Repositories\\ClientRepository.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAlwCMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:14:19.682Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ClientUser.cs",
-              "DocumentMoniker": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ClientUser.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\UserControl\\ClientUser.cs",
-              "ToolTip": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\StockatingBilling\\WinFormsApp\\UserControl\\ClientUser.cs",
-              "RelativeToolTip": "WinFormsApp\\UserControl\\ClientUser.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEsAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:11:56.213Z",
+              "WhenOpened": "2024-12-14T14:18:41.042Z",
               "EditorCaption": ""
             }
           ]

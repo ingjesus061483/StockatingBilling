@@ -43,3 +43,4 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DTO\obj\Debug\net8.0
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DTO\obj\Debug\net8.0-windows\refint\DTO.dll
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DTO\obj\Debug\net8.0-windows\DTO.pdb
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DTO\obj\Debug\net8.0-windows\ref\DTO.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DTO\obj\Debug\net8.0-windows\DTO.sourcelink.json

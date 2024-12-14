@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp
+﻿using DataAccess.Repositories;
+
+namespace WinFormsApp
 {
     partial class FrmMain
     {
@@ -36,6 +38,9 @@
             toolStripButtonProduct = new ToolStripButton();
             toolStripButtonWarehouse = new ToolStripButton();
             toolStripButtonClient = new ToolStripButton();
+            toolStripButtonEmployee = new ToolStripButton();
+            toolStripButtonCompany = new ToolStripButton();
+            toolStripButtonProvider = new ToolStripButton();
             panel1 = new Panel();
             pnlSecond = new Panel();
             customPanel2 = new RoundedBorders.CustomPanel();
@@ -48,7 +53,6 @@
             label5 = new Label();
             pnlDatagrid = new RoundedBorders.CustomPanel();
             pnlPrincipal = new Panel();
-            toolStripButton1 = new ToolStripButton();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             pnlSecond.SuspendLayout();
@@ -61,7 +65,7 @@
             // 
             toolStrip1.BackColor = Color.FromArgb(36, 113, 163);
             toolStrip1.ImageScalingSize = new Size(40, 40);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButton1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButtonEmployee, toolStripButtonCompany, toolStripButtonProvider });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 3, 0);
@@ -133,6 +137,39 @@
             toolStripButtonClient.Text = "toolStripButton1";
             toolStripButtonClient.ToolTipText = "Clientes";
             toolStripButtonClient.Click += toolStripButtonClient_Click;
+            // 
+            // toolStripButtonEmployee
+            // 
+            toolStripButtonEmployee.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonEmployee.Image = (Image)resources.GetObject("toolStripButtonEmployee.Image");
+            toolStripButtonEmployee.ImageTransparentColor = Color.Magenta;
+            toolStripButtonEmployee.Name = "toolStripButtonEmployee";
+            toolStripButtonEmployee.Size = new Size(44, 44);
+            toolStripButtonEmployee.Text = "toolStripButton1";
+            toolStripButtonEmployee.ToolTipText = "Empleados";
+            toolStripButtonEmployee.Click += toolStripButtonEmployee_Click;
+            // 
+            // toolStripButtonCompany
+            // 
+            toolStripButtonCompany.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonCompany.Image = (Image)resources.GetObject("toolStripButtonCompany.Image");
+            toolStripButtonCompany.ImageTransparentColor = Color.Magenta;
+            toolStripButtonCompany.Name = "toolStripButtonCompany";
+            toolStripButtonCompany.Size = new Size(44, 44);
+            toolStripButtonCompany.Text = "toolStripButton1";
+            toolStripButtonCompany.ToolTipText = "Empresas";
+            toolStripButtonCompany.Click += toolStripButtonCompany_Click;
+            // 
+            // toolStripButtonProvider
+            // 
+            toolStripButtonProvider.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonProvider.Image = (Image)resources.GetObject("toolStripButtonProvider.Image");
+            toolStripButtonProvider.ImageTransparentColor = Color.Magenta;
+            toolStripButtonProvider.Name = "toolStripButtonProvider";
+            toolStripButtonProvider.Size = new Size(44, 44);
+            toolStripButtonProvider.Text = "toolStripButton1";
+            toolStripButtonProvider.ToolTipText = "Proveedor";
+            toolStripButtonProvider.Click += toolStripButtonProvider_Click;
             // 
             // panel1
             // 
@@ -272,15 +309,6 @@
             pnlPrincipal.Size = new Size(561, 401);
             pnlPrincipal.TabIndex = 0;
             // 
-            // toolStripButton1
-            // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(44, 44);
-            toolStripButton1.Text = "toolStripButton1";
-            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -291,6 +319,8 @@
             Name = "FrmMain";
             Text = "FrmPrincipal";
             WindowState = FormWindowState.Maximized;
+            FormClosing += FrmMain_FormClosing;
+            Shown += FrmMain_Shown;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -325,6 +355,23 @@
         private Label label3;
         private Panel panel2;
         private Panel panel3;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButtonEmployee;
+        CompanyRepository companyRepository;
+        EmployeeRepository employeeRepository;
+        IdentificationTypeRepository IdentificationTypeRepository;
+        ClientRepository clientRepository;
+        RoleRepository roleRepository;
+        UnitMeasurementRepository unitMeasurementRepository;
+        DataGridView DataGridView;
+        StockRepository StockRepository;
+        CategoryRepository categoryRepository;
+        ProductRepository productRepository;
+        PictureRepository pictureRepository;
+        WarehouseRepository warehouseRepository;
+        UserRepository userRepository;
+        ProviderRepository providerRepository;
+        RegimenTypeRepository RegimenTypeRepository;
+        private ToolStripButton toolStripButtonCompany;
+        private ToolStripButton toolStripButtonProvider;
     }
 }

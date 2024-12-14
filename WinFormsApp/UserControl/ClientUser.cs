@@ -14,14 +14,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace WinFormsApp
 {
     public partial class ClientUser : UserControl
-    {
-        public ComboBox CmbFilter { get; set; }
+    {    
+        string[] arr = ["Id", "Name"];
+        public ComboBox CmbFilter { get; set; }   
+        public DataGridView DataGridView { get; set; }
         public TextBox TxtValue { get; set; }
         public ClientRepository ClientRepository { get; set; }
         public IdentificationTypeRepository IdentificationTypeRepository { get; set; }
-        public DataGridView DataGridView { get; set; }
         public Form Form { get; set; }
-        string[] arr = ["Id", "Name"];
         int Id;
         ClientDTO ClientDTO;
         public ClientUser()

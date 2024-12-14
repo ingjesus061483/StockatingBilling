@@ -55,3 +55,4 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DataAccess\obj\Debug
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DataAccess\obj\Debug\net8.0-windows\DataAccess.pdb
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DataAccess\obj\Debug\net8.0-windows\DataAccess.genruntimeconfig.cache
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DataAccess\obj\Debug\net8.0-windows\ref\DataAccess.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\DataAccess\obj\Debug\net8.0-windows\DataAccess.sourcelink.json

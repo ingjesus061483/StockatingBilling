@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearch));
             customPanel2 = new RoundedBorders.CustomPanel();
+            panel2 = new Panel();
+            label1 = new Label();
             cmbfields = new ComboBox();
             label6 = new Label();
             txtValue = new TextBox();
@@ -38,13 +40,11 @@
             dataGridView1 = new DataGridView();
             customPanel4 = new RoundedBorders.CustomPanel();
             btnSalir = new Button();
-            panel2 = new Panel();
-            label1 = new Label();
             customPanel2.SuspendLayout();
+            panel2.SuspendLayout();
             customPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             customPanel4.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // customPanel2
@@ -64,6 +64,28 @@
             customPanel2.Name = "customPanel2";
             customPanel2.Size = new Size(491, 204);
             customPanel2.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(36, 113, 163);
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(491, 64);
+            panel2.TabIndex = 25;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(147, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(191, 43);
+            label1.TabIndex = 0;
+            label1.Text = "Busqueda";
             // 
             // cmbfields
             // 
@@ -166,28 +188,6 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(36, 113, 163);
-            panel2.Controls.Add(label1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(491, 64);
-            panel2.TabIndex = 25;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(358, 43);
-            label1.TabIndex = 0;
-            label1.Text = "Registro de Bodega";
-            // 
             // frmSearch
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -204,11 +204,11 @@
             Load += frmSearch_Load;
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             customPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             customPanel4.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 

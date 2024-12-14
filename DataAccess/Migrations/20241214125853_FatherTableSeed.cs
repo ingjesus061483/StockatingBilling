@@ -3,10 +3,12 @@ using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class FatherTable : Migration
+    public partial class FatherTableSeed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -117,11 +119,11 @@ namespace DataAccess.Migrations
                     Nit = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     TradeCamera = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    Direction = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Address = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Phone = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Contact = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    slogan = table.Column<string>(type: "longtext", nullable: false),
+                    Slogan = table.Column<string>(type: "longtext", nullable: false),
                     RegimenTypeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -197,6 +199,54 @@ namespace DataAccess.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "IdentificationTypes",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "", "cedula de ciudadania" },
+                    { 2, "", "nit" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RegimenTypes",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "", "Simplificado" },
+                    { 2, "", "Comun" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[] { 1, "", "Administrador" });
+
+            migrationBuilder.InsertData(
+                table: "UnitMeasurement",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "", "Gramo" },
+                    { 2, "", "Litro" },
+                    { 3, "", "Unidad" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Companies",
+                columns: new[] { "Id", "Address", "Contact", "Email", "Name", "Nit", "Phone", "RegimenTypeId", "Slogan", "TradeCamera" },
+                values: new object[] { 1, "b / quilla", "pepito perez", "alguien@ejempo.com", "Empresa de prueba", "11111 - 1", "5444555", 1, "", "0001" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Companyid", "Email", "Name", "Password", "RoleId" },
+                values: new object[] { 1, 1, "example1@mail.com", "admin", "admin1234.", 1 });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "Id", "Address", "Identification", "IdentificationTypeId", "LastName", "Name", "Phone", "UserId" },
+                values: new object[] { 1, "B/quilla", "11111", 1, "admin", "admin", "55555", 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clients_Email",
@@ -308,6 +358,21 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "RegimenTypes");
+
+            migrationBuilder.DeleteData(
+                table: "UnitMeasurement",
+                keyColumn: "Id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "UnitMeasurement",
+                keyColumn: "Id",
+                keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "UnitMeasurement",
+                keyColumn: "Id",
+                keyValue: 3);
         }
     }
 }

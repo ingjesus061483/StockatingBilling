@@ -35,6 +35,11 @@ namespace WinFormsApp
             services.AddScoped<FrmMain>();
             services.AddScoped<StockRepository>();
             services.AddScoped<RoleRepository>();
+            services.AddScoped<EmployeeRepository>();
+            services.AddScoped<UserRepository>();
+            services.AddScoped<CompanyRepository>();
+            services.AddScoped<RegimenTypeRepository>();
+            services.AddScoped<ProviderRepository>();
 
         }
     }
