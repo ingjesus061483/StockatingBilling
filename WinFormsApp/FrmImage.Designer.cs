@@ -65,9 +65,10 @@
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(224, 224, 224);
             customPanel2.GradientTopColor = Color.FromArgb(224, 224, 224);
-            customPanel2.Location = new Point(9, 222);
+            customPanel2.Location = new Point(6, 133);
+            customPanel2.Margin = new Padding(2, 2, 2, 2);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(764, 575);
+            customPanel2.Size = new Size(535, 345);
             customPanel2.TabIndex = 2;
             // 
             // panel2
@@ -76,9 +77,10 @@
             panel2.Controls.Add(btnUpload);
             panel2.Controls.Add(btnSalir);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 478);
+            panel2.Location = new Point(0, 287);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(764, 97);
+            panel2.Size = new Size(535, 58);
             panel2.TabIndex = 2;
             // 
             // btnUpload
@@ -86,9 +88,10 @@
             btnUpload.BackgroundImage = (Image)resources.GetObject("btnUpload.BackgroundImage");
             btnUpload.BackgroundImageLayout = ImageLayout.Stretch;
             btnUpload.FlatStyle = FlatStyle.Flat;
-            btnUpload.Location = new Point(630, 15);
+            btnUpload.Location = new Point(441, 9);
+            btnUpload.Margin = new Padding(2, 2, 2, 2);
             btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(57, 67);
+            btnUpload.Size = new Size(40, 40);
             btnUpload.TabIndex = 20;
             btnUpload.UseVisualStyleBackColor = true;
             btnUpload.Click += btnUpload_Click;
@@ -98,9 +101,10 @@
             btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
             btnSalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(693, 15);
+            btnSalir.Location = new Point(485, 9);
+            btnSalir.Margin = new Padding(2, 2, 2, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(57, 67);
+            btnSalir.Size = new Size(40, 40);
             btnSalir.TabIndex = 17;
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
@@ -110,16 +114,18 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(764, 478);
+            panel1.Size = new Size(535, 287);
             panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(764, 478);
+            pictureBox1.Size = new Size(535, 287);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -133,9 +139,10 @@
             customPanel1.GradientAngle = 90F;
             customPanel1.GradientBottomColor = Color.CadetBlue;
             customPanel1.GradientTopColor = Color.DodgerBlue;
-            customPanel1.Location = new Point(9, 12);
+            customPanel1.Location = new Point(6, 7);
+            customPanel1.Margin = new Padding(2, 2, 2, 2);
             customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(766, 205);
+            customPanel1.Size = new Size(536, 123);
             customPanel1.TabIndex = 3;
             // 
             // dgImages
@@ -155,6 +162,7 @@
             dgImages.Columns.AddRange(new DataGridViewColumn[] { Id, Codigo, Nombre, Tipo, Data, btnVer, Eliminar });
             dgImages.Dock = DockStyle.Fill;
             dgImages.Location = new Point(0, 0);
+            dgImages.Margin = new Padding(2, 2, 2, 2);
             dgImages.Name = "dgImages";
             dgImages.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -168,7 +176,7 @@
             dgImages.RowHeadersVisible = false;
             dgImages.RowHeadersWidth = 62;
             dgImages.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgImages.Size = new Size(766, 205);
+            dgImages.Size = new Size(536, 123);
             dgImages.TabIndex = 0;
             dgImages.CellContentClick += dgImages_CellContentClick;
             // 
@@ -243,12 +251,13 @@
             // 
             // FrmImage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(786, 808);
+            ClientSize = new Size(550, 487);
             Controls.Add(customPanel1);
             Controls.Add(customPanel2);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FrmImage";
             Text = "FrmImagenes";
             Load += FrmImage_Load;

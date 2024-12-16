@@ -40,6 +40,7 @@ namespace WinFormsApp
             services.AddScoped<CompanyRepository>();
             services.AddScoped<RegimenTypeRepository>();
             services.AddScoped<ProviderRepository>();
+            services.AddScoped<TaxRepository>();
 
         }
     }

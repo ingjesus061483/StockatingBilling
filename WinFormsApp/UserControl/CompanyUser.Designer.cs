@@ -73,9 +73,10 @@
             customPanel3.GradientAngle = 90F;
             customPanel3.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel3.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel3.Location = new Point(18, 598);
+            customPanel3.Location = new Point(13, 359);
+            customPanel3.Margin = new Padding(2, 2, 2, 2);
             customPanel3.Name = "customPanel3";
-            customPanel3.Size = new Size(489, 87);
+            customPanel3.Size = new Size(342, 52);
             customPanel3.TabIndex = 14;
             // 
             // btnSalir
@@ -84,9 +85,10 @@
             btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
             btnSalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(417, 10);
+            btnSalir.Location = new Point(292, 6);
+            btnSalir.Margin = new Padding(2, 2, 2, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(57, 67);
+            btnSalir.Size = new Size(40, 40);
             btnSalir.TabIndex = 13;
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
@@ -97,9 +99,10 @@
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(353, 10);
+            btnEliminar.Location = new Point(247, 6);
+            btnEliminar.Margin = new Padding(2, 2, 2, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(57, 67);
+            btnEliminar.Size = new Size(40, 40);
             btnEliminar.TabIndex = 14;
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
@@ -110,9 +113,10 @@
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Location = new Point(290, 10);
+            btnGuardar.Location = new Point(203, 6);
+            btnGuardar.Margin = new Padding(2, 2, 2, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(57, 67);
+            btnGuardar.Size = new Size(40, 40);
             btnGuardar.TabIndex = 15;
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
@@ -123,9 +127,10 @@
             btnuevo.BackgroundImage = (Image)resources.GetObject("btnuevo.BackgroundImage");
             btnuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnuevo.FlatStyle = FlatStyle.Flat;
-            btnuevo.Location = new Point(227, 10);
+            btnuevo.Location = new Point(159, 6);
+            btnuevo.Margin = new Padding(2, 2, 2, 2);
             btnuevo.Name = "btnuevo";
-            btnuevo.Size = new Size(57, 67);
+            btnuevo.Size = new Size(40, 40);
             btnuevo.TabIndex = 16;
             btnuevo.UseVisualStyleBackColor = false;
             btnuevo.Click += btnuevo_Click;
@@ -158,19 +163,21 @@
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(18, 31);
+            customPanel2.Location = new Point(13, 19);
+            customPanel2.Margin = new Padding(2, 2, 2, 2);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(489, 554);
+            customPanel2.Size = new Size(342, 332);
             customPanel2.TabIndex = 13;
             // 
             // txtSlogan
             // 
             txtSlogan.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtSlogan.Location = new Point(246, 425);
+            txtSlogan.Location = new Point(172, 260);
+            txtSlogan.Margin = new Padding(2, 2, 2, 2);
             txtSlogan.Multiline = true;
             txtSlogan.Name = "txtSlogan";
             txtSlogan.ScrollBars = ScrollBars.Vertical;
-            txtSlogan.Size = new Size(213, 98);
+            txtSlogan.Size = new Size(150, 60);
             txtSlogan.TabIndex = 28;
             // 
             // label10
@@ -179,18 +186,20 @@
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Arial", 10F, FontStyle.Bold);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(161, 430);
+            label10.Location = new Point(108, 263);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(75, 24);
+            label10.Size = new Size(55, 16);
             label10.TabIndex = 27;
             label10.Text = "Slogan";
             // 
             // txtContact
             // 
             txtContact.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtContact.Location = new Point(246, 385);
+            txtContact.Location = new Point(172, 234);
+            txtContact.Margin = new Padding(2, 2, 2, 2);
             txtContact.Name = "txtContact";
-            txtContact.Size = new Size(213, 31);
+            txtContact.Size = new Size(150, 23);
             txtContact.TabIndex = 26;
             // 
             // label9
@@ -199,9 +208,10 @@
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Arial", 10F, FontStyle.Bold);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(141, 390);
+            label9.Location = new Point(93, 237);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(96, 24);
+            label9.Size = new Size(70, 16);
             label9.TabIndex = 25;
             label9.Text = "Contacto";
             // 
@@ -211,8 +221,9 @@
             panel2.Controls.Add(label5);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(489, 64);
+            panel2.Size = new Size(342, 38);
             panel2.TabIndex = 24;
             // 
             // label5
@@ -221,26 +232,29 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(46, 9);
+            label5.Location = new Point(32, 5);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(374, 43);
+            label5.Size = new Size(249, 29);
             label5.TabIndex = 0;
             label5.Text = "Registro de empresa";
             // 
             // txtPhone
             // 
             txtPhone.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtPhone.Location = new Point(246, 301);
+            txtPhone.Location = new Point(172, 182);
+            txtPhone.Margin = new Padding(2, 2, 2, 2);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(213, 31);
+            txtPhone.Size = new Size(150, 23);
             txtPhone.TabIndex = 23;
             // 
             // txtNit
             // 
             txtNit.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtNit.Location = new Point(246, 128);
+            txtNit.Location = new Point(172, 77);
+            txtNit.Margin = new Padding(2, 2, 2, 2);
             txtNit.Name = "txtNit";
-            txtNit.Size = new Size(213, 31);
+            txtNit.Size = new Size(150, 23);
             txtNit.TabIndex = 22;
             // 
             // label8
@@ -249,18 +263,20 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Arial", 10F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(201, 133);
+            label8.Location = new Point(137, 80);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(36, 24);
+            label8.Size = new Size(26, 16);
             label8.TabIndex = 21;
             label8.Text = "Nit";
             // 
             // txtTradeCamera
             // 
             txtTradeCamera.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtTradeCamera.Location = new Point(246, 214);
+            txtTradeCamera.Location = new Point(172, 129);
+            txtTradeCamera.Margin = new Padding(2, 2, 2, 2);
             txtTradeCamera.Name = "txtTradeCamera";
-            txtTradeCamera.Size = new Size(213, 31);
+            txtTradeCamera.Size = new Size(150, 23);
             txtTradeCamera.TabIndex = 20;
             // 
             // label7
@@ -269,9 +285,10 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Arial", 10F, FontStyle.Bold);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(33, 219);
+            label7.Location = new Point(16, 132);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(204, 24);
+            label7.Size = new Size(150, 16);
             label7.TabIndex = 19;
             label7.Text = "Camara de comercio";
             // 
@@ -281,9 +298,10 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Arial", 10F, FontStyle.Bold);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(145, 305);
+            label6.Location = new Point(96, 186);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(92, 24);
+            label6.Size = new Size(68, 16);
             label6.TabIndex = 17;
             label6.Text = "Telefono";
             // 
@@ -292,9 +310,10 @@
             cmbRegimeType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cmbRegimeType.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbRegimeType.FormattingEnabled = true;
-            cmbRegimeType.Location = new Point(246, 84);
+            cmbRegimeType.Location = new Point(172, 50);
+            cmbRegimeType.Margin = new Padding(2, 2, 2, 2);
             cmbRegimeType.Name = "cmbRegimeType";
-            cmbRegimeType.Size = new Size(213, 33);
+            cmbRegimeType.Size = new Size(150, 23);
             cmbRegimeType.TabIndex = 12;
             // 
             // label4
@@ -303,18 +322,20 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 10F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(103, 89);
+            label4.Location = new Point(65, 53);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(134, 24);
+            label4.Size = new Size(99, 16);
             label4.TabIndex = 10;
             label4.Text = "Tipo regimen";
             // 
             // txtAddress
             // 
             txtAddress.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtAddress.Location = new Point(246, 258);
+            txtAddress.Location = new Point(172, 156);
+            txtAddress.Margin = new Padding(2, 2, 2, 2);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(213, 31);
+            txtAddress.Size = new Size(150, 23);
             txtAddress.TabIndex = 9;
             // 
             // label3
@@ -323,18 +344,20 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial", 10F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(138, 263);
+            label3.Location = new Point(90, 159);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(99, 24);
+            label3.Size = new Size(74, 16);
             label3.TabIndex = 8;
             label3.Text = "Direccion";
             // 
             // txtEmail
             // 
             txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtEmail.Location = new Point(246, 344);
+            txtEmail.Location = new Point(172, 208);
+            txtEmail.Margin = new Padding(2, 2, 2, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(213, 31);
+            txtEmail.Size = new Size(150, 23);
             txtEmail.TabIndex = 3;
             // 
             // label2
@@ -343,18 +366,20 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 10F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(177, 349);
+            label2.Location = new Point(119, 211);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(61, 24);
+            label2.Size = new Size(44, 16);
             label2.TabIndex = 2;
             label2.Text = "Email";
             // 
             // txtName
             // 
             txtName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtName.Location = new Point(246, 171);
+            txtName.Location = new Point(172, 103);
+            txtName.Margin = new Padding(2, 2, 2, 2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(213, 31);
+            txtName.Size = new Size(150, 23);
             txtName.TabIndex = 1;
             // 
             // label1
@@ -363,21 +388,23 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 10F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(152, 176);
+            label1.Location = new Point(102, 106);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(84, 24);
+            label1.Size = new Size(62, 16);
             label1.TabIndex = 0;
             label1.Text = "Nombre";
             // 
             // CompanyUser
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             Controls.Add(customPanel3);
             Controls.Add(customPanel2);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "CompanyUser";
-            Size = new Size(524, 717);
+            Size = new Size(367, 430);
             Load += CompanyUser_Load;
             customPanel3.ResumeLayout(false);
             customPanel2.ResumeLayout(false);

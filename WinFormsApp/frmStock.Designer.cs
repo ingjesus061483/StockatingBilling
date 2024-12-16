@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStock));
             customPanel2 = new RoundedBorders.CustomPanel();
+            panel2 = new Panel();
+            label3 = new Label();
             checkBox1 = new CheckBox();
             dtpDate = new DateTimePicker();
             label2 = new Label();
@@ -53,13 +55,11 @@
             btnEliminar = new Button();
             btnGuardar = new Button();
             btnuevo = new Button();
-            panel2 = new Panel();
-            label3 = new Label();
             customPanel2.SuspendLayout();
+            panel2.SuspendLayout();
             customPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             customPanel4.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // customPanel2
@@ -80,10 +80,35 @@
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(21, 12);
+            customPanel2.Location = new Point(15, 7);
+            customPanel2.Margin = new Padding(2, 2, 2, 2);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(531, 285);
+            customPanel2.Size = new Size(372, 171);
             customPanel2.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(36, 113, 163);
+            panel2.Controls.Add(label3);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(372, 38);
+            panel2.TabIndex = 24;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(61, 7);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(271, 29);
+            label3.TabIndex = 0;
+            label3.Text = "Registro de Productos";
             // 
             // checkBox1
             // 
@@ -94,9 +119,10 @@
             checkBox1.CheckState = CheckState.Checked;
             checkBox1.Font = new Font("Arial", 10F, FontStyle.Bold);
             checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(389, 223);
+            checkBox1.Location = new Point(272, 134);
+            checkBox1.Margin = new Padding(2, 2, 2, 2);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(110, 28);
+            checkBox1.Size = new Size(80, 20);
             checkBox1.TabIndex = 8;
             checkBox1.Text = "Entrada";
             checkBox1.UseVisualStyleBackColor = false;
@@ -106,9 +132,10 @@
             dtpDate.CustomFormat = "yyyy-MM-dd";
             dtpDate.Font = new Font("Arial", 10F);
             dtpDate.Format = DateTimePickerFormat.Custom;
-            dtpDate.Location = new Point(114, 221);
+            dtpDate.Location = new Point(80, 133);
+            dtpDate.Margin = new Padding(2, 2, 2, 2);
             dtpDate.Name = "dtpDate";
-            dtpDate.Size = new Size(205, 30);
+            dtpDate.Size = new Size(145, 23);
             dtpDate.TabIndex = 7;
             // 
             // label2
@@ -117,18 +144,20 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 10F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(44, 226);
+            label2.Location = new Point(24, 136);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(67, 24);
+            label2.Size = new Size(50, 16);
             label2.TabIndex = 6;
             label2.Text = "Fecha";
             // 
             // txtAmount
             // 
             txtAmount.Font = new Font("Arial", 10F);
-            txtAmount.Location = new Point(117, 178);
+            txtAmount.Location = new Point(82, 107);
+            txtAmount.Margin = new Padding(2, 2, 2, 2);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(381, 30);
+            txtAmount.Size = new Size(268, 23);
             txtAmount.TabIndex = 5;
             // 
             // label1
@@ -137,9 +166,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 10F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(16, 181);
+            label1.Location = new Point(7, 111);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(94, 24);
+            label1.Size = new Size(69, 16);
             label1.TabIndex = 4;
             label1.Text = "Cantidad";
             // 
@@ -150,9 +180,10 @@
             btnWarehouse.BackgroundImageLayout = ImageLayout.Stretch;
             btnWarehouse.FlatStyle = FlatStyle.Flat;
             btnWarehouse.Font = new Font("Arial", 10F, FontStyle.Bold);
-            btnWarehouse.Location = new Point(73, 133);
+            btnWarehouse.Location = new Point(50, 81);
+            btnWarehouse.Margin = new Padding(2, 2, 2, 2);
             btnWarehouse.Name = "btnWarehouse";
-            btnWarehouse.Size = new Size(43, 40);
+            btnWarehouse.Size = new Size(30, 24);
             btnWarehouse.TabIndex = 3;
             btnWarehouse.UseVisualStyleBackColor = false;
             btnWarehouse.Click += btnWarehouse_Click;
@@ -160,10 +191,11 @@
             // txtWarehouse
             // 
             txtWarehouse.Font = new Font("Arial", 10F);
-            txtWarehouse.Location = new Point(117, 134);
+            txtWarehouse.Location = new Point(82, 81);
+            txtWarehouse.Margin = new Padding(2, 2, 2, 2);
             txtWarehouse.Name = "txtWarehouse";
             txtWarehouse.ReadOnly = true;
-            txtWarehouse.Size = new Size(381, 30);
+            txtWarehouse.Size = new Size(268, 23);
             txtWarehouse.TabIndex = 2;
             // 
             // btnProduct
@@ -173,9 +205,10 @@
             btnProduct.BackgroundImageLayout = ImageLayout.Stretch;
             btnProduct.FlatStyle = FlatStyle.Flat;
             btnProduct.Font = new Font("Arial", 10F, FontStyle.Bold);
-            btnProduct.Location = new Point(73, 89);
+            btnProduct.Location = new Point(50, 54);
+            btnProduct.Margin = new Padding(2, 2, 2, 2);
             btnProduct.Name = "btnProduct";
-            btnProduct.Size = new Size(43, 38);
+            btnProduct.Size = new Size(30, 25);
             btnProduct.TabIndex = 1;
             btnProduct.UseVisualStyleBackColor = false;
             btnProduct.Click += btnProduct_Click;
@@ -183,10 +216,11 @@
             // txtProduc
             // 
             txtProduc.Font = new Font("Arial", 10F);
-            txtProduc.Location = new Point(119, 91);
+            txtProduc.Location = new Point(83, 55);
+            txtProduc.Margin = new Padding(2, 2, 2, 2);
             txtProduc.Name = "txtProduc";
             txtProduc.ReadOnly = true;
-            txtProduc.Size = new Size(381, 30);
+            txtProduc.Size = new Size(268, 23);
             txtProduc.TabIndex = 0;
             // 
             // customPanel3
@@ -198,9 +232,10 @@
             customPanel3.GradientAngle = 90F;
             customPanel3.GradientBottomColor = Color.FromArgb(224, 224, 224);
             customPanel3.GradientTopColor = Color.FromArgb(224, 224, 224);
-            customPanel3.Location = new Point(21, 403);
+            customPanel3.Location = new Point(15, 242);
+            customPanel3.Margin = new Padding(2, 2, 2, 2);
             customPanel3.Name = "customPanel3";
-            customPanel3.Size = new Size(531, 230);
+            customPanel3.Size = new Size(372, 138);
             customPanel3.TabIndex = 12;
             // 
             // dataGridView1
@@ -212,12 +247,13 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, bodega, producto, cantidad, fecha, entrada });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(531, 230);
+            dataGridView1.Size = new Size(372, 138);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -288,9 +324,10 @@
             customPanel4.GradientAngle = 90F;
             customPanel4.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel4.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel4.Location = new Point(23, 308);
+            customPanel4.Location = new Point(16, 185);
+            customPanel4.Margin = new Padding(2, 2, 2, 2);
             customPanel4.Name = "customPanel4";
-            customPanel4.Size = new Size(531, 83);
+            customPanel4.Size = new Size(372, 50);
             customPanel4.TabIndex = 13;
             // 
             // btnOpen
@@ -299,9 +336,10 @@
             btnOpen.BackgroundImage = (Image)resources.GetObject("btnOpen.BackgroundImage");
             btnOpen.BackgroundImageLayout = ImageLayout.Stretch;
             btnOpen.FlatStyle = FlatStyle.Flat;
-            btnOpen.Location = new Point(207, 8);
+            btnOpen.Location = new Point(145, 5);
+            btnOpen.Margin = new Padding(2, 2, 2, 2);
             btnOpen.Name = "btnOpen";
-            btnOpen.Size = new Size(57, 67);
+            btnOpen.Size = new Size(40, 40);
             btnOpen.TabIndex = 26;
             btnOpen.UseVisualStyleBackColor = false;
             // 
@@ -311,9 +349,10 @@
             btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
             btnSalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(459, 8);
+            btnSalir.Location = new Point(321, 5);
+            btnSalir.Margin = new Padding(2, 2, 2, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(57, 67);
+            btnSalir.Size = new Size(40, 40);
             btnSalir.TabIndex = 13;
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
@@ -324,9 +363,10 @@
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(396, 8);
+            btnEliminar.Location = new Point(277, 5);
+            btnEliminar.Margin = new Padding(2, 2, 2, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(57, 67);
+            btnEliminar.Size = new Size(40, 40);
             btnEliminar.TabIndex = 14;
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
@@ -337,9 +377,10 @@
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Location = new Point(333, 8);
+            btnGuardar.Location = new Point(233, 5);
+            btnGuardar.Margin = new Padding(2, 2, 2, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(57, 67);
+            btnGuardar.Size = new Size(40, 40);
             btnGuardar.TabIndex = 15;
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
@@ -350,55 +391,35 @@
             btnuevo.BackgroundImage = (Image)resources.GetObject("btnuevo.BackgroundImage");
             btnuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnuevo.FlatStyle = FlatStyle.Flat;
-            btnuevo.Location = new Point(270, 8);
+            btnuevo.Location = new Point(189, 5);
+            btnuevo.Margin = new Padding(2, 2, 2, 2);
             btnuevo.Name = "btnuevo";
-            btnuevo.Size = new Size(57, 67);
+            btnuevo.Size = new Size(40, 40);
             btnuevo.TabIndex = 16;
             btnuevo.UseVisualStyleBackColor = false;
             btnuevo.Click += btnuevo_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(36, 113, 163);
-            panel2.Controls.Add(label3);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(531, 64);
-            panel2.TabIndex = 24;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(87, 11);
-            label3.Name = "label3";
-            label3.Size = new Size(401, 43);
-            label3.TabIndex = 0;
-            label3.Text = "Registro de Productos";
-            // 
             // frmStock
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(570, 643);
+            ClientSize = new Size(399, 386);
             Controls.Add(customPanel4);
             Controls.Add(customPanel3);
             Controls.Add(customPanel2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "frmStock";
             Text = "Registro de entrada y salida";
             Load += frmStock_Load;
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             customPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             customPanel4.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 

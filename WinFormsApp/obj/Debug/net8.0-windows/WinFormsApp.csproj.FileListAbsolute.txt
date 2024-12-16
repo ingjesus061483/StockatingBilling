@@ -384,3 +384,8 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debu
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.EmployeeUser.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.CompanyUser.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.ProviderUser.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AdministrationUser.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.BillingUser.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmBilling.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.TaxUser.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.dll.config

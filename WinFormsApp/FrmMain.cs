@@ -29,7 +29,8 @@ namespace WinFormsApp
                             UserRepository _userRepository,
                             CompanyRepository _companyRepository,
                             RegimenTypeRepository _regimenTypeRepository,
-                            ProviderRepository _providerRepository)
+                            ProviderRepository _providerRepository,
+                            TaxRepository _taxRepository)
 
         {
             companyRepository = _companyRepository;
@@ -46,173 +47,16 @@ namespace WinFormsApp
             userRepository = _userRepository;
             RegimenTypeRepository = _regimenTypeRepository;
             providerRepository = _providerRepository;
+            taxRepository = _taxRepository;
             InitializeComponent();
         }
-        private void toolStripButtonCategory_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
 
-            DataGridView = ControlForm.GetDatagrid();
-            CategoryUser category = new()
-            {
-                CmbFilter = cmbfields,
-                TxtValue = txtValue,
-                repository = categoryRepository,
-                DataGridView = DataGridView,
-                Form = this,
-                Dock = DockStyle.Fill
-            };
-            addControls(DataGridView, category);
-        }
-        private void toolStripButtonProduct_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            ProductUser product = new()
-            {
-                repository = productRepository,
-                pictureRepository = pictureRepository,
-                CmbFilter = cmbfields,
-                TxtValue = txtValue,
-                categoryRepository = categoryRepository,
-                unitMeasurementRepository = unitMeasurementRepository,
-                WarehouseRepository = warehouseRepository,
-                stockRepository = StockRepository,
-                dgProduct = DataGridView,
-                Form = this,
-                Dock = DockStyle.Fill
-            };
-            addControls(DataGridView, product);
-        }
-        private void toolStripButtonUnitMeasurement_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            UnitMeasurementUser unitMeasurement = new()
-            {
-                UnitMeasurementRepository = unitMeasurementRepository,
-                CmbFilter = cmbfields,
-                TxtValue = txtValue,
-                DataGridView = DataGridView,
-                Form = this,
-                Dock = DockStyle.Fill
-            };
-            addControls(DataGridView, unitMeasurement);
-        }
-        private void toolStripButtonWarehouse_Click(object sender, EventArgs e)
-        {
-
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            WarehouseUser warehouse = new()
-            {
-                CmbFilter = cmbfields,
-                TxtValue = txtValue,
-                ProductRepository = productRepository,
-                StockRepository = StockRepository,
-                warehouseRepository = warehouseRepository,
-                DataGridView = DataGridView,
-                Form = this,
-                Dock = DockStyle.Fill
-            };
-            addControls(DataGridView, warehouse);
-        }
-        private void toolStripButtonRole_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            RoleUser role = new()
-            {
-                CmbFilter = cmbfields,
-                TxtValue = txtValue,
-                RoleRepository = roleRepository,
-                DataGridView = DataGridView,
-                Dock = DockStyle.Fill,
-                Form = this
-            }; addControls(DataGridView, role);
-
-        }
-        private void toolStripButtonClient_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-
-            ClientUser client = new()
-            {
-                CmbFilter = cmbfields,
-                TxtValue = txtValue,
-                ClientRepository = clientRepository,
-                IdentificationTypeRepository = IdentificationTypeRepository,
-                DataGridView = DataGridView,
-                Dock = DockStyle.Fill,
-                Form = this
-            };
-
-            addControls(DataGridView, client);
-
-        }
         private void FrmMain_Shown(object sender, EventArgs e)
         {
             this.Hide();
             FrmLogin frm = new FrmLogin();
             frm.ShowDialog();
             this.Show();
-        }
-        private void toolStripButtonEmployee_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            EmployeeUser employee = new EmployeeUser
-            {
-                CompanyRepository = companyRepository,
-                UserRepository = userRepository,
-                DataGridView = DataGridView,
-                TxtValue = txtValue,
-                CmbFilter = cmbfields,
-                EmployeeRepository = employeeRepository,
-                IdentificationTypeRepository = IdentificationTypeRepository,
-                RoleRepository = roleRepository,
-                Form = this
-            };
-            addControls(DataGridView, employee);
-        }
-        void addControls(DataGridView dataGridView, UserControl userControl)
-        {
-            pnlDatagrid.Controls.Clear();
-            pnlPrincipal.Controls.Clear();
-            pnlDatagrid.Controls.Add(dataGridView);
-            pnlPrincipal.Controls.Add(userControl);
-        }
-        private void toolStripButtonCompany_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            CompanyUser companyUser = new CompanyUser
-            {
-                CompanyRepository = companyRepository,
-                DataGridView = DataGridView,
-                TxtValue = txtValue,
-                CmbFilter = cmbfields,
-                RegimenTypeRepository = RegimenTypeRepository,
-                Form = this
-            };
-            addControls(DataGridView, companyUser);
-
-        }
-        private void toolStripButtonProvider_Click(object sender, EventArgs e)
-        {
-            DataGridView = null;
-            DataGridView = ControlForm.GetDatagrid();
-            ProviderUser provider = new ProviderUser
-            {
-                ProviderRepository = providerRepository,
-                IdentificationTypeRepository = IdentificationTypeRepository,
-                DataGridView = DataGridView,
-                TxtValue = txtValue,
-                Form =this,
-                CmbFilter = cmbfields,
-            };
-            addControls(DataGridView, provider);
         }
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -225,7 +69,54 @@ namespace WinFormsApp
             {
                 e.Cancel = false;
             }
-            
+
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAdministration_Click(object sender, EventArgs e)
+        {
+            AdministrationUser administration = new AdministrationUser
+            {
+                TaxRepository=taxRepository,
+                companyRepository = companyRepository,
+                roleRepository = roleRepository,
+                IdentificationTypeRepository = IdentificationTypeRepository,
+                clientRepository = clientRepository,
+                StockRepository = StockRepository,
+                warehouseRepository = warehouseRepository,
+                categoryRepository = categoryRepository,
+                productRepository = productRepository,
+                pictureRepository = pictureRepository,
+                unitMeasurementRepository = unitMeasurementRepository,
+                employeeRepository = employeeRepository,
+                userRepository = userRepository,
+                RegimenTypeRepository = RegimenTypeRepository,
+                providerRepository = providerRepository,
+                Dock = DockStyle.Fill,
+                frmMain = this
+            };
+            addControl(pnlMain, administration);
+
+        }
+
+        private void btnBilling_Click(object sender, EventArgs e)
+        {
+            BillingUser billingUser =new BillingUser 
+            {
+                Dock = DockStyle.Fill,
+                frmMain = this
+
+            };
+            addControl(pnlMain, billingUser);
+
+        }
+        void addControl(Panel panel,UserControl control )
+        {
+            panel.Controls.Clear();
+            panel.Controls.Add(control );
         }
     }
 }

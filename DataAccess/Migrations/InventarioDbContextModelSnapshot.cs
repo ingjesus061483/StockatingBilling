@@ -502,6 +502,28 @@ namespace DataAccess.Migrations
                     b.ToTable("Stocks");
                 });
 
+            modelBuilder.Entity("Factory.Tax", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Taxes");
+                });
+
             modelBuilder.Entity("Factory.UnitMeasurement", b =>
                 {
                     b.Property<int>("Id")
