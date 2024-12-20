@@ -96,7 +96,6 @@ namespace WinFormsApp
                 RegimenTypeRepository = RegimenTypeRepository,
                 providerRepository = providerRepository,
                 Dock = DockStyle.Fill,
-                frmMain = this
             };
             addControl(pnlMain, administration);
 

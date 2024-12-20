@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductUser));
             btnuevo = new Button();
             btnGuardar = new Button();
-            btnEliminar = new Button();
             btnSalir = new Button();
             btnOpen = new Button();
             btnStock = new Button();
@@ -64,7 +63,7 @@
             btnuevo.BackgroundImage = (Image)resources.GetObject("btnuevo.BackgroundImage");
             btnuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnuevo.FlatStyle = FlatStyle.Flat;
-            btnuevo.Location = new Point(261, 10);
+            btnuevo.Location = new Point(324, 10);
             btnuevo.Name = "btnuevo";
             btnuevo.Size = new Size(57, 67);
             btnuevo.TabIndex = 16;
@@ -77,25 +76,12 @@
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Location = new Point(324, 10);
+            btnGuardar.Location = new Point(387, 10);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(57, 67);
             btnGuardar.TabIndex = 15;
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.Transparent;
-            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
-            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(387, 10);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(57, 67);
-            btnEliminar.TabIndex = 14;
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnSalir
             // 
@@ -116,7 +102,7 @@
             btnOpen.BackgroundImage = (Image)resources.GetObject("btnOpen.BackgroundImage");
             btnOpen.BackgroundImageLayout = ImageLayout.Stretch;
             btnOpen.FlatStyle = FlatStyle.Flat;
-            btnOpen.Location = new Point(199, 10);
+            btnOpen.Location = new Point(262, 10);
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(57, 67);
             btnOpen.TabIndex = 26;
@@ -129,7 +115,7 @@
             btnStock.BackgroundImage = (Image)resources.GetObject("btnStock.BackgroundImage");
             btnStock.BackgroundImageLayout = ImageLayout.Stretch;
             btnStock.FlatStyle = FlatStyle.Flat;
-            btnStock.Location = new Point(137, 10);
+            btnStock.Location = new Point(200, 10);
             btnStock.Name = "btnStock";
             btnStock.Size = new Size(57, 67);
             btnStock.TabIndex = 27;
@@ -144,7 +130,6 @@
             customPanel3.Controls.Add(btnStock);
             customPanel3.Controls.Add(btnOpen);
             customPanel3.Controls.Add(btnSalir);
-            customPanel3.Controls.Add(btnEliminar);
             customPanel3.Controls.Add(btnGuardar);
             customPanel3.Controls.Add(btnuevo);
             customPanel3.ForeColor = Color.Black;
@@ -375,7 +360,6 @@
 
         private Button btnuevo;
         private Button btnGuardar;
-        private Button btnEliminar;
         private Button btnSalir;
         private Button btnOpen;
         private Button btnStock;

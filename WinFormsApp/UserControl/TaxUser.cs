@@ -14,12 +14,9 @@ namespace WinFormsApp
 {
     public partial class TaxUser : UserControl
     {
-        TaxDTO taxDTO;
+       public TaxDTO taxDTO;
         public TaxRepository TaxRepository { get; set; }
-        public DataGridView DataGridView { get; set; }
-        public TextBox TxtValue { get; set; }
         public Form Form { get; set; }
-        public ComboBox CmbFilter { get; set; }
         public TaxUser()
         {
             InitializeComponent();
@@ -27,13 +24,6 @@ namespace WinFormsApp
         void NewTax()
         {
             taxDTO = null;
-            DataGridView.DataSource = TaxRepository.Values.Select(x => new
-            {
-                x.Id,
-                Nombre = x.Name,
-                Valor = x.Value,
-                Descripcion = x.Description
-            }).ToList();
             txtDescription.Clear();
             txtName.Clear();
             txtValue.Clear();
@@ -42,37 +32,17 @@ namespace WinFormsApp
         }
         private void TaxUser_Load(object sender, EventArgs e)
         {
-            DataGridView.CellContentClick += DataGridView_CellContentClick;
-            TxtValue.TextChanged += TxtValue_TextChanged;
-            NewTax();
-            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
-            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
-        }
-
-        private void TxtValue_TextChanged(object? sender, EventArgs e)
-        {
-            DataGridView.DataSource = TaxRepository.Values.Select(x => new
+            if (taxDTO != null)
             {
-                x.Id,
-                Nombre = x.Name,
-                Valor = x.Value,
-                Descripcion = x.Description
-            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
-        }
-
-        private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
+                txtDescription.Text = taxDTO.Description;
+                txtName.Text = taxDTO.Name;
+                txtValue.Text = taxDTO.Value.ToString();
                 return;
             }
-            int id = int.Parse(DataGridView.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-            taxDTO = TaxRepository.GetById(id);
-            txtDescription.Text = taxDTO.Description;
-            txtName.Text = taxDTO.Name;
-            txtValue.Text = taxDTO.Value.ToString();
+            NewTax();
         }
 
+ 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             decimal.TryParse(txtValue.Text, out decimal value);
@@ -108,17 +78,7 @@ namespace WinFormsApp
             NewTax();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (taxDTO == null)
-            {
-                return;
-
-            }
-            TaxRepository.DeleteById(taxDTO.Id);
-            NewTax();
-        }
-
+        
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Form.Close();

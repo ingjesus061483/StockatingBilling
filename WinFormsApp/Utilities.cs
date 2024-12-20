@@ -27,7 +27,7 @@ namespace WinFormsApp
         {
            T [] Columns = new T[dataGridView.Columns.Count];
             dataGridView.Columns.CopyTo(Columns, 0);
-            return Columns.ToList();
+            return Columns. ToList();
             
         }
         public static void FillCombo(List<T> values,System.Windows.Forms.ComboBox combo)
@@ -35,8 +35,11 @@ namespace WinFormsApp
             combo.Items.Clear();
             foreach (var item in values) 
             {
-                PropertyInfo propertyInfo = item.GetType().GetRuntimeProperties().FirstOrDefault(x=>x.Name=="Name");                
-                combo.Items.Add(propertyInfo.GetValue(item).ToString()); 
+                PropertyInfo propertyInfo = item.GetType().GetRuntimeProperties().FirstOrDefault(x=>x.Name=="Name");
+                if (!string.IsNullOrEmpty(propertyInfo.GetValue(item).ToString()))
+                {
+                    combo.Items.Add(propertyInfo.GetValue(item).ToString());
+                }
             }
             combo.SelectedIndex = 0;
         }

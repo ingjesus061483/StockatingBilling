@@ -30,68 +30,68 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBilling));
             customPanel1 = new RoundedBorders.CustomPanel();
-            customPanel3 = new RoundedBorders.CustomPanel();
-            customPanel4 = new RoundedBorders.CustomPanel();
+            dtpDate = new DateTimePicker();
+            label16 = new Label();
+            comboBox2 = new ComboBox();
+            label14 = new Label();
+            btnEmployee = new Button();
+            txtEmployee = new TextBox();
+            btnClient = new Button();
+            txtClient = new TextBox();
+            comboBox1 = new ComboBox();
+            label12 = new Label();
+            txtcode = new TextBox();
+            label13 = new Label();
             panel1 = new Panel();
-            customPanel2 = new RoundedBorders.CustomPanel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            dataGridView1 = new DataGridView();
             label5 = new Label();
-            label1 = new Label();
+            customPanel3 = new RoundedBorders.CustomPanel();
+            dataGridView1 = new DataGridView();
+            customPanel4 = new RoundedBorders.CustomPanel();
+            cmbIdentificationType = new ComboBox();
+            textBox7 = new TextBox();
+            label11 = new Label();
+            textBox6 = new TextBox();
+            label10 = new Label();
+            textBox5 = new TextBox();
+            label9 = new Label();
+            textBox4 = new TextBox();
+            label8 = new Label();
+            textBox3 = new TextBox();
+            label7 = new Label();
+            textBox2 = new TextBox();
+            label6 = new Label();
+            panel3 = new Panel();
             label2 = new Label();
+            customPanel2 = new RoundedBorders.CustomPanel();
+            txtUnitPrice = new TextBox();
+            txtStock = new TextBox();
+            label4 = new Label();
             txtAmount = new TextBox();
             label3 = new Label();
             btnWarehouse = new Button();
             txtWarehouse = new TextBox();
             btnProduct = new Button();
             txtProduc = new TextBox();
-            txtStock = new TextBox();
-            label4 = new Label();
+            panel2 = new Panel();
+            label1 = new Label();
             customPanel5 = new RoundedBorders.CustomPanel();
             btnGuardar = new Button();
             btnuevo = new Button();
-            textBox2 = new TextBox();
-            label6 = new Label();
-            textBox3 = new TextBox();
-            label7 = new Label();
-            textBox4 = new TextBox();
-            label8 = new Label();
-            textBox5 = new TextBox();
-            label9 = new Label();
-            textBox6 = new TextBox();
-            label10 = new Label();
-            textBox7 = new TextBox();
-            label11 = new Label();
-            cmbIdentificationType = new ComboBox();
             customPanel6 = new RoundedBorders.CustomPanel();
             button1 = new Button();
             button2 = new Button();
-            txtUnitPrice = new TextBox();
-            comboBox1 = new ComboBox();
-            label12 = new Label();
-            txtcode = new TextBox();
-            label13 = new Label();
-            btnClient = new Button();
-            txtClient = new TextBox();
-            btnEmployee = new Button();
-            txtEmployee = new TextBox();
-            comboBox2 = new ComboBox();
-            label14 = new Label();
             customPanel7 = new RoundedBorders.CustomPanel();
             textBox12 = new TextBox();
             panel4 = new Panel();
             label15 = new Label();
-            dtpDate = new DateTimePicker();
-            label16 = new Label();
             customPanel1.SuspendLayout();
-            customPanel3.SuspendLayout();
-            customPanel4.SuspendLayout();
             panel1.SuspendLayout();
+            customPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            customPanel4.SuspendLayout();
+            panel3.SuspendLayout();
             customPanel2.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             customPanel5.SuspendLayout();
             customPanel6.SuspendLayout();
             customPanel7.SuspendLayout();
@@ -122,8 +122,160 @@
             customPanel1.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel1.Location = new Point(16, 22);
             customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(563, 309);
+            customPanel1.Size = new Size(537, 309);
             customPanel1.TabIndex = 0;
+            // 
+            // dtpDate
+            // 
+            dtpDate.CustomFormat = "yyyy-MM-dd";
+            dtpDate.Font = new Font("Arial", 10F);
+            dtpDate.Format = DateTimePickerFormat.Custom;
+            dtpDate.Location = new Point(183, 255);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(331, 30);
+            dtpDate.TabIndex = 36;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(107, 259);
+            label16.Name = "label16";
+            label16.Size = new Size(67, 24);
+            label16.TabIndex = 35;
+            label16.Text = "Fecha";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(183, 218);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(331, 33);
+            comboBox2.TabIndex = 34;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(57, 222);
+            label14.Name = "label14";
+            label14.Size = new Size(118, 24);
+            label14.TabIndex = 33;
+            label14.Text = "Documento";
+            // 
+            // btnEmployee
+            // 
+            btnEmployee.BackColor = Color.Transparent;
+            btnEmployee.BackgroundImage = (Image)resources.GetObject("btnEmployee.BackgroundImage");
+            btnEmployee.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEmployee.FlatStyle = FlatStyle.Flat;
+            btnEmployee.Font = new Font("Arial", 10F, FontStyle.Bold);
+            btnEmployee.Location = new Point(135, 144);
+            btnEmployee.Name = "btnEmployee";
+            btnEmployee.Size = new Size(38, 32);
+            btnEmployee.TabIndex = 32;
+            btnEmployee.UseVisualStyleBackColor = false;
+            // 
+            // txtEmployee
+            // 
+            txtEmployee.Font = new Font("Arial", 10F);
+            txtEmployee.Location = new Point(181, 145);
+            txtEmployee.Name = "txtEmployee";
+            txtEmployee.ReadOnly = true;
+            txtEmployee.Size = new Size(333, 30);
+            txtEmployee.TabIndex = 31;
+            // 
+            // btnClient
+            // 
+            btnClient.BackColor = Color.Transparent;
+            btnClient.BackgroundImage = (Image)resources.GetObject("btnClient.BackgroundImage");
+            btnClient.BackgroundImageLayout = ImageLayout.Stretch;
+            btnClient.FlatStyle = FlatStyle.Flat;
+            btnClient.Font = new Font("Arial", 10F, FontStyle.Bold);
+            btnClient.Location = new Point(136, 109);
+            btnClient.Name = "btnClient";
+            btnClient.Size = new Size(37, 32);
+            btnClient.TabIndex = 30;
+            btnClient.UseVisualStyleBackColor = false;
+            // 
+            // txtClient
+            // 
+            txtClient.Font = new Font("Arial", 10F);
+            txtClient.Location = new Point(182, 110);
+            txtClient.Name = "txtClient";
+            txtClient.ReadOnly = true;
+            txtClient.Size = new Size(333, 30);
+            txtClient.TabIndex = 29;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(182, 180);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(332, 33);
+            comboBox1.TabIndex = 28;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(22, 184);
+            label12.Name = "label12";
+            label12.Size = new Size(152, 24);
+            label12.TabIndex = 27;
+            label12.Text = "Forma de pago";
+            // 
+            // txtcode
+            // 
+            txtcode.Font = new Font("Arial", 10F);
+            txtcode.Location = new Point(182, 75);
+            txtcode.Name = "txtcode";
+            txtcode.Size = new Size(333, 30);
+            txtcode.TabIndex = 26;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(96, 78);
+            label13.Name = "label13";
+            label13.Size = new Size(77, 24);
+            label13.TabIndex = 25;
+            label13.Text = "Codigo";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(36, 113, 163);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(537, 48);
+            panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(144, 3);
+            label5.Name = "label5";
+            label5.Size = new Size(230, 43);
+            label5.TabIndex = 1;
+            label5.Text = "Encabezado";
             // 
             // customPanel3
             // 
@@ -137,8 +289,19 @@
             customPanel3.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel3.Location = new Point(16, 631);
             customPanel3.Name = "customPanel3";
-            customPanel3.Size = new Size(563, 134);
+            customPanel3.Size = new Size(537, 134);
             customPanel3.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(42, 46, 50);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(537, 134);
+            dataGridView1.TabIndex = 1;
             // 
             // customPanel4
             // 
@@ -165,18 +328,160 @@
             customPanel4.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel4.Location = new Point(280, 774);
             customPanel4.Name = "customPanel4";
-            customPanel4.Size = new Size(299, 292);
+            customPanel4.Size = new Size(273, 292);
             customPanel4.TabIndex = 3;
             // 
-            // panel1
+            // cmbIdentificationType
             // 
-            panel1.BackColor = Color.FromArgb(36, 113, 163);
-            panel1.Controls.Add(label5);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(563, 48);
-            panel1.TabIndex = 0;
+            cmbIdentificationType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            cmbIdentificationType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbIdentificationType.FormattingEnabled = true;
+            cmbIdentificationType.Location = new Point(143, 138);
+            cmbIdentificationType.Name = "cmbIdentificationType";
+            cmbIdentificationType.Size = new Size(32, 33);
+            cmbIdentificationType.TabIndex = 24;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Arial", 10F);
+            textBox7.Location = new Point(145, 244);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(106, 30);
+            textBox7.TabIndex = 23;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(55, 247);
+            label11.Name = "label11";
+            label11.Size = new Size(81, 24);
+            label11.TabIndex = 22;
+            label11.Text = "Cambio";
+            // 
+            // textBox6
+            // 
+            textBox6.Font = new Font("Arial", 10F);
+            textBox6.Location = new Point(145, 209);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(106, 30);
+            textBox6.TabIndex = 21;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(44, 212);
+            label10.Name = "label10";
+            label10.Size = new Size(92, 24);
+            label10.TabIndex = 20;
+            label10.Text = "Recibido";
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Arial", 10F);
+            textBox5.Location = new Point(145, 174);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(106, 30);
+            textBox5.TabIndex = 19;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(3, 177);
+            label9.Name = "label9";
+            label9.Size = new Size(134, 24);
+            label9.TabIndex = 18;
+            label9.Text = "Total a pagar";
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Arial", 10F);
+            textBox4.Location = new Point(181, 139);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(71, 30);
+            textBox4.TabIndex = 17;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(26, 142);
+            label8.Name = "label8";
+            label8.Size = new Size(111, 24);
+            label8.TabIndex = 16;
+            label8.Text = "Descuento";
+            // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Arial", 10F);
+            textBox3.Location = new Point(145, 104);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(107, 30);
+            textBox3.TabIndex = 15;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(29, 107);
+            label7.Name = "label7";
+            label7.Size = new Size(108, 24);
+            label7.TabIndex = 14;
+            label7.Text = "Impuestos";
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Arial", 10F);
+            textBox2.Location = new Point(145, 68);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(107, 30);
+            textBox2.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(48, 71);
+            label6.Name = "label6";
+            label6.Size = new Size(89, 24);
+            label6.TabIndex = 12;
+            label6.Text = "Subtotal";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(36, 113, 163);
+            panel3.Controls.Add(label2);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(273, 48);
+            panel3.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(86, 3);
+            label2.Name = "label2";
+            label2.Size = new Size(142, 43);
+            label2.TabIndex = 1;
+            label2.Text = "Totales";
             // 
             // customPanel2
             // 
@@ -199,75 +504,37 @@
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel2.Location = new Point(16, 344);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(563, 187);
+            customPanel2.Size = new Size(537, 187);
             customPanel2.TabIndex = 4;
             // 
-            // panel2
+            // txtUnitPrice
             // 
-            panel2.BackColor = Color.FromArgb(36, 113, 163);
-            panel2.Controls.Add(label1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(563, 48);
-            panel2.TabIndex = 0;
+            txtUnitPrice.Font = new Font("Arial", 10F);
+            txtUnitPrice.Location = new Point(299, 67);
+            txtUnitPrice.Name = "txtUnitPrice";
+            txtUnitPrice.Size = new Size(216, 30);
+            txtUnitPrice.TabIndex = 14;
             // 
-            // panel3
+            // txtStock
             // 
-            panel3.BackColor = Color.FromArgb(36, 113, 163);
-            panel3.Controls.Add(label2);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(299, 48);
-            panel3.TabIndex = 1;
+            txtStock.Font = new Font("Arial", 10F);
+            txtStock.Location = new Point(374, 136);
+            txtStock.Name = "txtStock";
+            txtStock.ReadOnly = true;
+            txtStock.Size = new Size(141, 30);
+            txtStock.TabIndex = 13;
             // 
-            // dataGridView1
+            // label4
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(42, 46, 50);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(563, 134);
-            dataGridView1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(144, 3);
-            label5.Name = "label5";
-            label5.Size = new Size(230, 43);
-            label5.TabIndex = 1;
-            label5.Text = "Encabezado";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(182, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(155, 43);
-            label1.TabIndex = 1;
-            label1.Text = "Detalles";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(86, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(142, 43);
-            label2.TabIndex = 1;
-            label2.Text = "Totales";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(259, 139);
+            label4.Name = "label4";
+            label4.Size = new Size(107, 24);
+            label4.TabIndex = 12;
+            label4.Text = "Existencia";
             // 
             // txtAmount
             // 
@@ -308,7 +575,7 @@
             txtWarehouse.Location = new Point(63, 102);
             txtWarehouse.Name = "txtWarehouse";
             txtWarehouse.ReadOnly = true;
-            txtWarehouse.Size = new Size(477, 30);
+            txtWarehouse.Size = new Size(452, 30);
             txtWarehouse.TabIndex = 8;
             // 
             // btnProduct
@@ -333,26 +600,27 @@
             txtProduc.Size = new Size(228, 30);
             txtProduc.TabIndex = 6;
             // 
-            // txtStock
+            // panel2
             // 
-            txtStock.Font = new Font("Arial", 10F);
-            txtStock.Location = new Point(374, 136);
-            txtStock.Name = "txtStock";
-            txtStock.ReadOnly = true;
-            txtStock.Size = new Size(166, 30);
-            txtStock.TabIndex = 13;
+            panel2.BackColor = Color.FromArgb(36, 113, 163);
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(537, 48);
+            panel2.TabIndex = 0;
             // 
-            // label4
+            // label1
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(259, 139);
-            label4.Name = "label4";
-            label4.Size = new Size(107, 24);
-            label4.TabIndex = 12;
-            label4.Text = "Existencia";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(182, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 43);
+            label1.TabIndex = 1;
+            label1.Text = "Detalles";
             // 
             // customPanel5
             // 
@@ -367,7 +635,7 @@
             customPanel5.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel5.Location = new Point(16, 541);
             customPanel5.Name = "customPanel5";
-            customPanel5.Size = new Size(563, 81);
+            customPanel5.Size = new Size(537, 81);
             customPanel5.TabIndex = 5;
             // 
             // btnGuardar
@@ -394,136 +662,6 @@
             btnuevo.TabIndex = 18;
             btnuevo.UseVisualStyleBackColor = false;
             // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Arial", 10F);
-            textBox2.Location = new Point(145, 60);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(130, 30);
-            textBox2.TabIndex = 13;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(48, 63);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 24);
-            label6.TabIndex = 12;
-            label6.Text = "Subtotal";
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Arial", 10F);
-            textBox3.Location = new Point(145, 96);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(130, 30);
-            textBox3.TabIndex = 15;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(29, 99);
-            label7.Name = "label7";
-            label7.Size = new Size(108, 24);
-            label7.TabIndex = 14;
-            label7.Text = "Impuestos";
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Arial", 10F);
-            textBox4.Location = new Point(204, 131);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(71, 30);
-            textBox4.TabIndex = 17;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(26, 134);
-            label8.Name = "label8";
-            label8.Size = new Size(111, 24);
-            label8.TabIndex = 16;
-            label8.Text = "Descuento";
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Arial", 10F);
-            textBox5.Location = new Point(145, 166);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(130, 30);
-            textBox5.TabIndex = 19;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(3, 169);
-            label9.Name = "label9";
-            label9.Size = new Size(134, 24);
-            label9.TabIndex = 18;
-            label9.Text = "Total a pagar";
-            // 
-            // textBox6
-            // 
-            textBox6.Font = new Font("Arial", 10F);
-            textBox6.Location = new Point(145, 201);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(130, 30);
-            textBox6.TabIndex = 21;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(44, 204);
-            label10.Name = "label10";
-            label10.Size = new Size(92, 24);
-            label10.TabIndex = 20;
-            label10.Text = "Recibido";
-            // 
-            // textBox7
-            // 
-            textBox7.Font = new Font("Arial", 10F);
-            textBox7.Location = new Point(145, 236);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(130, 30);
-            textBox7.TabIndex = 23;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(55, 239);
-            label11.Name = "label11";
-            label11.Size = new Size(81, 24);
-            label11.TabIndex = 22;
-            label11.Text = "Cambio";
-            // 
-            // cmbIdentificationType
-            // 
-            cmbIdentificationType.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            cmbIdentificationType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbIdentificationType.FormattingEnabled = true;
-            cmbIdentificationType.Location = new Point(143, 130);
-            cmbIdentificationType.Name = "cmbIdentificationType";
-            cmbIdentificationType.Size = new Size(58, 33);
-            cmbIdentificationType.TabIndex = 24;
-            // 
             // customPanel6
             // 
             customPanel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -537,7 +675,7 @@
             customPanel6.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel6.Location = new Point(16, 1077);
             customPanel6.Name = "customPanel6";
-            customPanel6.Size = new Size(563, 81);
+            customPanel6.Size = new Size(537, 81);
             customPanel6.TabIndex = 6;
             // 
             // button1
@@ -563,122 +701,6 @@
             button2.Size = new Size(57, 67);
             button2.TabIndex = 18;
             button2.UseVisualStyleBackColor = false;
-            // 
-            // txtUnitPrice
-            // 
-            txtUnitPrice.Font = new Font("Arial", 10F);
-            txtUnitPrice.Location = new Point(299, 67);
-            txtUnitPrice.Name = "txtUnitPrice";
-            txtUnitPrice.Size = new Size(241, 30);
-            txtUnitPrice.TabIndex = 14;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(182, 171);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(358, 33);
-            comboBox1.TabIndex = 28;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(22, 175);
-            label12.Name = "label12";
-            label12.Size = new Size(152, 24);
-            label12.TabIndex = 27;
-            label12.Text = "Forma de pago";
-            // 
-            // txtcode
-            // 
-            txtcode.Font = new Font("Arial", 10F);
-            txtcode.Location = new Point(182, 66);
-            txtcode.Name = "txtcode";
-            txtcode.Size = new Size(358, 30);
-            txtcode.TabIndex = 26;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(96, 69);
-            label13.Name = "label13";
-            label13.Size = new Size(77, 24);
-            label13.TabIndex = 25;
-            label13.Text = "Codigo";
-            // 
-            // btnClient
-            // 
-            btnClient.BackColor = Color.Transparent;
-            btnClient.BackgroundImage = (Image)resources.GetObject("btnClient.BackgroundImage");
-            btnClient.BackgroundImageLayout = ImageLayout.Stretch;
-            btnClient.FlatStyle = FlatStyle.Flat;
-            btnClient.Font = new Font("Arial", 10F, FontStyle.Bold);
-            btnClient.Location = new Point(136, 100);
-            btnClient.Name = "btnClient";
-            btnClient.Size = new Size(37, 32);
-            btnClient.TabIndex = 30;
-            btnClient.UseVisualStyleBackColor = false;
-            // 
-            // txtClient
-            // 
-            txtClient.Font = new Font("Arial", 10F);
-            txtClient.Location = new Point(182, 101);
-            txtClient.Name = "txtClient";
-            txtClient.ReadOnly = true;
-            txtClient.Size = new Size(358, 30);
-            txtClient.TabIndex = 29;
-            // 
-            // btnEmployee
-            // 
-            btnEmployee.BackColor = Color.Transparent;
-            btnEmployee.BackgroundImage = (Image)resources.GetObject("btnEmployee.BackgroundImage");
-            btnEmployee.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEmployee.FlatStyle = FlatStyle.Flat;
-            btnEmployee.Font = new Font("Arial", 10F, FontStyle.Bold);
-            btnEmployee.Location = new Point(135, 135);
-            btnEmployee.Name = "btnEmployee";
-            btnEmployee.Size = new Size(38, 32);
-            btnEmployee.TabIndex = 32;
-            btnEmployee.UseVisualStyleBackColor = false;
-            // 
-            // txtEmployee
-            // 
-            txtEmployee.Font = new Font("Arial", 10F);
-            txtEmployee.Location = new Point(181, 136);
-            txtEmployee.Name = "txtEmployee";
-            txtEmployee.ReadOnly = true;
-            txtEmployee.Size = new Size(358, 30);
-            txtEmployee.TabIndex = 31;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(183, 209);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(357, 33);
-            comboBox2.TabIndex = 34;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(57, 213);
-            label14.Name = "label14";
-            label14.Size = new Size(118, 24);
-            label14.TabIndex = 33;
-            label14.Text = "Documento";
             // 
             // customPanel7
             // 
@@ -727,28 +749,6 @@
             label15.TabIndex = 1;
             label15.Text = "Observciones";
             // 
-            // dtpDate
-            // 
-            dtpDate.CustomFormat = "yyyy-MM-dd";
-            dtpDate.Font = new Font("Arial", 10F);
-            dtpDate.Format = DateTimePickerFormat.Custom;
-            dtpDate.Location = new Point(183, 246);
-            dtpDate.Name = "dtpDate";
-            dtpDate.Size = new Size(357, 30);
-            dtpDate.TabIndex = 36;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Arial", 10F, FontStyle.Bold);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(107, 250);
-            label16.Name = "label16";
-            label16.Size = new Size(67, 24);
-            label16.TabIndex = 35;
-            label16.Text = "Fecha";
-            // 
             // FrmBilling
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -767,18 +767,18 @@
             Text = "FrmBilling";
             customPanel1.ResumeLayout(false);
             customPanel1.PerformLayout();
-            customPanel3.ResumeLayout(false);
-            customPanel4.ResumeLayout(false);
-            customPanel4.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            customPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            customPanel4.ResumeLayout(false);
+            customPanel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             customPanel5.ResumeLayout(false);
             customPanel6.ResumeLayout(false);
             customPanel7.ResumeLayout(false);

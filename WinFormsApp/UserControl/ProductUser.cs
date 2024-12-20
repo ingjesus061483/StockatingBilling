@@ -20,11 +20,9 @@ namespace WinFormsApp
         List<PictureDTO> pictureDTOs;
         int idProduct;
         string path;
-        ProductDTO productDTO;
+       public  ProductDTO productDTO ;
         public Form Form { get; set; }
-        public ComboBox CmbFilter { get; set; }
-        public TextBox TxtValue { get; set; }
-        public DataGridView dgProduct { get; set; }
+   
         public WarehouseRepository WarehouseRepository { get; set; }
         public UnitMeasurementRepository unitMeasurementRepository;
         public ProductRepository repository { get; set; }
@@ -48,21 +46,7 @@ namespace WinFormsApp
             cmbCategory.SelectedIndex = -1;
             cmbUnitMeasurement.SelectedIndex = -1;
             txtCode.Focus();
-            pictureDTOs = pictureRepository.Values.Where(x => x.ProductId == idProduct).ToList();
-            dgProduct.DataSource = repository.Values.Select(x => new
-            {
-                x.Id,
-                Codigo = x.Code,
-                Nombre = x.Name,
-                Costo = x.UnitCost,
-                Precio = x.Price,
-                Descripcion = x.Description,
-                Categoria = x.Category.Name,
-                Unidad = x.UnitMeasurement.Name,
-                Entrada = x.Entrance,
-                Salida = x.Out,
-                x.Total
-            }).ToList();
+            pictureDTOs = pictureRepository.Values.Where(x => x.ProductId == idProduct).ToList();   
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -139,38 +123,11 @@ namespace WinFormsApp
                 productDTO.UnitCost = unitCost;
                 productDTO.Code = txtCode.Text;
                 repository.Update(productDTO, idProduct);
-            }
-            NewProduct();
+            }  
             btnStock .PerformClick ();
+            NewProduct();
 
-        }
-
-        private void dgProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-            idProduct = int.Parse(dgProduct.Rows[e.RowIndex].Cells["id"].Value.ToString());
-            productDTO = repository.GetById(idProduct);
-            productDTO.Images = pictureRepository.Values.Where(x => x.ProductId == idProduct).Select(t => new Picture
-            {
-                Id = t.Id,
-                Code = t.Code,
-                Name = t.Name,
-                Data = t.Data,
-                Type = t.Type,
-            }).ToList();
-            txtCode.Text = productDTO.Code;
-            txtUnitCost.Text = productDTO.UnitCost.ToString();
-            txtName.Text = productDTO.Name;
-            txtDescription.Text = productDTO.Description;
-            txtPrice.Text = productDTO.Price.ToString();
-            cmbUnitMeasurement.SelectedValue = productDTO.UnitMeasurementId;
-            cmbCategory.SelectedValue = productDTO.CategoryId;
-            pictureDTOs = pictureRepository.Values.ToList();
-
-        }
+        }       
         private void Btnuevo_Click(object sender, EventArgs e)
         {
             NewProduct();
@@ -196,34 +153,32 @@ namespace WinFormsApp
 
         private void ProductUser_Load(object sender, EventArgs e)
         {
-            TxtValue.TextChanged += TxtValue_TextChanged;
-            dgProduct.CellContentClick += dgProduct_CellContentClick;
             Utilities<UnitMeasurementDTO>.FillCombo(unitMeasurementRepository.Values.ToList(), arr, cmbUnitMeasurement);
             Utilities<CategoryDTO>.FillCombo(categoryRepository.Values.ToList(), arr, cmbCategory);
-            NewProduct();
-            var cols = Utilities<DataGridViewColumn>.GetValues(dgProduct);
-            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
-
-        }
-
-        private void TxtValue_TextChanged(object? sender, EventArgs e)
-        {
-            dgProduct.DataSource = repository.Values.Select(x => new
+            if (productDTO != null)
             {
-                x.Id,
-                Codigo = x.Code,
-                Nombre = x.Name,
-                Costo = x.UnitCost,
-                Precio = x.Price,
-                Descripcion = x.Description,
-                Categoria = x.Category.Name,
-                Unidad = x.UnitMeasurement.Name,
-                Entrada = x.Entrance,
-                Salida = x.Out,
-                x.Total
-            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
-        }
-
+                idProduct= productDTO.Id ;
+                productDTO.Images = pictureRepository.Values.Where(x => x.ProductId == idProduct).Select(t => new Picture
+                {
+                    Id = t.Id,
+                    Code = t.Code,
+                    Name = t.Name,
+                    Data = t.Data,
+                    Type = t.Type,
+                }).ToList();
+                txtCode.Text = productDTO.Code;
+                txtUnitCost.Text = productDTO.UnitCost.ToString();
+                txtName.Text = productDTO.Name;
+                txtDescription.Text = productDTO.Description;
+                txtPrice.Text = productDTO.Price.ToString();
+                cmbUnitMeasurement.SelectedValue = productDTO.UnitMeasurementId;
+                cmbCategory.SelectedValue = productDTO.CategoryId;
+                pictureDTOs = pictureRepository.Values.ToList();
+                return;
+            }
+            NewProduct();
+     
+        }       
         private void btnStock_Click(object sender, EventArgs e)
         {
             if (productDTO==null)

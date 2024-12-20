@@ -16,12 +16,10 @@ namespace WinFormsApp
     public partial class UnitMeasurementUser : UserControl
     {
         int idUnitMeasurement;
-        public ComboBox CmbFilter { get; set; }
-        public TextBox TxtValue { get; set; }
-
+     
         public UnitMeasurementRepository UnitMeasurementRepository { get; set; }
-        public DataGridView DataGridView { get; set; }
-        UnitMeasurementDTO unitMeasurementDTO;
+      
+      public   UnitMeasurementDTO unitMeasurementDTO { get;set; }
         public Form Form { get; set; }
         public UnitMeasurementUser()
         {
@@ -33,11 +31,11 @@ namespace WinFormsApp
             txtName.Clear();
             txtDescription.Clear();
             txtName.Focus();
-            DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x=> new {
+        /*    DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x=> new {
                 x.Id,
                 Nombre = x.Name,
                 Descripcion = x.Description,
-            }). ToList();           
+            }). ToList();           */
             
 
             unitMeasurementDTO = null;
@@ -74,11 +72,7 @@ namespace WinFormsApp
             newUnit();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            UnitMeasurementRepository.DeleteById(idUnitMeasurement);
-            newUnit();
-        }
+     
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -87,14 +81,17 @@ namespace WinFormsApp
 
         private void UnitMeasurementUser_Load(object sender, EventArgs e)
         {
-            DataGridView.CellContentClick += DataGridView_CellContentClick;
-            TxtValue.TextChanged += TxtValue_TextChanged;
-            newUnit();
-            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
-            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
+            if(unitMeasurementDTO!= null)
+            { 
+                idUnitMeasurement = unitMeasurementDTO.Id;
+                txtDescription.Text = unitMeasurementDTO.Description;
+                txtName.Text = unitMeasurementDTO.Name;
+                return;
+            }      
+            newUnit();           
         }
 
-        private void TxtValue_TextChanged(object? sender, EventArgs e)
+     /*   private void TxtValue_TextChanged(object? sender, EventArgs e)
         {
 
             DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x => new {
@@ -102,9 +99,9 @@ namespace WinFormsApp
                 Nombre = x.Name,
                 Descripcion = x.Description,
             }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
-        }
+        }*/
 
-        private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+    /*    private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
@@ -115,6 +112,6 @@ namespace WinFormsApp
             txtDescription.Text = unitMeasurementDTO.Description;   
             txtName.Text = unitMeasurementDTO.Name; 
 
-        }
+        }*/
     }
 }

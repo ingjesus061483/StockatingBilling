@@ -1,4 +1,7 @@
-﻿namespace WinFormsApp
+﻿using DataAccess.Repositories;
+using WinFormsApp.Controls;
+
+namespace WinFormsApp
 {
     partial class AdministrationUser
     {
@@ -39,9 +42,10 @@
             toolStripButtonEmployee = new ToolStripButton();
             toolStripButtonCompany = new ToolStripButton();
             toolStripButtonProvider = new ToolStripButton();
-            toolStripButton1 = new ToolStripButton();
-            pnlPrincipal = new Panel();
+            toolStripButtonTax = new ToolStripButton();
             pnlSecond = new Panel();
+            customPanel1 = new RoundedBorders.CustomPanel();
+            btnNew = new Button();
             customPanel2 = new RoundedBorders.CustomPanel();
             label6 = new Label();
             panel2 = new Panel();
@@ -52,6 +56,7 @@
             pnlDatagrid = new RoundedBorders.CustomPanel();
             toolStrip1.SuspendLayout();
             pnlSecond.SuspendLayout();
+            customPanel1.SuspendLayout();
             customPanel2.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -60,7 +65,7 @@
             // 
             toolStrip1.BackColor = Color.FromArgb(36, 113, 163);
             toolStrip1.ImageScalingSize = new Size(40, 40);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButtonEmployee, toolStripButtonCompany, toolStripButtonProvider, toolStripButton1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButtonEmployee, toolStripButtonCompany, toolStripButtonProvider, toolStripButtonTax });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 3, 0);
@@ -166,35 +171,58 @@
             toolStripButtonProvider.ToolTipText = "Proveedor";
             toolStripButtonProvider.Click += toolStripButtonProvider_Click;
             // 
-            // toolStripButton1
+            // toolStripButtonTax
             // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(44, 44);
-            toolStripButton1.Text = "toolStripButton1";
-            toolStripButton1.Click += toolStripButton1_Click;
-            // 
-            // pnlPrincipal
-            // 
-            pnlPrincipal.BackColor = Color.Black;
-            pnlPrincipal.Dock = DockStyle.Left;
-            pnlPrincipal.Location = new Point(0, 49);
-            pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(561, 466);
-            pnlPrincipal.TabIndex = 2;
+            toolStripButtonTax.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonTax.Image = (Image)resources.GetObject("toolStripButtonTax.Image");
+            toolStripButtonTax.ImageTransparentColor = Color.Magenta;
+            toolStripButtonTax.Name = "toolStripButtonTax";
+            toolStripButtonTax.Size = new Size(44, 44);
+            toolStripButtonTax.Text = "toolStripButton1";
+            toolStripButtonTax.Click += toolStripButtonTax_Click;
             // 
             // pnlSecond
             // 
             pnlSecond.BackColor = Color.Black;
+            pnlSecond.Controls.Add(customPanel1);
             pnlSecond.Controls.Add(customPanel2);
             pnlSecond.Controls.Add(pnlDatagrid);
             pnlSecond.Dock = DockStyle.Fill;
-            pnlSecond.Location = new Point(561, 49);
+            pnlSecond.Location = new Point(0, 49);
             pnlSecond.Name = "pnlSecond";
-            pnlSecond.Size = new Size(262, 466);
+            pnlSecond.Size = new Size(823, 466);
             pnlSecond.TabIndex = 3;
+            // 
+            // customPanel1
+            // 
+            customPanel1.BackColor = Color.White;
+            customPanel1.BorderRadius = 30;
+            customPanel1.Controls.Add(btnNew);
+            customPanel1.ForeColor = Color.Black;
+            customPanel1.GradientAngle = 90F;
+            customPanel1.GradientBottomColor = Color.CadetBlue;
+            customPanel1.GradientTopColor = Color.DodgerBlue;
+            customPanel1.Location = new Point(23, 24);
+            customPanel1.Name = "customPanel1";
+            customPanel1.Size = new Size(153, 42);
+            customPanel1.TabIndex = 11;
+            // 
+            // btnNew
+            // 
+            btnNew.BackColor = Color.FromArgb(36, 113, 163);
+            btnNew.Dock = DockStyle.Fill;
+            btnNew.Enabled = false;
+            btnNew.FlatAppearance.BorderSize = 0;
+            btnNew.FlatStyle = FlatStyle.Flat;
+            btnNew.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNew.ForeColor = Color.White;
+            btnNew.Location = new Point(0, 0);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(153, 42);
+            btnNew.TabIndex = 10;
+            btnNew.Text = "Nuevo";
+            btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
             // customPanel2
             // 
@@ -210,9 +238,9 @@
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(23, 18);
+            customPanel2.Location = new Point(23, 72);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(222, 212);
+            customPanel2.Size = new Size(473, 212);
             customPanel2.TabIndex = 9;
             // 
             // label6
@@ -234,7 +262,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(222, 63);
+            panel2.Size = new Size(473, 63);
             panel2.TabIndex = 19;
             // 
             // label5
@@ -256,8 +284,9 @@
             cmbfields.FormattingEnabled = true;
             cmbfields.Location = new Point(117, 101);
             cmbfields.Name = "cmbfields";
-            cmbfields.Size = new Size(84, 33);
+            cmbfields.Size = new Size(335, 33);
             cmbfields.TabIndex = 18;
+            cmbfields.SelectedIndexChanged += cmbfields_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -276,8 +305,9 @@
             txtValue.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtValue.Location = new Point(117, 144);
             txtValue.Name = "txtValue";
-            txtValue.Size = new Size(84, 31);
+            txtValue.Size = new Size(335, 31);
             txtValue.TabIndex = 9;
+            txtValue.TextChanged += txtValue_TextChanged;
             // 
             // pnlDatagrid
             // 
@@ -288,10 +318,10 @@
             pnlDatagrid.GradientAngle = 90F;
             pnlDatagrid.GradientBottomColor = Color.FromArgb(42, 46, 50);
             pnlDatagrid.GradientTopColor = Color.FromArgb(42, 46, 50);
-            pnlDatagrid.Location = new Point(23, 248);
+            pnlDatagrid.Location = new Point(23, 299);
             pnlDatagrid.Margin = new Padding(4, 5, 4, 5);
             pnlDatagrid.Name = "pnlDatagrid";
-            pnlDatagrid.Size = new Size(222, 197);
+            pnlDatagrid.Size = new Size(783, 148);
             pnlDatagrid.TabIndex = 0;
             // 
             // AdministrationUser
@@ -300,14 +330,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             Controls.Add(pnlSecond);
-            Controls.Add(pnlPrincipal);
             Controls.Add(toolStrip1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "AdministrationUser";
             Size = new Size(823, 515);
+            Load += AdministrationUser_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             pnlSecond.ResumeLayout(false);
+            customPanel1.ResumeLayout(false);
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
             panel2.ResumeLayout(false);
@@ -328,7 +359,6 @@
         private ToolStripButton toolStripButtonEmployee;
         private ToolStripButton toolStripButtonCompany;
         private ToolStripButton toolStripButtonProvider;
-        private Panel pnlPrincipal;
         private Panel pnlSecond;
         private RoundedBorders.CustomPanel customPanel2;
         private Label label6;
@@ -338,6 +368,36 @@
         private Panel panel2;
         private Label label5;
         private RoundedBorders.CustomPanel pnlDatagrid;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripButtonTax;
+        private RoundedBorders.CustomPanel customPanel1;
+        private Button btnNew;
+        public TaxRepository TaxRepository { get; set; }
+        public CompanyRepository companyRepository { get; set; }
+        public EmployeeRepository employeeRepository { get; set; }
+        public IdentificationTypeRepository IdentificationTypeRepository { get; set; }
+        public ClientRepository clientRepository { get; set; }
+        public RoleRepository roleRepository { get; set; }
+        public UnitMeasurementRepository unitMeasurementRepository { get; set; }
+        public StockRepository StockRepository { get; set; }
+        public CategoryRepository categoryRepository { get; set; }
+        public ProductRepository productRepository { get; set; }
+        public PictureRepository pictureRepository { get; set; }
+        public WarehouseRepository warehouseRepository { get; set; }
+        public UserRepository userRepository { get; set; }
+        public ProviderRepository providerRepository { get; set; }
+        public RegimenTypeRepository RegimenTypeRepository { get; set; }
+        FrmFather FrmFather;
+        DataGridView DataGridView;
+        ProductControl productControl;
+        CategoryControl categoryControl;
+        RoleControl roleControl;
+        UnitMeasurementControl unitMeasurementControl;
+        WarehouseControl warehouseControl;
+        ClientControl clientControl;
+        EmployeeControl employeeControl;
+        CompanyControl companyControl;
+        ProviderControl providerControl;
+        TaxControl taxControl;
+
     }
 }

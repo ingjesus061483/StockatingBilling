@@ -33,7 +33,6 @@
             btnNevo = new Button();
             btnSalir = new Button();
             btnGuardar = new Button();
-            btnEliminar = new Button();
             customPanel2 = new RoundedBorders.CustomPanel();
             label3 = new Label();
             txtValue = new TextBox();
@@ -56,7 +55,6 @@
             customPanel3.Controls.Add(btnNevo);
             customPanel3.Controls.Add(btnSalir);
             customPanel3.Controls.Add(btnGuardar);
-            customPanel3.Controls.Add(btnEliminar);
             customPanel3.ForeColor = Color.Black;
             customPanel3.GradientAngle = 90F;
             customPanel3.GradientBottomColor = Color.FromArgb(42, 46, 50);
@@ -72,7 +70,7 @@
             btnNevo.BackgroundImage = (Image)resources.GetObject("btnNevo.BackgroundImage");
             btnNevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnNevo.FlatStyle = FlatStyle.Flat;
-            btnNevo.Location = new Point(190, 7);
+            btnNevo.Location = new Point(259, 7);
             btnNevo.Name = "btnNevo";
             btnNevo.Size = new Size(57, 67);
             btnNevo.TabIndex = 7;
@@ -98,25 +96,12 @@
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Location = new Point(254, 7);
+            btnGuardar.Location = new Point(323, 7);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(57, 67);
             btnGuardar.TabIndex = 6;
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.Transparent;
-            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
-            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(321, 7);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(57, 67);
-            btnEliminar.TabIndex = 5;
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // customPanel2
             // 
@@ -247,7 +232,6 @@
         private Button btnNevo;
         private Button btnSalir;
         private Button btnGuardar;
-        private Button btnEliminar;
         private RoundedBorders.CustomPanel customPanel2;
         private Label label3;
         private TextBox txtValue;

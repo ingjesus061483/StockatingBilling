@@ -17,10 +17,7 @@ namespace WinFormsApp
     public partial class WarehouseUser : UserControl
     {
         int id;
-        public ComboBox CmbFilter { get; set; }
-        public TextBox TxtValue { get; set; }
-        WarehouseDTO WarehouseDTO;
-        public DataGridView DataGridView { get; set; }
+        public WarehouseDTO WarehouseDTO;        
         public Form Form { get; set; }
         public ProductRepository ProductRepository { get; set; }    
         public StockRepository StockRepository { get; set; }
@@ -31,14 +28,22 @@ namespace WinFormsApp
         }
         private void WarehouseUser_Load(object sender, EventArgs e)
         {
-            DataGridView.CellContentClick += DataGridView_CellContentClick;
-            TxtValue.TextChanged += TxtValue_TextChanged;
+            if (WarehouseDTO != null)
+            {
+                id = WarehouseDTO.Id;
+                txtCode.Text = WarehouseDTO.Code;
+                txtName.Text = WarehouseDTO.Name;
+                txtDescription.Text = WarehouseDTO.Descripcion;
+                txtMin.Text = WarehouseDTO.StockMinimo.ToString();
+                txtMax.Text = WarehouseDTO.StockMaximo.ToString();
+                chkLimit.Checked = WarehouseDTO.limitado;
+                return ;
+            }
+
             NewWarehouse();
-            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView );
-            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
         }
 
-        private void TxtValue_TextChanged(object? sender, EventArgs e)
+    /*    private void TxtValue_TextChanged(object? sender, EventArgs e)
         {
             DataGridView.DataSource = warehouseRepository.Values.Select(x => new
             {
@@ -49,9 +54,9 @@ namespace WinFormsApp
                 Stockmaximo = x.StockMaximo,
                 limitado = x.limitado ? "Si" : "No"
             }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList(); ;
-        }
+        }*/
 
-        private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+     /*   private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
@@ -67,7 +72,7 @@ namespace WinFormsApp
             chkLimit.Checked = WarehouseDTO.limitado;
             txtCode.Focus();
 
-        }
+        }*/
         void NewWarehouse()
         {
             id = 0;
@@ -79,7 +84,7 @@ namespace WinFormsApp
             txtDescription.Clear();
             chkLimit.Checked = false;
             txtCode.Focus();
-            DataGridView.DataSource = warehouseRepository.Values.Select(x => new
+   /*         DataGridView.DataSource = warehouseRepository.Values.Select(x => new
             {
                 x.Id,
                 Codigo = x.Code,
@@ -87,7 +92,7 @@ namespace WinFormsApp
                 StockMinmo = x.StockMinimo,
                 Stockmaximo = x.StockMaximo,
                 limitado = x.limitado ? "Si" : "No"
-            }).ToList();
+            }).ToList();*/
 
 
         }
@@ -155,11 +160,7 @@ namespace WinFormsApp
             NewWarehouse();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            warehouseRepository.DeleteById(id);
-            NewWarehouse();
-        }
+    
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

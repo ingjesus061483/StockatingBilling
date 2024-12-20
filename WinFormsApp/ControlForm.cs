@@ -11,6 +11,23 @@ namespace WinFormsApp
 {
     public abstract class ControlForm
     {
+        public static DataGridViewCellStyle GetGridViewCellStyle(Color back,Color fore )
+        {
+           DataGridViewCellStyle DefaultCellStyle = new () { BackColor =back , ForeColor = fore  };
+            return DefaultCellStyle;
+        }
+        public static DataGridViewButtonColumn  GetButtonColumn(string  Text ,string header)
+           
+        {
+            DataGridViewButtonColumn buttonColumn = new ()
+            {
+                FlatStyle = FlatStyle.Flat,
+                Text = Text ,
+                UseColumnTextForButtonValue = true,
+                HeaderText =header 
+            };
+            return buttonColumn ;
+        }
         public static DataGridView GetDatagrid()
         {
             DataGridView dataGridView = new()

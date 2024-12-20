@@ -16,12 +16,9 @@ namespace WinFormsApp
     {
         string[] arr = ["Id", "Name"];
 
-        ProviderDTO providerDTO;
+        public ProviderDTO providerDTO;
         public ProviderRepository ProviderRepository { get; set; }
         public IdentificationTypeRepository IdentificationTypeRepository { get; set; }
-        public DataGridView DataGridView { get; set; }
-        public TextBox TxtValue { get; set; }
-        public ComboBox CmbFilter { get; set; }
         public Form Form { get; set; }
         public ProviderUser()
         {
@@ -29,17 +26,6 @@ namespace WinFormsApp
         }
         void NewProvider()
         {
-            DataGridView.DataSource = ProviderRepository.Values.Select(x => new
-            {
-                x.Id,
-
-                TipoIdentificacion = x.IdentificationType.Name,
-                Identificion = x.Identification,
-                NombreCompleto = x.CompleteName,
-                Direccion = x.Address,
-                Telefono = x.Phone,
-                x.Email,
-            }).ToList();
             providerDTO = null;
             txtIdentification.Clear();
             txtAddress.Clear();
@@ -53,44 +39,21 @@ namespace WinFormsApp
 
         private void ProviderUser_Load(object sender, EventArgs e)
         {
-            DataGridView.CellContentClick += DataGridView_CellContentClick;
-            TxtValue.TextChanged += TxtValue_TextChanged;
             Utilities<IdentificationTypeDTO>.FillCombo(IdentificationTypeRepository.Values.ToList(), arr, cmbIdentificationType);
-            NewProvider();
-            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
-            Utilities<DataGridViewColumn>.FillCombo(cols, CmbFilter);
-        }
-
-        private void TxtValue_TextChanged(object? sender, EventArgs e)
-        {
-            DataGridView.DataSource = ProviderRepository.Values.Select(x => new
-            {
-                x.Id,
-                TipoIdentificacion = x.IdentificationType.Name,
-                Identificion = x.Identification,
-                NombreCompleto = x.CompleteName,
-                Direccion = x.Address,
-                Telefono = x.Phone,
-                x.Email,
-            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
-        }
-
-        private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
+            if (providerDTO != null)
+            {                
+                txtIdentification.Text = providerDTO.Identification;
+                txtAddress.Text = providerDTO.Address;
+                txtPhone.Text = providerDTO.Phone;
+                txtEmail.Text = providerDTO.Email;
+                txtName.Text = providerDTO.Name;
+                txtLastName.Text = providerDTO.LastName;
+                cmbIdentificationType.SelectedValue = providerDTO.IdentificationTypeId;
+                return ;
             }
-            int Id = int.Parse(DataGridView.Rows[e.RowIndex].Cells["id"].Value.ToString());
-            providerDTO = ProviderRepository.GetById(Id);
-            txtIdentification.Text = providerDTO.Identification;
-            txtAddress.Text = providerDTO.Address;
-            txtPhone.Text = providerDTO.Phone;
-            txtEmail.Text = providerDTO.Email;
-            txtName.Text = providerDTO.Name;
-            txtLastName.Text = providerDTO.LastName;
-            cmbIdentificationType.SelectedValue = providerDTO.IdentificationTypeId;
+            NewProvider();           
         }
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -119,13 +82,13 @@ namespace WinFormsApp
                 ControlForm.GetMessage("Telefono no puede ser vacio", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (!string.IsNullOrEmpty(txtEmail.Text))
+            if (string.IsNullOrEmpty(txtEmail.Text))
             {
                 ControlForm.GetMessage("Email no puede ser vacio", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
 
             }
-            if (!string.IsNullOrEmpty(txtName.Text))
+            if (string.IsNullOrEmpty(txtName.Text))
             {
                 ControlForm.GetMessage("Nombre no puede ser vacio", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -169,14 +132,5 @@ namespace WinFormsApp
             NewProvider();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (providerDTO == null)
-            {
-                return;
-            }
-            ProviderRepository .DeleteById(providerDTO.Id); 
-            NewProvider();
-        }
     }
 }

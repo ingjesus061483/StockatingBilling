@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillingUser));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             customPanel2 = new RoundedBorders.CustomPanel();
             panel3 = new Panel();
             textBox1 = new TextBox();
@@ -54,6 +55,7 @@
             toolStripButton3 = new ToolStripButton();
             toolStripButton4 = new ToolStripButton();
             toolStripButton5 = new ToolStripButton();
+            colPrint = new DataGridViewButtonColumn();
             customPanel2.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -265,6 +267,7 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(42, 46, 50);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colPrint });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
@@ -356,6 +359,20 @@
             toolStripButton5.Size = new Size(44, 44);
             toolStripButton5.Text = "toolStripButton5";
             // 
+            // colPrint
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Red;
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            colPrint.DefaultCellStyle = dataGridViewCellStyle1;
+            colPrint.FlatStyle = FlatStyle.Flat;
+            colPrint.HeaderText = "";
+            colPrint.MinimumWidth = 8;
+            colPrint.Name = "colPrint";
+            colPrint.Text = "Imprimir";
+            colPrint.UseColumnTextForButtonValue = true;
+            colPrint.Width = 150;
+            // 
             // BillingUser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -408,5 +425,6 @@
         private ToolStripButton toolStripButton3;
         private ToolStripButton toolStripButton4;
         private ToolStripButton toolStripButton5;
+        private DataGridViewButtonColumn colPrint;
     }
 }

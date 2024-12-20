@@ -4,6 +4,9 @@
     <Compile Update="FrmBilling.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmFather.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserControl\TaxUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
