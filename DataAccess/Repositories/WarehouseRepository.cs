@@ -34,10 +34,8 @@ namespace DataAccess.Repositories
             Db.SaveChanges();            
         }
 
-        public WarehouseDTO GetById(int id)
-        {
-            return Values.Where(x => x.Id == id).FirstOrDefault();
-        }
+        public WarehouseDTO GetById(int id)=> Values.Where(x => x.Id == id).FirstOrDefault();
+        
 
         public void Save(WarehouseDTO entity)
         {

@@ -34,11 +34,7 @@ namespace DataAccess.Repositories
    
         }
 
-        public CategoryDTO GetById(int id)
-        {
-            return Values.Where(x => x.Id == id).FirstOrDefault();
-
-        }
+        public CategoryDTO GetById(int id)=> Values.Where(x => x.Id == id).FirstOrDefault();        
 
         public void Save(CategoryDTO entity)
         {

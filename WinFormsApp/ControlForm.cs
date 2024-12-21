@@ -13,11 +13,10 @@ namespace WinFormsApp
     {
         public static DataGridViewCellStyle GetGridViewCellStyle(Color back,Color fore )
         {
-           DataGridViewCellStyle DefaultCellStyle = new () { BackColor =back , ForeColor = fore  };
+            DataGridViewCellStyle DefaultCellStyle = new () { BackColor =back , ForeColor = fore  };
             return DefaultCellStyle;
         }
-        public static DataGridViewButtonColumn  GetButtonColumn(string  Text ,string header)
-           
+        public static DataGridViewButtonColumn  GetButtonColumn(string  Text ,string header)           
         {
             DataGridViewButtonColumn buttonColumn = new ()
             {

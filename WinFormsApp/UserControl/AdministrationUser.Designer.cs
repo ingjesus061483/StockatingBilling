@@ -43,7 +43,7 @@ namespace WinFormsApp
             toolStripButtonCompany = new ToolStripButton();
             toolStripButtonProvider = new ToolStripButton();
             toolStripButtonTax = new ToolStripButton();
-            pnlSecond = new Panel();
+            pnlMain = new Panel();
             customPanel1 = new RoundedBorders.CustomPanel();
             btnNew = new Button();
             customPanel2 = new RoundedBorders.CustomPanel();
@@ -55,7 +55,7 @@ namespace WinFormsApp
             txtValue = new TextBox();
             pnlDatagrid = new RoundedBorders.CustomPanel();
             toolStrip1.SuspendLayout();
-            pnlSecond.SuspendLayout();
+            pnlMain.SuspendLayout();
             customPanel1.SuspendLayout();
             customPanel2.SuspendLayout();
             panel2.SuspendLayout();
@@ -179,19 +179,20 @@ namespace WinFormsApp
             toolStripButtonTax.Name = "toolStripButtonTax";
             toolStripButtonTax.Size = new Size(44, 44);
             toolStripButtonTax.Text = "toolStripButton1";
+            toolStripButtonTax.ToolTipText = "Impuestos";
             toolStripButtonTax.Click += toolStripButtonTax_Click;
             // 
-            // pnlSecond
+            // pnlMain
             // 
-            pnlSecond.BackColor = Color.Black;
-            pnlSecond.Controls.Add(customPanel1);
-            pnlSecond.Controls.Add(customPanel2);
-            pnlSecond.Controls.Add(pnlDatagrid);
-            pnlSecond.Dock = DockStyle.Fill;
-            pnlSecond.Location = new Point(0, 49);
-            pnlSecond.Name = "pnlSecond";
-            pnlSecond.Size = new Size(823, 466);
-            pnlSecond.TabIndex = 3;
+            pnlMain.BackColor = Color.Black;
+            pnlMain.Controls.Add(customPanel1);
+            pnlMain.Controls.Add(customPanel2);
+            pnlMain.Controls.Add(pnlDatagrid);
+            pnlMain.Dock = DockStyle.Fill;
+            pnlMain.Location = new Point(0, 49);
+            pnlMain.Name = "pnlMain";
+            pnlMain.Size = new Size(823, 466);
+            pnlMain.TabIndex = 3;
             // 
             // customPanel1
             // 
@@ -329,7 +330,7 @@ namespace WinFormsApp
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            Controls.Add(pnlSecond);
+            Controls.Add(pnlMain);
             Controls.Add(toolStrip1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "AdministrationUser";
@@ -337,7 +338,7 @@ namespace WinFormsApp
             Load += AdministrationUser_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
-            pnlSecond.ResumeLayout(false);
+            pnlMain.ResumeLayout(false);
             customPanel1.ResumeLayout(false);
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
@@ -359,7 +360,7 @@ namespace WinFormsApp
         private ToolStripButton toolStripButtonEmployee;
         private ToolStripButton toolStripButtonCompany;
         private ToolStripButton toolStripButtonProvider;
-        private Panel pnlSecond;
+        private Panel pnlMain;
         private RoundedBorders.CustomPanel customPanel2;
         private Label label6;
         private ComboBox cmbfields;

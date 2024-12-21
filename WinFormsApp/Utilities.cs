@@ -27,25 +27,26 @@ namespace WinFormsApp
         {
            T [] Columns = new T[dataGridView.Columns.Count];
             dataGridView.Columns.CopyTo(Columns, 0);
-            return Columns. ToList();
-            
+            return Columns. ToList().Where(x => !string.IsNullOrEmpty(x.GetType()
+                                    .GetRuntimeProperties().FirstOrDefault(z => z.Name == "Name")
+                                    .GetValue(x).ToString()))
+                                    .ToList();             
         }
-        public static void FillCombo(List<T> values,System.Windows.Forms.ComboBox combo)
+        public static void FillCombo(List<T> values,ComboBox combo)
         {
-            combo.Items.Clear();
+            combo.Items.Clear();              
             foreach (var item in values) 
             {
-                PropertyInfo propertyInfo = item.GetType().GetRuntimeProperties().FirstOrDefault(x=>x.Name=="Name");
-                if (!string.IsNullOrEmpty(propertyInfo.GetValue(item).ToString()))
-                {
-                    combo.Items.Add(propertyInfo.GetValue(item).ToString());
-                }
+                PropertyInfo propertyInfo = item.GetType().GetRuntimeProperties()
+                                                          .FirstOrDefault(x=>x.Name=="Name");
+                combo.Items.Add(propertyInfo.GetValue(item).ToString());                
             }
             combo.SelectedIndex = 0;
         }
         public static bool GetValue(T z, string field, string value)
         {
-            return z.GetType().GetProperty(field).GetValue(z).ToString().Contains(value);
+            return z.GetType().GetProperty(field).GetValue(z)
+                              .ToString().Contains(value);
         }
 
         public static string Encriptar(T cadenaAencriptar)
@@ -56,7 +57,8 @@ namespace WinFormsApp
         public static bool ValidarEmail(T email)
         {
             string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            return Regex.IsMatch(email.ToString(), expresion)? Regex.Replace(email.ToString(), expresion, string.Empty).Length == 0:false;
+            return Regex.IsMatch(email.ToString(), expresion)? 
+                   Regex.Replace(email.ToString(), expresion, string.Empty).Length == 0:false;
         }
     
     }

@@ -20,33 +20,342 @@ namespace WinFormsApp
         public AdministrationUser()
         {
             InitializeComponent();
-
         }
-        void SetDatagrid()
+        void SetDatagrid(DataGridView gridView)
         {
-            DataGridView.CellContentClick += DataGridView_CellContentClick;
+            gridView.CellContentClick += DataGridView_CellContentClick;
             DataGridViewButtonColumn buttonColumn = ControlForm.GetButtonColumn("Editar", "");
             buttonColumn.DefaultCellStyle = ControlForm.GetGridViewCellStyle(Color.FromArgb(249, 215, 2), Color.White);
             DataGridViewButtonColumn buttonColumn2 = ControlForm.GetButtonColumn("Eliminar", "");
             buttonColumn2.DefaultCellStyle = ControlForm.GetGridViewCellStyle(Color.Red, Color.White);
-            DataGridView.Columns.Add(buttonColumn);
-            DataGridView.Columns.Add(buttonColumn2);
+            gridView.Columns.Add(buttonColumn);
+            gridView.Columns.Add(buttonColumn2);
         }
-        private void toolStripButtonCategory_Click(object sender, EventArgs e)
+        void AddControls(DataGridView gridView)
         {
-            DataGridView = null;
-            btnNew.Enabled = true;
-            DataGridView = ControlForm.GetDatagrid();
-            FrmFather = new FrmFather();
-            CategoryUser category = categoryControl.GetControlUser(null, FrmFather);
-            FrmFather.UserControl = category;
-            SetDatagrid();
-            this.Cursor = Cursors.WaitCursor;
-            categoryControl.LoadGrid(DataGridView);
-            this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            pnlDatagrid.Controls.Clear();
+            pnlDatagrid.Controls.Add(gridView);
         }
+        void SetCombo(DataGridView gridView)
+        {
+            var cols = Utilities<DataGridViewColumn>.GetValues(gridView);
+            Utilities<DataGridViewColumn>.FillCombo(cols, cmbfields);
+        }
+        void Delete(UserControl UserControl, int id)
+        {
+            var resp = MessageBox.Show("Eliminar registro?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resp == DialogResult.Yes)
+            {
+                switch (UserControl)
+                {
+                    case CategoryUser:
+                        {
+                            categoryRepository.DeleteById(id);
+                            categoryControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case ProductUser: 
+                        {
+                            productRepository.DeleteById(id);
+                            categoryControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case UnitMeasurementUser:
+                        {
+                            unitMeasurementRepository.DeleteById(id);
+                            unitMeasurementControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case WarehouseUser:
+                        {
+                            warehouseRepository.DeleteById(id);
+                            warehouseControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case ClientUser:
+                        {
+                            clientRepository.DeleteById(id);
+                            clientControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case RoleUser:
+                        {
+                            roleRepository.DeleteById(id);
+                            roleControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case EmployeeUser:
+                        {
+                            EmployeeDTO employeeDTO = employeeRepository.GetById(id);
+                            userRepository.DeleteById(employeeDTO.UserId);
+                            employeeControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case CompanyUser:
+                        {
+                            companyRepository.DeleteById(id);
+                            companyControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case ProviderUser:
+                        {
+                            providerRepository.DeleteById(id);
+                            providerControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                    case TaxUser:
+                        {
+                            TaxRepository.DeleteById(id);
+                            taxControl.LoadGrid(DataGridView);
+                            break;
+                        }
+                } 
+            }
+        }
+        void New(FrmFather frmFather)
+        {
+            switch (frmFather.UserControl)
+            {
+                case TaxUser:
+                    {
+                        TaxUser tax = (TaxUser)frmFather.UserControl;
+                        tax.taxDTO = null;
+                        frmFather.ShowDialog();
+                        taxControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case ProviderUser: 
+                    {
+                        ProviderUser provider = (ProviderUser)frmFather.UserControl;
+                        provider.providerDTO = null;
+                        frmFather.ShowDialog();
+                        providerControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case CompanyUser:
+                    {
+                        CompanyUser company = (CompanyUser)frmFather.UserControl;
+                        company.companyDTO = null;
+                        frmFather.ShowDialog();
+                        companyControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case CategoryUser:
+                    {
+                        CategoryUser categoryUser = (CategoryUser)frmFather.UserControl;
+                        categoryUser.categoryDTO = null;
+                        frmFather.ShowDialog();
+                        categoryControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case ProductUser: 
+                    {
+                        ProductUser product = (ProductUser)frmFather.UserControl;
+                        product.productDTO = null;
+                        frmFather.ShowDialog();
+                        productControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case UnitMeasurementUser: 
+                    {
+                        UnitMeasurementUser unitMeasurement = (UnitMeasurementUser)frmFather.UserControl;
+                        unitMeasurement.unitMeasurementDTO = null;
+                        frmFather.ShowDialog();
+                        unitMeasurementControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case WarehouseUser: 
+                    {
+                        WarehouseUser warehouse = (WarehouseUser)frmFather.UserControl;
+                        warehouse.WarehouseDTO = null;
+                        frmFather.ShowDialog();
+                        warehouseControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case ClientUser:
+                    {
+                        ClientUser client = (ClientUser)frmFather.UserControl;
+                        client.ClientDTO = null;
+                        frmFather.ShowDialog();
+                        clientControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case RoleUser:
+                    {    
+                        RoleUser role = (RoleUser)frmFather.UserControl;
+                        role.RoleDTO = null;
+                        frmFather.ShowDialog();
+                        roleControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case EmployeeUser:
+                    {
+                        EmployeeUser employee = (EmployeeUser)frmFather.UserControl;
+                        employee.EmployeeDTO = null;
+                        frmFather.ShowDialog();
+                        employeeControl.LoadGrid(DataGridView);
+                        break;
+                    }
+            }            
+        }
+        void Search(DataGridView gridView,UserControl userControl,string filter,  string searchText)
+        {
+            switch(userControl)
+            {
+                case ProviderUser:
+                    {
+                        providerControl.LoadGrid(gridView,filter, searchText);
+                        break;
+                    }
+                case CompanyUser:
+                    {
+                        companyControl.LoadGrid(gridView, filter, searchText);
+                        break;
+
+                    }
+                    case CategoryUser: 
+                    {
+                        categoryControl.LoadGrid(gridView, filter ,searchText);
+                        break;
+
+                    }
+                case ProductUser:
+                    {
+                        productControl.LoadGrid(gridView, filter, searchText);
+                        break;
+                    }
+                    case UnitMeasurementUser:
+                    {
+                        unitMeasurementControl.LoadGrid(gridView, filter, searchText);
+                        break;
+
+                    }
+                    case WarehouseUser:
+                    {
+                        warehouseControl.LoadGrid(gridView, filter,searchText);
+                        break;
+                    }
+                case ClientUser:
+                    {
+                        clientControl.LoadGrid(gridView, filter,searchText);
+                        break;
+                    }
+                case RoleUser:
+                    {
+                        roleControl.LoadGrid(gridView, filter,searchText);
+                        break;
+                    }
+                case EmployeeUser:
+                    {
+                        employeeControl.LoadGrid(gridView, filter,searchText);
+                        break ;
+                    }
+                case TaxUser:
+                    {
+                        taxControl.LoadGrid(gridView, filter,searchText);
+                        break;
+
+                    }
+            }                                   
+        }
+        void Edit(FrmFather frmFather, int id)
+        {
+            switch (frmFather.UserControl)
+            {
+                case TaxUser:
+                    {
+                        TaxDTO taxDTO = TaxRepository.GetById(id);
+                        TaxUser tax = taxControl.GetControlUser(taxDTO, FrmFather);
+                        frmFather.UserControl = tax;
+                        frmFather.ShowDialog();
+                        taxControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case ProviderUser:
+                    {   
+                        ProviderDTO providerDTO = providerRepository.GetById(id);
+                        ProviderUser provider = providerControl.GetControlUser(providerDTO, FrmFather);
+                        frmFather.UserControl = provider;
+                        frmFather.ShowDialog();
+                        providerControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case CompanyUser:
+                    {
+                        CompanyDTO companyDTO = companyRepository.GetById(id);
+                        CompanyUser company = companyControl.GetControlUser(companyDTO, FrmFather);
+                        frmFather.UserControl = company;
+                        frmFather.ShowDialog();
+                        companyControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case EmployeeUser:
+                    {
+                        EmployeeDTO employeeDTO = employeeRepository.GetById(id);
+                        EmployeeUser employee = employeeControl.GetControlUser(employeeDTO, FrmFather);
+                        frmFather.UserControl = employee;
+                        frmFather.ShowDialog();
+                        employeeControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case CategoryUser:
+                    {
+                        CategoryDTO categoryDTO = categoryRepository.GetById(id);
+                        CategoryUser category = categoryControl.GetControlUser(categoryDTO, FrmFather);
+                        frmFather.UserControl = category;
+                        frmFather.ShowDialog();
+                        categoryControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case ProductUser :
+                    {
+                        ProductDTO productDTO = productRepository.GetById(id);
+                        ProductUser product = productControl.GetControlUser(productDTO, FrmFather);
+                        frmFather.UserControl = product;
+                        frmFather.ShowDialog();
+                        productControl.LoadGrid(DataGridView);
+                        break;
+
+                    }
+                case UnitMeasurementUser: 
+                    {
+                        UnitMeasurementDTO unitMeasurementDTO = unitMeasurementRepository.GetById(id);
+                        UnitMeasurementUser unitMeasurement = unitMeasurementControl.GetControlUser(unitMeasurementDTO, FrmFather);
+                        frmFather.UserControl = unitMeasurement;
+                        frmFather.ShowDialog();
+                        unitMeasurementControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case WarehouseUser:
+                    {
+                        WarehouseDTO WarehouseDTO = warehouseRepository.GetById(id);
+                        WarehouseUser warehouse = warehouseControl.GetControlUser(WarehouseDTO, FrmFather);
+                        frmFather.UserControl = warehouse;
+                        frmFather.ShowDialog();
+                        warehouseControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case ClientUser:
+                    {
+                        ClientDTO ClientDTO = clientRepository.GetById(id);
+                        ClientUser client = clientControl.GetControlUser(ClientDTO, FrmFather);
+                        frmFather.UserControl = client;
+                        frmFather.ShowDialog();
+                        clientControl.LoadGrid(DataGridView);
+                        break;
+                    }
+                case RoleUser:
+                    {
+                        RoleDTO roleDTO = roleRepository.GetById(id);
+                        RoleUser role = roleControl.GetControlUser(roleDTO, FrmFather);
+                        frmFather.UserControl = role;
+                        frmFather.ShowDialog();
+                        roleControl.LoadGrid(DataGridView);
+                        break;
+                    }
+            }          
+        }
+  
         private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -58,44 +367,46 @@ namespace WinFormsApp
             {
                 case 0:
                     {
-                        Edit(FrmFather.UserControl, id);
+                        Edit(FrmFather, id);
                         break;
-                        //editar
                     }
                 case 1:
                     {
                         Delete(FrmFather.UserControl, id);
-                        //eliminar
                         break;
                     }
             }
         }
-
+        private void toolStripButtonCategory_Click(object sender, EventArgs e)
+        {
+            DataGridView = null;
+            btnNew.Enabled = true;
+            DataGridView = ControlForm.GetDatagrid();
+            FrmFather = new FrmFather();
+            CategoryUser category = categoryControl.GetControlUser(null, FrmFather);
+            FrmFather.UserControl = category;
+            SetDatagrid(DataGridView);
+            this.Cursor = Cursors.WaitCursor;
+            categoryControl.LoadGrid(DataGridView);
+            this.Cursor = Cursors.Default;
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
+        }
         private void toolStripButtonProduct_Click(object sender, EventArgs e)
         {
             DataGridView = null;
             btnNew.Enabled = true;
-
             DataGridView = ControlForm.GetDatagrid();
             FrmFather = new FrmFather();
-
             ProductUser product = productControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = product;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             productControl.LoadGrid(DataGridView);
-
             this.Cursor = Cursors.Default;
-
-            addControls(DataGridView);
-            setCombo();
-
-        }
-        void setCombo()
-        {
-            var cols = Utilities<DataGridViewColumn>.GetValues(DataGridView);
-            Utilities<DataGridViewColumn>.FillCombo(cols, cmbfields);
-        }
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
+        }        
         private void toolStripButtonUnitMeasurement_Click(object sender, EventArgs e)
         {
             DataGridView = null;
@@ -104,28 +415,27 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             UnitMeasurementUser unitMeasurement = unitMeasurementControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = unitMeasurement;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             unitMeasurementControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonWarehouse_Click(object sender, EventArgs e)
         {
-
             DataGridView = null;
             DataGridView = ControlForm.GetDatagrid();
             btnNew.Enabled = true;
             FrmFather = new FrmFather();
             WarehouseUser warehouse = warehouseControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = warehouse;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             warehouseControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonRole_Click(object sender, EventArgs e)
         {
@@ -135,12 +445,12 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             RoleUser role = roleControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = role;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             roleControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonClient_Click(object sender, EventArgs e)
         {
@@ -150,12 +460,12 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             ClientUser client = clientControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = client;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             clientControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonEmployee_Click(object sender, EventArgs e)
         {
@@ -165,12 +475,12 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             EmployeeUser employee = employeeControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = employee;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             employeeControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonCompany_Click(object sender, EventArgs e)
         {
@@ -180,13 +490,12 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             CompanyUser companyUser = companyControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = companyUser;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             companyControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
-
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonProvider_Click(object sender, EventArgs e)
         {
@@ -196,12 +505,12 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             ProviderUser provider = providerControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = provider;
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             providerControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
         }
         private void toolStripButtonTax_Click(object sender, EventArgs e)
         {
@@ -211,299 +520,27 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             TaxUser tax = taxControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = tax;    
-            SetDatagrid();
+            SetDatagrid(DataGridView);
             this.Cursor = Cursors.WaitCursor;
             taxControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
-            addControls(DataGridView);
-            setCombo();
-        }
-
-
-        void addControls(DataGridView dataGridView)
-        {
-            pnlDatagrid.Controls.Clear();
-            pnlDatagrid.Controls.Add(dataGridView);
-        }
-
-
-
+            AddControls(DataGridView);
+            SetCombo(DataGridView);
+        } 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            if (FrmFather .UserControl is TaxUser)
-            {
-                TaxUser tax=(TaxUser )FrmFather .UserControl;
-                tax.taxDTO = null;
-                FrmFather .ShowDialog();
-                taxControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is ProviderUser)
-            {
-                ProviderUser provider = (ProviderUser)FrmFather.UserControl;
-                provider.providerDTO = null;
-                FrmFather.ShowDialog();
-                providerControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is CompanyUser)
-            {
-                CompanyUser company = (CompanyUser)FrmFather.UserControl;
-                company.companyDTO = null;
-                FrmFather.ShowDialog();
-                companyControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is CategoryUser)
-            {
-                CategoryUser categoryUser = (CategoryUser)FrmFather.UserControl;
-                categoryUser.categoryDTO = null;
-
-                FrmFather.ShowDialog();
-
-                categoryControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is ProductUser)
-            {
-                ProductUser product = (ProductUser)FrmFather.UserControl;
-                product.productDTO = null;
-                FrmFather.ShowDialog();
-                productControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is UnitMeasurementUser)
-            {
-                UnitMeasurementUser unitMeasurement = (UnitMeasurementUser)FrmFather.UserControl;
-                unitMeasurement.unitMeasurementDTO = null;
-                FrmFather.ShowDialog();
-                unitMeasurementControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is WarehouseUser)
-            {
-                WarehouseUser warehouse = (WarehouseUser)FrmFather.UserControl;
-                warehouse.WarehouseDTO = null;
-                FrmFather.ShowDialog();
-                warehouseControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is ClientUser)
-            {
-                ClientUser client = (ClientUser)FrmFather.UserControl;
-                client.ClientDTO = null;
-                FrmFather.ShowDialog();
-                clientControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is RoleUser)
-            {
-                RoleUser role = (RoleUser)FrmFather.UserControl;
-                role.RoleDTO = null;
-                FrmFather.ShowDialog();
-                roleControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is EmployeeUser)
-            {
-                EmployeeUser employee = (EmployeeUser)FrmFather.UserControl;
-                employee.EmployeeDTO = null;
-                FrmFather.ShowDialog();
-                employeeControl.LoadGrid(DataGridView);
-            }
+            New(FrmFather);
         }
 
         private void txtValue_TextChanged(object sender, EventArgs e)
         {
-            if (FrmFather.UserControl is ProviderUser)
-            {
-                providerControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-
-            }
-            if (FrmFather.UserControl is CompanyUser)
-            {
-                companyControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-
-            }
-            if (FrmFather.UserControl is CategoryUser)
-            {
-                categoryControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is ProductUser)
-            {
-                productControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is UnitMeasurementUser)
-            {
-                unitMeasurementControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is WarehouseUser)
-            {
-                warehouseControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is ClientUser)
-            {
-                clientControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is RoleUser)
-            {
-                roleControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is EmployeeUser)
-            {
-                employeeControl.LoadGrid(DataGridView, cmbfields.Text, txtValue.Text);
-            }
-            if (FrmFather.UserControl is TaxUser)
-            {
-                taxControl.LoadGrid(DataGridView,cmbfields.Text ,txtValue .Text);
-            }
-        }
-            void Delete(UserControl UserControl, int id)
-        {
-            var resp = MessageBox.Show("Eliminar registro?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resp == DialogResult.Yes)
-            {
-                if (UserControl is CategoryUser)
-                {
-                    categoryRepository.DeleteById(id);
-                    categoryControl.LoadGrid(DataGridView);
-
-                }
-                if (UserControl is ProductUser)
-                {
-                    productRepository.DeleteById(id);
-                    categoryControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is UnitMeasurementUser)
-                {
-                    unitMeasurementRepository.DeleteById(id);
-                    unitMeasurementControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is WarehouseUser)
-                {
-                    warehouseRepository.DeleteById(id);
-                    warehouseControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is ClientUser)
-                {
-                    clientRepository.DeleteById(id);
-                    clientControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is RoleUser)
-                {
-                    roleRepository.DeleteById(id);
-                    roleControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is EmployeeUser)
-                {
-                    EmployeeDTO employeeDTO = employeeRepository.GetById(id);
-                    userRepository.DeleteById(employeeDTO.UserId);
-                    employeeControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is CompanyUser)
-                {
-                    companyRepository.DeleteById(id);
-                    companyControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is ProviderUser)
-                {
-                    providerRepository.DeleteById(id);
-                    providerControl.LoadGrid(DataGridView);
-                }
-                if (UserControl is TaxUser)
-                {
-                    TaxRepository.DeleteById(id);
-                    taxControl.LoadGrid(DataGridView);  
-
-                }
-            }
-        }
-        void Edit(UserControl UserControl, int id)
-        {
-            if (UserControl is TaxUser)
-            {
-                TaxDTO taxDTO=TaxRepository.GetById(id);
-                TaxUser tax=taxControl.GetControlUser(taxDTO,FrmFather);
-                FrmFather.UserControl =tax;
-                FrmFather.ShowDialog ();
-                taxControl.LoadGrid (DataGridView);
-            }
-            if (UserControl is ProviderUser)
-            {
-                ProviderDTO providerDTO = providerRepository.GetById(id);
-                ProviderUser provider = providerControl.GetControlUser(providerDTO, FrmFather);
-                FrmFather.UserControl = provider;
-                FrmFather.ShowDialog();
-                providerControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is CompanyUser)
-            {
-                CompanyDTO companyDTO = companyRepository.GetById(id);
-                CompanyUser company = companyControl.GetControlUser(companyDTO, FrmFather);
-                FrmFather.UserControl = company;
-                FrmFather.ShowDialog();
-                companyControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is EmployeeUser)
-            {
-                EmployeeDTO employeeDTO = employeeRepository.GetById(id);
-                EmployeeUser employee = employeeControl.GetControlUser(employeeDTO, FrmFather);
-                FrmFather.UserControl = employee;
-                FrmFather.ShowDialog();
-                employeeControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is CategoryUser)
-            {
-                CategoryDTO categoryDTO = categoryRepository.GetById(id);
-                CategoryUser category = categoryControl.GetControlUser(categoryDTO, FrmFather);
-                FrmFather.UserControl = category;
-                FrmFather.ShowDialog();
-                categoryControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is ProductUser)
-            {
-                ProductDTO productDTO = productRepository.GetById(id);
-                ProductUser product = productControl.GetControlUser(productDTO, FrmFather);
-                FrmFather.UserControl = product;
-                FrmFather.ShowDialog();
-                productControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is UnitMeasurementUser)
-            {
-                UnitMeasurementDTO unitMeasurementDTO = unitMeasurementRepository.GetById(id);
-                UnitMeasurementUser unitMeasurement = unitMeasurementControl.GetControlUser(unitMeasurementDTO, FrmFather);
-                FrmFather.UserControl = unitMeasurement;
-                FrmFather.ShowDialog();
-                unitMeasurementControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is WarehouseUser)
-            {
-                WarehouseDTO WarehouseDTO = warehouseRepository.GetById(id);
-
-                WarehouseUser warehouse = warehouseControl.GetControlUser(WarehouseDTO, FrmFather);
-                FrmFather.UserControl = warehouse;
-                FrmFather.ShowDialog();
-                warehouseControl.LoadGrid(DataGridView);
-            }
-            if (UserControl is ClientUser)
-            {
-                ClientDTO ClientDTO = clientRepository.GetById(id);
-
-                ClientUser client = clientControl.GetControlUser(ClientDTO, FrmFather);
-                FrmFather.UserControl = client;
-                FrmFather.ShowDialog();
-                clientControl.LoadGrid(DataGridView);
-            }
-            if (FrmFather.UserControl is RoleUser)
-            {
-                RoleDTO roleDTO = roleRepository.GetById(id);
-                RoleUser role = roleControl.GetControlUser(roleDTO, FrmFather);
-                FrmFather.UserControl = role;
-                FrmFather.ShowDialog();
-                roleControl.LoadGrid(DataGridView);
-
-            }
-
+            Search(DataGridView,FrmFather.UserControl,cmbfields.Text,txtValue.Text);
         }
         private void cmbfields_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtValue.Clear();
             txtValue.Focus();
         }
-
-
-
         private void AdministrationUser_Load(object sender, EventArgs e)
         {
             providerControl = new ProviderControl
@@ -554,6 +591,9 @@ namespace WinFormsApp
             {
                 taxRepository =TaxRepository,
             };
-        }     
+            toolStripButtonRole.PerformClick();
+        }
+      
+
     }
 }

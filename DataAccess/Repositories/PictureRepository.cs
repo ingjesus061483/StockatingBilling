@@ -12,18 +12,18 @@ namespace DataAccess.Repositories
     {
         public StockatingDbContext Db { get; set ; }
 
-        public IQueryable<PictureDTO> Values => Db .PictureProducts.Include(pp=>pp.Picture).Include(pp=>pp.Product).Select(x=>new PictureDTO { 
-            Id = x.Picture.Id,
-            Code = x.Picture.Code,
-            Name=x.Picture.Name,
-            Type = x.Picture.Type,
-            Data = x.Picture.Data,
-            ProductId=x.ProductID,
-           Product=x.Product,
-            
-
-
-        }) ;
+        public IQueryable<PictureDTO> Values => Db .PictureProducts.Include(pp=>pp.Picture)
+                                                   .Include(pp=>pp.Product)
+                                                   .Select(x=>new PictureDTO
+                                                   {
+                                                       Id = x.Picture.Id,
+                                                       Code = x.Picture.Code,
+                                                       Name = x.Picture.Name,
+                                                       Type = x.Picture.Type,
+                                                       Data = x.Picture.Data,
+                                                       ProductId = x.ProductID,
+                                                       Product = x.Product,
+                                                   }) ;
 
         public PictureRepository(StockatingDbContext inventarioDbContext) 
         {
@@ -36,10 +36,8 @@ namespace DataAccess.Repositories
             Db.SaveChanges();
         }
 
-        public PictureDTO GetById(int id)
-        {
-            return Values.Where(x=>x.Id==id).FirstOrDefault();
-        }
+        public PictureDTO GetById(int id)=> Values.Where(x=>x.Id==id).FirstOrDefault();
+        
 
         public void Save(PictureDTO entity)
         {

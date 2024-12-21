@@ -33,14 +33,12 @@ namespace DataAccess.Repositories
         public void DeleteById(int id)
         {
             Stock stock = Db.Stocks.FirstOrDefault(x => x.Id == id);
-Db .Stocks.Remove(stock);
+            Db .Stocks.Remove(stock);
             Db.SaveChanges();
         }
 
-        public StockDTO GetById(int id)
-        {
-            return Values.Where(x => x.Id == id).FirstOrDefault();
-        }
+        public StockDTO GetById(int id)=> Values.Where(x => x.Id == id).FirstOrDefault();
+        
 
         public void Save(StockDTO entity)
         {

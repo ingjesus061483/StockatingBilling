@@ -20,21 +20,23 @@ namespace DataAccess.Repositories
         }
         public StockatingDbContext Db { get  ; set; }
 
-        public IQueryable<ProductDTO> Values => Db.Products.Include(c=>c.Category).Include(u=>u.UnitMeasurement).
-            Include(s=>s.Stocks). Select(x => new ProductDTO
-        {
-            Id = x.Id,
-            Code = x.Code,
-            Name = x.Name,
-            UnitCost = x.UnitCost,
-            Price = x.Price,
-            Description = x.Description,
-            CategoryId = x.CategoryId,
-            Category=x.Category,
-            UnitMeasurementId = x.UnitMeasurementId,
-            UnitMeasurement = x.UnitMeasurement,
-            Stocks = x.Stocks,       
-        });
+        public IQueryable<ProductDTO> Values => Db.Products.Include(c=>c.Category)
+                                                           .Include(u=>u.UnitMeasurement)
+                                                           .Include(s=>s.Stocks)
+                                                           .Select(x => new ProductDTO
+                                                           {
+                                                                Id = x.Id,
+                                                                Code = x.Code,
+                                                                Name = x.Name,
+                                                                UnitCost = x.UnitCost,
+                                                                Price = x.Price,
+                                                                Description = x.Description,
+                                                                CategoryId = x.CategoryId,
+                                                                Category=x.Category,
+                                                                UnitMeasurementId = x.UnitMeasurementId,
+                                                                UnitMeasurement = x.UnitMeasurement,
+                                                                Stocks = x.Stocks,       
+                                                           });
 
         public void DeleteById(int id)
         {
@@ -43,10 +45,8 @@ namespace DataAccess.Repositories
             Db.SaveChanges();
         }
 
-        public ProductDTO GetById(int id)
-        {
-            return Values .Where(x=>x.Id==id).FirstOrDefault();
-        }
+        public ProductDTO GetById(int id)=> Values .Where(x=>x.Id==id).FirstOrDefault();
+        
 
         public void Save(ProductDTO entity)
         {

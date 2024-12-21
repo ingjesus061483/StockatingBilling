@@ -16,10 +16,10 @@ namespace DataAccess.Repositories
         {
             Db = db;
         }
-
-
-        public IQueryable<EmployeeDTO> Values => Db.Employees.Include(e=>e.User).Include (e=>e.IdentificationType).Include(e=>e.User.Role).Include (e=>e.User.Company).
-            Select(x=> new EmployeeDTO {
+        public IQueryable<EmployeeDTO> Values => Db.Employees.Include(e=>e.User)
+            .Include (e=>e.IdentificationType).Include(e=>e.User.Role)
+            .Include (e=>e.User.Company).Select(x=> new EmployeeDTO 
+            {
                 Id = x.Id,
                 IdentificationType = x.IdentificationType,
                 IdentificationTypeId = x.IdentificationTypeId,

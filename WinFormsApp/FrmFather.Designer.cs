@@ -35,10 +35,12 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            AutoSize = true;
             ClientSize = new Size(539, 450);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmFather";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmFather";
             FormClosing += FrmFather_FormClosing;
             Load += FrmFather_Load;
