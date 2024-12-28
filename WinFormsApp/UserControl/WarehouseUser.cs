@@ -167,18 +167,6 @@ namespace WinFormsApp
             Form.Close();
         }
 
-        private void btnStock_Click(object sender, EventArgs e)
-        {
-            if (WarehouseDTO==null)
-            { return; }
-            frmStock frmStock = new frmStock
-            {
-                WarehouseDTO = WarehouseDTO,
-                ProductRepository = ProductRepository ,
-                WarehouseRepository = warehouseRepository,
-                Repository = StockRepository  ,
-            };
-            frmStock.ShowDialog();
-        }
+      
     }
 }

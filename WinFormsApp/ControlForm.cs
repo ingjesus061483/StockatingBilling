@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Utilities;
+﻿using DTO;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,17 @@ namespace WinFormsApp
                 throw ex;
             }
         }
+      public static   decimal GetStock(ProductDTO productDTO, WarehouseDTO warehouseDTO)
+        {
+            decimal result = 0;
+            if (productDTO != null && warehouseDTO != null)
+            {
+                productDTO.Stocks = productDTO.Stocks.Where(x => x.WarehouseId == warehouseDTO.Id).ToList();
+                result = productDTO.Total;
+            }
+            return result;
+        }
+
         static byte[] GetBytes(string path) 
         {
             byte[] bytes = [];

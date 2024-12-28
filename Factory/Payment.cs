@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Factory
 {
     public class Payment
@@ -20,21 +14,23 @@ namespace Factory
         public DateTime DateTime { get; set; }
 
         [Required]
-        public decimal SubTotal { 
+        public decimal SubTotal
+        { 
             get 
             {
                 return BillHeader.Total;
             }
         }
 
-      public   List<Tax >   Taxes { get; set; }
+        [NotMapped]
+        public  List<Tax > Taxes { get; set; }
 
-        decimal _TotalTax; 
-        [Required]
-        public decimal Tax { 
+        decimal _TotalTax;      
+        public decimal Tax 
+        { 
             get 
             {
-                if (Company .RegimenTypeId  == 2)
+                if (Company.RegimenTypeId  == 2)
                 {
                     _TotalTax = 0;
                     foreach (Tax  item in Taxes )
@@ -50,28 +46,47 @@ namespace Factory
         [NotMapped]        
         public Company Company { get; set; }
 
-
         [Required]
         public decimal Discount { get; set; }
 
         [Required]
-        public decimal TotalPay { 
+        public decimal TotalPay 
+        { 
             get 
             {
-                return 0;
+                return  SubTotal+Tax-Discount;
+            }
+        }        
+
+        [Required]
+        decimal _valueReceived;
+        public decimal ValueReceived
+        {
+            get
+            {
+                _valueReceived = 0;
+
+                foreach (DetailPay item in DetailPays) 
+                {
+                    _valueReceived += item.Value;
+                }
+                return _valueReceived;
             }
         }
-        List<DetailPay> DetailPays { get; set; }
 
         [Required]
-        public decimal ValueReceived { get; }
-
-        [Required]
-        public decimal Change { get; }
+        public decimal Change
+        {
+            get
+            {
+                return ValueReceived - TotalPay;
+            }
+        }
 
         [Required]
         public int BillHeaderId { get; set; }
         public BillHeader BillHeader {get; set;}
 
+        List<DetailPay> DetailPays { get; set; }
     }
 }

@@ -33,7 +33,6 @@
             btnGuardar = new Button();
             btnSalir = new Button();
             btnOpen = new Button();
-            btnStock = new Button();
             customPanel3 = new RoundedBorders.CustomPanel();
             label5 = new Label();
             label1 = new Label();
@@ -109,25 +108,11 @@
             btnOpen.UseVisualStyleBackColor = false;
             btnOpen.Click += btnOpen_Click;
             // 
-            // btnStock
-            // 
-            btnStock.BackColor = Color.Transparent;
-            btnStock.BackgroundImage = (Image)resources.GetObject("btnStock.BackgroundImage");
-            btnStock.BackgroundImageLayout = ImageLayout.Stretch;
-            btnStock.FlatStyle = FlatStyle.Flat;
-            btnStock.Location = new Point(200, 10);
-            btnStock.Name = "btnStock";
-            btnStock.Size = new Size(57, 67);
-            btnStock.TabIndex = 27;
-            btnStock.UseVisualStyleBackColor = false;
-            btnStock.Click += btnStock_Click;
-            // 
             // customPanel3
             // 
             customPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             customPanel3.BackColor = Color.White;
             customPanel3.BorderRadius = 30;
-            customPanel3.Controls.Add(btnStock);
             customPanel3.Controls.Add(btnOpen);
             customPanel3.Controls.Add(btnSalir);
             customPanel3.Controls.Add(btnGuardar);
@@ -362,7 +347,6 @@
         private Button btnGuardar;
         private Button btnSalir;
         private Button btnOpen;
-        private Button btnStock;
         private RoundedBorders.CustomPanel customPanel3;
         private Label label5;
         private Label label1;

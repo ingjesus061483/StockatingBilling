@@ -19,6 +19,86 @@ namespace DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Factory.BillDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BillHeaderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("WarehouseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BillHeaderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("WarehouseId");
+
+                    b.ToTable("BillDetail");
+                });
+
+            modelBuilder.Entity("Factory.BillHeader", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<bool>("Credit")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("DocumentTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("StateId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
+
+                    b.HasIndex("DocumentTypeId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("StateId");
+
+                    b.ToTable("BillHeaders");
+                });
+
             modelBuilder.Entity("Factory.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -26,7 +106,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -131,7 +210,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Slogan")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("TradeCamera")
@@ -161,6 +239,73 @@ namespace DataAccess.Migrations
                             RegimenTypeId = 1,
                             Slogan = "",
                             TradeCamera = "0001"
+                        });
+                });
+
+            modelBuilder.Entity("Factory.DetailPay", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("MethodPaymentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("PaymentId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MethodPaymentId");
+
+                    b.HasIndex("PaymentId");
+
+                    b.ToTable("DetailPays");
+                });
+
+            modelBuilder.Entity("Factory.DocumentType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DocumentTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "",
+                            Name = "Factura"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "",
+                            Name = "Compra"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "",
+                            Name = "Ticket"
                         });
                 });
 
@@ -233,7 +378,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -258,6 +402,72 @@ namespace DataAccess.Migrations
                             Description = "",
                             Name = "nit"
                         });
+                });
+
+            modelBuilder.Entity("Factory.MethodPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MethodPays");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "",
+                            Name = "Contado"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "",
+                            Name = "Datafono"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "",
+                            Name = "Tranferencia"
+                        });
+                });
+
+            modelBuilder.Entity("Factory.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("BillHeaderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BillHeaderId");
+
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Factory.Picture", b =>
@@ -329,7 +539,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -417,7 +626,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -451,7 +659,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -469,6 +676,51 @@ namespace DataAccess.Migrations
                             Id = 1,
                             Description = "",
                             Name = "Administrador"
+                        });
+                });
+
+            modelBuilder.Entity("Factory.State", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("States");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "",
+                            Name = "En proceso"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "",
+                            Name = "Entregado"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "",
+                            Name = "Pagado"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "",
+                            Name = "En mora"
                         });
                 });
 
@@ -509,12 +761,12 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(18,2)");
@@ -531,7 +783,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -612,7 +863,7 @@ namespace DataAccess.Migrations
                             Companyid = 1,
                             Email = "example1@mail.com",
                             Name = "admin",
-                            Password = "admin1234.",
+                            Password = "YQBkAG0AaQBuADEAMgAzADQALgA=",
                             RoleId = 1
                         });
                 });
@@ -629,7 +880,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Descripcion")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -654,6 +904,66 @@ namespace DataAccess.Migrations
                     b.ToTable("Warehouse");
                 });
 
+            modelBuilder.Entity("Factory.BillDetail", b =>
+                {
+                    b.HasOne("Factory.BillHeader", "BillHeader")
+                        .WithMany("BillDetails")
+                        .HasForeignKey("BillHeaderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Factory.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Factory.Warehouse", "Warehouse")
+                        .WithMany("BillDetails")
+                        .HasForeignKey("WarehouseId");
+
+                    b.Navigation("BillHeader");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("Factory.BillHeader", b =>
+                {
+                    b.HasOne("Factory.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Factory.DocumentType", "DocumentType")
+                        .WithMany("BillHeaders")
+                        .HasForeignKey("DocumentTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Factory.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Factory.State", "State")
+                        .WithMany("BillHeaders")
+                        .HasForeignKey("StateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("DocumentType");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("State");
+                });
+
             modelBuilder.Entity("Factory.Client", b =>
                 {
                     b.HasOne("Factory.IdentificationType", "IdentificationType")
@@ -676,6 +986,25 @@ namespace DataAccess.Migrations
                     b.Navigation("RegimenType");
                 });
 
+            modelBuilder.Entity("Factory.DetailPay", b =>
+                {
+                    b.HasOne("Factory.MethodPayment", "MethodPayment")
+                        .WithMany()
+                        .HasForeignKey("MethodPaymentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Factory.Payment", "Payment")
+                        .WithMany()
+                        .HasForeignKey("PaymentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MethodPayment");
+
+                    b.Navigation("Payment");
+                });
+
             modelBuilder.Entity("Factory.Employee", b =>
                 {
                     b.HasOne("Factory.IdentificationType", "IdentificationType")
@@ -693,6 +1022,17 @@ namespace DataAccess.Migrations
                     b.Navigation("IdentificationType");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Factory.Payment", b =>
+                {
+                    b.HasOne("Factory.BillHeader", "BillHeader")
+                        .WithMany()
+                        .HasForeignKey("BillHeaderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BillHeader");
                 });
 
             modelBuilder.Entity("Factory.PictureProduct", b =>
@@ -782,6 +1122,11 @@ namespace DataAccess.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("Factory.BillHeader", b =>
+                {
+                    b.Navigation("BillDetails");
+                });
+
             modelBuilder.Entity("Factory.Category", b =>
                 {
                     b.Navigation("Products");
@@ -790,6 +1135,11 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Factory.Company", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Factory.DocumentType", b =>
+                {
+                    b.Navigation("BillHeaders");
                 });
 
             modelBuilder.Entity("Factory.IdentificationType", b =>
@@ -816,6 +1166,11 @@ namespace DataAccess.Migrations
                     b.Navigation("Users");
                 });
 
+            modelBuilder.Entity("Factory.State", b =>
+                {
+                    b.Navigation("BillHeaders");
+                });
+
             modelBuilder.Entity("Factory.UnitMeasurement", b =>
                 {
                     b.Navigation("Products");
@@ -824,6 +1179,11 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Factory.User", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("Factory.Warehouse", b =>
+                {
+                    b.Navigation("BillDetails");
                 });
 #pragma warning restore 612, 618
         }

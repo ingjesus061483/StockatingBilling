@@ -12,10 +12,11 @@ using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace WinFormsApp
+namespace DataAccess.Repositories
 {
     public abstract class Utilities<T>
     {
+
         public static void FillCombo(List<T> values, Array arr, System.Windows.Forms.ComboBox combo)
         {
             combo.DataSource = values;
@@ -57,8 +58,8 @@ namespace WinFormsApp
         public static bool ValidarEmail(T email)
         {
             string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            return Regex.IsMatch(email.ToString(), expresion)? 
-                   Regex.Replace(email.ToString(), expresion, string.Empty).Length == 0:false;
+            return !Regex.IsMatch(email.ToString(), expresion) ? false :
+                   Regex.Replace(email.ToString(), expresion, string.Empty).Length == 0;
         }
     
     }

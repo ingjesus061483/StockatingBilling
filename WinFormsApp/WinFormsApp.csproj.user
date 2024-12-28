@@ -1,16 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="FrmBilling.cs">
-      <SubType>Form</SubType>
+    <Compile Update="UserControl\BillingUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControl\StockUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControl\BillDetailUser.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="FrmFather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UserControl\TaxUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControl\BillingUser.cs">
+    <Compile Update="UserControl\BillingAdministrationUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControl\AdministrationUser.cs">
@@ -29,9 +38,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="frmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmStock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UserControl\RoleUser.cs">
@@ -59,6 +65,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControl\WarehouseUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControl\ViewProductUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

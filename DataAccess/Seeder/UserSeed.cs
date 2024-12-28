@@ -1,4 +1,5 @@
-﻿using Factory;
+﻿using DataAccess.Repositories;
+using Factory;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -15,7 +16,7 @@ namespace DataAccess.Seeder
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasData(
-                         new User { Email = "example1@mail.com", Id = 1, Name = "admin", Password = "admin1234.", RoleId = 1, Companyid = 1 }
+                    new User { Email = "example1@mail.com", Id = 1, Name = "admin", Password =Utilities<string>.Encriptar ( "admin1234."), RoleId = 1, Companyid = 1 }
                      );
         }
     }

@@ -30,20 +30,7 @@ namespace WinFormsApp
             InitializeComponent();
         }
         void NewEmployee()
-        {
-       /*     DataGridView.DataSource = EmployeeRepository.Values.Select(x => new
-            {
-                x.Id,
-                TipoIdentificacion = x.IdentificationType.Name,
-                Identificion = x.Identification,
-                NombreCompleto = x.CompleteName,
-                Direccion = x.Address,
-                Telefono = x.Phone,
-                x.User.Email,
-                Usuario = x.User.Name,
-                Role = x.User.Role.Name,
-                Empresa = x.User.Company.Nit + " -" + x.User.Company.Name
-            }).ToList();*/
+        {    
             Id = 0;
             txtIdentification.Clear();
             txtAddress.Clear();
@@ -178,7 +165,7 @@ namespace WinFormsApp
         }
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new frmSearch { CompanyDTOs=CompanyRepository .Values.ToList ()};
+            frmSearch frmSearch = new frmSearch { objects =CompanyRepository .Values.ToList ()};
             frmSearch.ShowDialog();
            CompanyDTO= CompanyRepository.GetById( frmSearch .Id );
             txtCompany.Text = CompanyDTO != null ? CompanyDTO.Nit + " " + CompanyDTO.Name : string .Empty;

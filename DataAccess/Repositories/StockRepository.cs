@@ -13,39 +13,53 @@ namespace DataAccess.Repositories
     {
         public StockatingDbContext Db { get; set; }
 
-        public IQueryable<StockDTO> Values => Db.Stocks.Include(s => s.Product).Include(s=>s.Warehouse) .Select(x=>new StockDTO
+        public IQueryable<StockDTO> Values => Db.Stocks.Include(s => s.Product).Include(s => s.Warehouse).Select(x => new StockDTO
         {
             Date = x.Date,
-            Entrance = x.Entrance,  
-            Amount = x.Amount,  
+            Entrance = x.Entrance,
+            Amount = x.Amount,
             Id = x.Id,
             Product = x.Product,
             ProductId = x.ProductId,
             WarehouseId = x.WarehouseId,
-            Warehouse=x.Warehouse,
-        }) ;
+            Warehouse = x.Warehouse,
+        });
         public StockRepository(StockatingDbContext db)
         {
-            Db = db ;
-
+            Db = db;
         }
 
         public void DeleteById(int id)
         {
             Stock stock = Db.Stocks.FirstOrDefault(x => x.Id == id);
-            Db .Stocks.Remove(stock);
+            Db.Stocks.Remove(stock);
             Db.SaveChanges();
         }
 
-        public StockDTO GetById(int id)=> Values.Where(x => x.Id == id).FirstOrDefault();
-        
+        public StockDTO GetById(int id) => Values.Where(x => x.Id == id).FirstOrDefault();
 
+        public IQueryable<StockDTO >GetStockDTOs(int productId, int WarehouseId,bool entrance = true)
+        {
+            return Values.Where(x => x.Entrance==entrance  && x.ProductId == productId && x.WarehouseId == WarehouseId);
+        }
+
+        public decimal  GetTotalStock(int productId  ,int WarehouseId )
+        {
+            decimal totalEntrance = Values.Where(x => x.Entrance && x.ProductId == productId && x.WarehouseId == WarehouseId).Sum(x => x.Amount);
+            decimal totalExit = Values.Where(x => !x.Entrance && x.ProductId == productId && x.WarehouseId == WarehouseId).Sum(x => x.Amount);
+            return totalEntrance - totalExit;
+        }
+        public void Save(List<Stock> stocks)
+        {
+            Db.Stocks .AddRange(stocks);
+            Db.SaveChanges();
+        }
         public void Save(StockDTO entity)
         {
             Stock stock = new Stock
             {
                 Date = entity.Date,
-                Entrance = entity.Entrance,
+                Entrance = true,
                 Amount = entity.Amount,
                 ProductId = entity.ProductId,
                 WarehouseId = entity.WarehouseId,

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +22,23 @@ namespace WinFormsApp
         {
             InitializeComponent();
         }
-        void SetDatagrid(DataGridView gridView)
+        DataGridViewButtonColumn[] SetButtonColumn(string[] buttons, Dictionary<int, Color[]> pairs)
+        {
+            DataGridViewButtonColumn[] dataGridViewButtonColumns = new DataGridViewButtonColumn[buttons.Length];
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                Color[] colors = pairs[i];
+                DataGridViewButtonColumn buttonColumn = ControlForm.GetButtonColumn(buttons[i], "");
+                buttonColumn.DefaultCellStyle = ControlForm.GetGridViewCellStyle(colors[0], colors[1]);
+                dataGridViewButtonColumns[i] = buttonColumn;
+            }
+            return dataGridViewButtonColumns;
+        }
+        void SetDatagrid(DataGridView gridView, DataGridViewColumn[] dataGridViewColumns)
         {
             gridView.CellContentClick += DataGridView_CellContentClick;
-            DataGridViewButtonColumn buttonColumn = ControlForm.GetButtonColumn("Editar", "");
-            buttonColumn.DefaultCellStyle = ControlForm.GetGridViewCellStyle(Color.FromArgb(249, 215, 2), Color.White);
-            DataGridViewButtonColumn buttonColumn2 = ControlForm.GetButtonColumn("Eliminar", "");
-            buttonColumn2.DefaultCellStyle = ControlForm.GetGridViewCellStyle(Color.Red, Color.White);
-            gridView.Columns.Add(buttonColumn);
-            gridView.Columns.Add(buttonColumn2);
+            gridView.Columns.AddRange(dataGridViewColumns);
+
         }
         void AddControls(DataGridView gridView)
         {
@@ -54,10 +63,10 @@ namespace WinFormsApp
                             categoryControl.LoadGrid(DataGridView);
                             break;
                         }
-                    case ProductUser: 
+                    case ProductUser:
                         {
                             productRepository.DeleteById(id);
-                            categoryControl.LoadGrid(DataGridView);
+                            productControl.LoadGrid(DataGridView);
                             break;
                         }
                     case UnitMeasurementUser:
@@ -109,7 +118,7 @@ namespace WinFormsApp
                             taxControl.LoadGrid(DataGridView);
                             break;
                         }
-                } 
+                }
             }
         }
         void New(FrmFather frmFather)
@@ -124,7 +133,7 @@ namespace WinFormsApp
                         taxControl.LoadGrid(DataGridView);
                         break;
                     }
-                case ProviderUser: 
+                case ProviderUser:
                     {
                         ProviderUser provider = (ProviderUser)frmFather.UserControl;
                         provider.providerDTO = null;
@@ -148,7 +157,7 @@ namespace WinFormsApp
                         categoryControl.LoadGrid(DataGridView);
                         break;
                     }
-                case ProductUser: 
+                case ProductUser:
                     {
                         ProductUser product = (ProductUser)frmFather.UserControl;
                         product.productDTO = null;
@@ -156,7 +165,7 @@ namespace WinFormsApp
                         productControl.LoadGrid(DataGridView);
                         break;
                     }
-                case UnitMeasurementUser: 
+                case UnitMeasurementUser:
                     {
                         UnitMeasurementUser unitMeasurement = (UnitMeasurementUser)frmFather.UserControl;
                         unitMeasurement.unitMeasurementDTO = null;
@@ -164,7 +173,7 @@ namespace WinFormsApp
                         unitMeasurementControl.LoadGrid(DataGridView);
                         break;
                     }
-                case WarehouseUser: 
+                case WarehouseUser:
                     {
                         WarehouseUser warehouse = (WarehouseUser)frmFather.UserControl;
                         warehouse.WarehouseDTO = null;
@@ -181,7 +190,7 @@ namespace WinFormsApp
                         break;
                     }
                 case RoleUser:
-                    {    
+                    {
                         RoleUser role = (RoleUser)frmFather.UserControl;
                         role.RoleDTO = null;
                         frmFather.ShowDialog();
@@ -196,15 +205,15 @@ namespace WinFormsApp
                         employeeControl.LoadGrid(DataGridView);
                         break;
                     }
-            }            
+            }
         }
-        void Search(DataGridView gridView,UserControl userControl,string filter,  string searchText)
+        void Search(DataGridView gridView, UserControl userControl, string filter, string searchText)
         {
-            switch(userControl)
+            switch (userControl)
             {
                 case ProviderUser:
                     {
-                        providerControl.LoadGrid(gridView,filter, searchText);
+                        providerControl.LoadGrid(gridView, filter, searchText);
                         break;
                     }
                 case CompanyUser:
@@ -213,9 +222,9 @@ namespace WinFormsApp
                         break;
 
                     }
-                    case CategoryUser: 
+                case CategoryUser:
                     {
-                        categoryControl.LoadGrid(gridView, filter ,searchText);
+                        categoryControl.LoadGrid(gridView, filter, searchText);
                         break;
 
                     }
@@ -224,39 +233,44 @@ namespace WinFormsApp
                         productControl.LoadGrid(gridView, filter, searchText);
                         break;
                     }
-                    case UnitMeasurementUser:
+                case UnitMeasurementUser:
                     {
                         unitMeasurementControl.LoadGrid(gridView, filter, searchText);
                         break;
 
                     }
-                    case WarehouseUser:
+                case WarehouseUser:
                     {
-                        warehouseControl.LoadGrid(gridView, filter,searchText);
+                        warehouseControl.LoadGrid(gridView, filter, searchText);
                         break;
                     }
                 case ClientUser:
                     {
-                        clientControl.LoadGrid(gridView, filter,searchText);
+                        clientControl.LoadGrid(gridView, filter, searchText);
                         break;
                     }
                 case RoleUser:
                     {
-                        roleControl.LoadGrid(gridView, filter,searchText);
+                        roleControl.LoadGrid(gridView, filter, searchText);
                         break;
                     }
                 case EmployeeUser:
                     {
-                        employeeControl.LoadGrid(gridView, filter,searchText);
-                        break ;
+                        employeeControl.LoadGrid(gridView, filter, searchText);
+                        break;
                     }
                 case TaxUser:
                     {
-                        taxControl.LoadGrid(gridView, filter,searchText);
+                        taxControl.LoadGrid(gridView, filter, searchText);
                         break;
 
                     }
-            }                                   
+                case StockUser:
+                    {
+                        productControl.LoadGrid(gridView, filter, searchText);
+                        break;
+                    }
+            }
         }
         void Edit(FrmFather frmFather, int id)
         {
@@ -272,7 +286,7 @@ namespace WinFormsApp
                         break;
                     }
                 case ProviderUser:
-                    {   
+                    {
                         ProviderDTO providerDTO = providerRepository.GetById(id);
                         ProviderUser provider = providerControl.GetControlUser(providerDTO, FrmFather);
                         frmFather.UserControl = provider;
@@ -307,7 +321,7 @@ namespace WinFormsApp
                         categoryControl.LoadGrid(DataGridView);
                         break;
                     }
-                case ProductUser :
+                case ProductUser:
                     {
                         ProductDTO productDTO = productRepository.GetById(id);
                         ProductUser product = productControl.GetControlUser(productDTO, FrmFather);
@@ -317,7 +331,7 @@ namespace WinFormsApp
                         break;
 
                     }
-                case UnitMeasurementUser: 
+                case UnitMeasurementUser:
                     {
                         UnitMeasurementDTO unitMeasurementDTO = unitMeasurementRepository.GetById(id);
                         UnitMeasurementUser unitMeasurement = unitMeasurementControl.GetControlUser(unitMeasurementDTO, FrmFather);
@@ -353,9 +367,9 @@ namespace WinFormsApp
                         roleControl.LoadGrid(DataGridView);
                         break;
                     }
-            }          
+            }
         }
-  
+
         private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -375,6 +389,45 @@ namespace WinFormsApp
                         Delete(FrmFather.UserControl, id);
                         break;
                     }
+                case 2:
+                    {
+                        if (FrmFather.UserControl is ProductUser)
+                        {
+                            StockUser stockUser = new()
+                            {
+                                FrmFather = FrmFather,
+                                ProductDTO = productRepository.GetById(id),
+                                Repository = StockRepository,
+                                WarehouseRepository = warehouseRepository
+                            };
+                            FrmFather.UserControl = stockUser;
+                            FrmFather.ShowDialog();
+                            productControl.LoadGrid(DataGridView);
+                            FrmFather.UserControl = productControl.GetControlUser(null, FrmFather);                           
+                        } 
+                        break;
+                    }
+                case 3: 
+                    {
+                        if (FrmFather.UserControl is ProductUser)
+                        {
+                            ViewProductUser ViewProductUser = new()
+                            {
+                                FrmFather = FrmFather,
+                                ProductDTO = productRepository.GetById(id),
+                                StockRepository = StockRepository,
+                                PictureRepository = pictureRepository,
+                                WarehouseRepository = warehouseRepository
+                            };
+                            FrmFather.UserControl = ViewProductUser;
+                            FrmFather.ShowDialog();
+                            productControl.LoadGrid(DataGridView);
+                            FrmFather.UserControl = productControl.GetControlUser(null, FrmFather);
+                        }
+                        break ;
+                    }
+
+
             }
         }
         private void toolStripButtonCategory_Click(object sender, EventArgs e)
@@ -385,7 +438,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             CategoryUser category = categoryControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = category;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             categoryControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -400,13 +459,20 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             ProductUser product = productControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = product;
-            SetDatagrid(DataGridView);
-            this.Cursor = Cursors.WaitCursor;
+            string[] buttons = { "Editar", "Eliminar", "Existencias","Ver detalle de producto" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] },
+                {2,[Color.Blue ,Color.White  ] },
+                {3,[Color .Silver ,Color.Black ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs)); this.Cursor = Cursors.WaitCursor;
             productControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
             AddControls(DataGridView);
             SetCombo(DataGridView);
-        }        
+        }
         private void toolStripButtonUnitMeasurement_Click(object sender, EventArgs e)
         {
             DataGridView = null;
@@ -415,8 +481,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             UnitMeasurementUser unitMeasurement = unitMeasurementControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = unitMeasurement;
-            SetDatagrid(DataGridView);
-            this.Cursor = Cursors.WaitCursor;
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs)); this.Cursor = Cursors.WaitCursor;
             unitMeasurementControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
             AddControls(DataGridView);
@@ -430,7 +501,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             WarehouseUser warehouse = warehouseControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = warehouse;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             warehouseControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -445,7 +522,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             RoleUser role = roleControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = role;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             roleControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -460,7 +543,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             ClientUser client = clientControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = client;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             clientControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -475,7 +564,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             EmployeeUser employee = employeeControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = employee;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             employeeControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -490,7 +585,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             CompanyUser companyUser = companyControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = companyUser;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             companyControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -505,7 +606,13 @@ namespace WinFormsApp
             FrmFather = new FrmFather();
             ProviderUser provider = providerControl.GetControlUser(null, FrmFather);
             FrmFather.UserControl = provider;
-            SetDatagrid(DataGridView);
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             providerControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
@@ -519,14 +626,20 @@ namespace WinFormsApp
             btnNew.Enabled = true;
             FrmFather = new FrmFather();
             TaxUser tax = taxControl.GetControlUser(null, FrmFather);
-            FrmFather.UserControl = tax;    
-            SetDatagrid(DataGridView);
+            FrmFather.UserControl = tax;
+            string[] buttons = { "Editar", "Eliminar" };
+            Dictionary<int, Color[]> pairs = new Dictionary<int, Color[]>
+            {
+                {0,[Color.Yellow,Color.Black ] },
+                {1,[Color.Red ,Color.White ] }
+            };
+            SetDatagrid(DataGridView, SetButtonColumn(buttons, pairs));
             this.Cursor = Cursors.WaitCursor;
             taxControl.LoadGrid(DataGridView);
             this.Cursor = Cursors.Default;
             AddControls(DataGridView);
             SetCombo(DataGridView);
-        } 
+        }
         private void btnNew_Click(object sender, EventArgs e)
         {
             New(FrmFather);
@@ -534,7 +647,7 @@ namespace WinFormsApp
 
         private void txtValue_TextChanged(object sender, EventArgs e)
         {
-            Search(DataGridView,FrmFather.UserControl,cmbfields.Text,txtValue.Text);
+            Search(DataGridView, FrmFather.UserControl, cmbfields.Text, txtValue.Text);
         }
         private void cmbfields_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -589,11 +702,16 @@ namespace WinFormsApp
             };
             taxControl = new TaxControl
             {
-                taxRepository =TaxRepository,
+                taxRepository = TaxRepository,
             };
             toolStripButtonRole.PerformClick();
         }
-      
 
+        private void toolStripButtonExit_Click(object sender, EventArgs e)
+        {
+            FrmMain.Close();
+        }
+
+        
     }
 }

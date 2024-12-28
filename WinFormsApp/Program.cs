@@ -24,6 +24,9 @@ namespace WinFormsApp
         }
         static void Configservice(ServiceCollection services)
         {
+            services.AddScoped<DocumentTypeRepository>();
+            services.AddScoped<BillingRepository >();
+            services.AddScoped<StateRepository>();                
             services .AddScoped <IdentificationTypeRepository> ();
             services .AddScoped<ClientRepository> ();
             services.AddScoped<StockatingDbContext>();

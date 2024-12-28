@@ -85,9 +85,6 @@ namespace DataAccess.Repositories
                 Db.PictureProducts.Add(new PictureProduct { PictureID =P.Id, ProductID = idproduct });
                 Db.SaveChanges();           
             }
-
-
-
         }
         public void Update(ProductDTO entity, int id)
         {
@@ -102,5 +99,12 @@ namespace DataAccess.Repositories
             Db.Products.Update(product  );
             Db.SaveChanges();
         }
+        public bool GetTotalAmount(ProductDTO product, decimal amount)
+        {
+            decimal stock = product.Total;
+            decimal total = stock - amount;
+            return total <= 0;
+        }
+
     }
 }

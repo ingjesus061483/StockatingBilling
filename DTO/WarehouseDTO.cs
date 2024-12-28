@@ -29,5 +29,13 @@ namespace DTO
         public int StockMaximo { get; set; }
 
         List<Stock> Stocks { get; set; }
+
+        public string Reference 
+        { 
+            get
+            {
+                return Code +" - "+ Name ;
+            } 
+        }
     }
 }

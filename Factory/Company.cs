@@ -1,18 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.Logging;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
 namespace Factory
 {
     [Index(nameof(Nit), IsUnique = true)]
-
     public class Company
     {
         public int Id { get; set; }
@@ -31,7 +21,7 @@ namespace Factory
 
         [Required]
         [StringLength(50)]
-        public string Address    { get; set; }
+        public string Address { get; set; }
         
         [Required]
         [StringLength(50)]
@@ -45,10 +35,10 @@ namespace Factory
         [StringLength(50)]
         public string Contact { get; set; }
        
-        public string Slogan { get; set; }
+        public string? Slogan { get; set; }
 
         [Required]
-        public int  RegimenTypeId     { get; set; }
+        public int  RegimenTypeId { get; set; }
         public RegimenType RegimenType { get; set; }    
 
         public List <User> Users { get; set; }  

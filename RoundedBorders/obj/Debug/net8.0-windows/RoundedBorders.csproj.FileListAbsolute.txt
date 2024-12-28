@@ -55,10 +55,10 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\D
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.AssemblyInfoInputs.cache
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.AssemblyInfo.cs
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.csproj.CoreCompileInputs.cache
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.sourcelink.json
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedB.E00F0F60.Up2Date
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.dll
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\refint\RoundedBorders.dll
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.pdb
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.genruntimeconfig.cache
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\ref\RoundedBorders.dll
-C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\RoundedBorders\obj\Debug\net8.0-windows\RoundedBorders.sourcelink.json

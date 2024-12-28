@@ -124,7 +124,6 @@ namespace WinFormsApp
                 productDTO.Code = txtCode.Text;
                 repository.Update(productDTO, idProduct);
             }  
-            btnStock .PerformClick ();
             NewProduct();
 
         }       
@@ -179,21 +178,6 @@ namespace WinFormsApp
             NewProduct();
      
         }       
-        private void btnStock_Click(object sender, EventArgs e)
-        {
-            if (productDTO==null)
-            {
-                return;
-            }
-            frmStock frmStock = new frmStock
-            {
-                ProductDTO=productDTO,
-                ProductRepository= repository,
-                WarehouseRepository=WarehouseRepository,
-                Repository =stockRepository 
-            };
-            frmStock.ShowDialog();
-            NewProduct(); 
-        }
+   
     }
 }

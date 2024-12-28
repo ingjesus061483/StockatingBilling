@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp
 {
-    public partial class FrmBilling : Form
+    public partial class FrmPayment : Form
     {
-        public FrmBilling()
+        public FrmPayment()
         {
             InitializeComponent();
         }

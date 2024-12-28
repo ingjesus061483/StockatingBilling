@@ -43,6 +43,7 @@ namespace WinFormsApp
             toolStripButtonCompany = new ToolStripButton();
             toolStripButtonProvider = new ToolStripButton();
             toolStripButtonTax = new ToolStripButton();
+            toolStripButtonExit = new ToolStripButton();
             pnlMain = new Panel();
             customPanel1 = new RoundedBorders.CustomPanel();
             btnNew = new Button();
@@ -65,7 +66,7 @@ namespace WinFormsApp
             // 
             toolStrip1.BackColor = Color.FromArgb(36, 113, 163);
             toolStrip1.ImageScalingSize = new Size(40, 40);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButtonEmployee, toolStripButtonCompany, toolStripButtonProvider, toolStripButtonTax });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonRole, toolStripButtonUnitMeasurement, toolStripButtonCategory, toolStripButtonProduct, toolStripButtonWarehouse, toolStripButtonClient, toolStripButtonEmployee, toolStripButtonCompany, toolStripButtonProvider, toolStripButtonTax, toolStripButtonExit });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 3, 0);
@@ -178,9 +179,19 @@ namespace WinFormsApp
             toolStripButtonTax.ImageTransparentColor = Color.Magenta;
             toolStripButtonTax.Name = "toolStripButtonTax";
             toolStripButtonTax.Size = new Size(44, 44);
-            toolStripButtonTax.Text = "toolStripButton1";
+            toolStripButtonTax.Text = "toolStripButtonTax";
             toolStripButtonTax.ToolTipText = "Impuestos";
             toolStripButtonTax.Click += toolStripButtonTax_Click;
+            // 
+            // toolStripButtonExit
+            // 
+            toolStripButtonExit.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolStripButtonExit.Image = (Image)resources.GetObject("toolStripButtonExit.Image");
+            toolStripButtonExit.ImageTransparentColor = Color.Magenta;
+            toolStripButtonExit.Name = "toolStripButtonExit";
+            toolStripButtonExit.Size = new Size(44, 44);
+            toolStripButtonExit.Text = "toolStripButton5";
+            toolStripButtonExit.Click += toolStripButtonExit_Click;
             // 
             // pnlMain
             // 
@@ -386,8 +397,9 @@ namespace WinFormsApp
         public WarehouseRepository warehouseRepository { get; set; }
         public UserRepository userRepository { get; set; }
         public ProviderRepository providerRepository { get; set; }
-        public RegimenTypeRepository RegimenTypeRepository { get; set; }
-        FrmFather FrmFather;
+        public RegimenTypeRepository RegimenTypeRepository { get; set; } 
+        public FrmMain FrmMain;
+        FrmFather FrmFather;       
         DataGridView DataGridView;
         ProductControl productControl;
         CategoryControl categoryControl;
@@ -399,6 +411,6 @@ namespace WinFormsApp
         CompanyControl companyControl;
         ProviderControl providerControl;
         TaxControl taxControl;
-
+        private ToolStripButton toolStripButtonExit;
     }
 }

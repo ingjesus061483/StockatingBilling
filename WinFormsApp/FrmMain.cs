@@ -30,7 +30,10 @@ namespace WinFormsApp
                             CompanyRepository _companyRepository,
                             RegimenTypeRepository _regimenTypeRepository,
                             ProviderRepository _providerRepository,
-                            TaxRepository _taxRepository)
+                            TaxRepository _taxRepository,
+                            StateRepository _stateRepository,
+                            BillingRepository _billingRepository,
+                           DocumentTypeRepository _documentTypeRepository)
 
         {
             companyRepository = _companyRepository;
@@ -48,6 +51,9 @@ namespace WinFormsApp
             RegimenTypeRepository = _regimenTypeRepository;
             providerRepository = _providerRepository;
             taxRepository = _taxRepository;
+            documetTypeRepository = _documentTypeRepository;
+            stateRepository = _stateRepository;
+            billingRepository = _billingRepository;
             InitializeComponent();
         }
 
@@ -95,6 +101,7 @@ namespace WinFormsApp
                 userRepository = userRepository,
                 RegimenTypeRepository = RegimenTypeRepository,
                 providerRepository = providerRepository,
+                FrmMain =this,
                 Dock = DockStyle.Fill,
             };
             addControl(pnlMain, administration);
@@ -103,11 +110,18 @@ namespace WinFormsApp
 
         private void btnBilling_Click(object sender, EventArgs e)
         {
-            BillingUser billingUser =new BillingUser 
+            BillingAdministrationUser billingUser =new BillingAdministrationUser 
             {
                 Dock = DockStyle.Fill,
-                frmMain = this
-
+                frmMain = this,
+                StateRepository=stateRepository,
+                DocumetTypeRepository=documetTypeRepository,
+                ProductRepository =productRepository,
+                ClientRepository = clientRepository,
+                EmployeeRepository = employeeRepository,
+                WarehouseRepository = warehouseRepository,
+                StockRepository=StockRepository,
+                BillingRepository=billingRepository,
             };
             addControl(pnlMain, billingUser);
 

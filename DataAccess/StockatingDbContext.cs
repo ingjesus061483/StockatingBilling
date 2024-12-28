@@ -14,7 +14,14 @@ namespace DataAccess
                 return ConfigurationManager.ConnectionStrings["Stockating"].ConnectionString;
             }
         }
-
+        public DbSet<State> States { get; set; }  
+        public DbSet <Tax> Taxes { get; set; }
+        public DbSet<DocumentType> DocumentTypes { get; set; }
+        public DbSet<BillHeader> BillHeaders { get; set; }
+        public DbSet <BillDetail> BillDetail { get; set; }
+        public DbSet<Payment > Payments { get; set; }
+        public DbSet<DetailPay> DetailPays { get; set; }
+        public DbSet <MethodPayment> MethodPays { get; set; }
         public DbSet<RegimenType> RegimenTypes { get; set; }
         public DbSet<Provider> Providers { get; set; }
         public DbSet<Company> Companies { get; set; }
@@ -30,13 +37,14 @@ namespace DataAccess
         public DbSet<UnitMeasurement> UnitMeasurement { get; set; } 
         public DbSet<Warehouse> Warehouse { get; set; }
         public DbSet<Stock> Stocks { get; set; }
-        public DbSet <Tax> Taxes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL(ConnectionString );
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new DocumentTypeSeed());
+            modelBuilder .ApplyConfiguration(new MethodPaymentSeed());
             modelBuilder.ApplyConfiguration(new RoleSeed());
             modelBuilder.ApplyConfiguration(new IdentificationTypeSeed());
             modelBuilder .ApplyConfiguration(new RegimenTypeSeed());
@@ -44,7 +52,7 @@ namespace DataAccess
             modelBuilder .ApplyConfiguration(new UserSeed());
             modelBuilder.ApplyConfiguration(new EmployeeSedd());
             modelBuilder.ApplyConfiguration(new UnitMeasurementSeed());
-
+            modelBuilder.ApplyConfiguration(new StateSeed());
         }
     }
 }

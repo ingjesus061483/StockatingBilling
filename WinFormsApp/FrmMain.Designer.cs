@@ -117,6 +117,9 @@ namespace WinFormsApp
         ProviderRepository providerRepository;
         RegimenTypeRepository RegimenTypeRepository;
         TaxRepository taxRepository;
+        StateRepository stateRepository;
+        DocumentTypeRepository documetTypeRepository;
+        BillingRepository billingRepository;
         private Panel pnlButtons;
         private Button btnAdministration;
         private Panel pnlMain;

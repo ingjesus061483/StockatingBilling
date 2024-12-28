@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Factory
 {
     public class BillDetail
     {
-        public int ID;
+        public int Id { get; set; }
+
+        public int?  WarehouseId { get; set; }
+        public Warehouse? Warehouse { get; set; }
 
         [Required]
         public decimal  Amount {  get; set; }

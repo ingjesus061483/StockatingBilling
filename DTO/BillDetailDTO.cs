@@ -25,5 +25,7 @@ namespace DTO
         [Required]
         public int BillHeaderId { get; set; }
         public BillHeader BillHeader { get; set; }
+        public decimal Total { get { return Amount * UnitPrice; } }
+
     }
 }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WarehouseUser));
             customPanel3 = new RoundedBorders.CustomPanel();
-            btnStock = new Button();
             btnSalir = new Button();
             btnGuardar = new Button();
             btnuevo = new Button();
@@ -58,7 +57,6 @@
             customPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             customPanel3.BackColor = Color.White;
             customPanel3.BorderRadius = 30;
-            customPanel3.Controls.Add(btnStock);
             customPanel3.Controls.Add(btnSalir);
             customPanel3.Controls.Add(btnGuardar);
             customPanel3.Controls.Add(btnuevo);
@@ -70,19 +68,6 @@
             customPanel3.Name = "customPanel3";
             customPanel3.Size = new Size(491, 83);
             customPanel3.TabIndex = 10;
-            // 
-            // btnStock
-            // 
-            btnStock.BackColor = Color.Transparent;
-            btnStock.BackgroundImage = (Image)resources.GetObject("btnStock.BackgroundImage");
-            btnStock.BackgroundImageLayout = ImageLayout.Stretch;
-            btnStock.FlatStyle = FlatStyle.Flat;
-            btnStock.Location = new Point(217, 10);
-            btnStock.Name = "btnStock";
-            btnStock.Size = new Size(57, 67);
-            btnStock.TabIndex = 26;
-            btnStock.UseVisualStyleBackColor = false;
-            btnStock.Click += btnStock_Click;
             // 
             // btnSalir
             // 
@@ -308,7 +293,6 @@
         #endregion
 
         private RoundedBorders.CustomPanel customPanel3;
-        private Button btnStock;
         private Button btnSalir;
         private Button btnGuardar;
         private Button btnuevo;

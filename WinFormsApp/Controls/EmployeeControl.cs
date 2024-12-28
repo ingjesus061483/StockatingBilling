@@ -31,7 +31,7 @@ namespace WinFormsApp.Controls
             {
                 x.Id,
                 TipoIdentificacion = x.IdentificationType.Name,
-                Identificion = x.Identification,
+                Identificacion = x.Identification,
                 NombreCompleto = x.CompleteName,
                 Direccion = x.Address,
                 Telefono = x.Phone,
@@ -49,7 +49,7 @@ namespace WinFormsApp.Controls
             {
                 x.Id,
                 TipoIdentificacion = x.IdentificationType.Name,
-                Identificion = x.Identification,
+                Identificacion = x.Identification,
                 NombreCompleto = x.CompleteName,
                 Direccion = x.Address,
                 Telefono = x.Phone,
