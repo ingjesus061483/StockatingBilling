@@ -21,7 +21,7 @@ public  class UserRepository : IRepository<UserDTO>
          Password = x.Password,
          Role=x.Role,
          Company = x.Company,
-         Companyid = x.Companyid,
+         CompanyId = x.Companyid,
          Email = x.Email,
         });
         public UserRepository( StockatingDbContext db) { 
@@ -46,7 +46,7 @@ public  class UserRepository : IRepository<UserDTO>
                 Email=entity.Email,
                 RoleId = entity.RoleId,
                     Password = entity.Password, 
-                    Companyid=entity.Companyid,
+                    Companyid=entity.CompanyId,
             };
             Db.Users.Add(user);            
             Db.SaveChanges();
@@ -61,7 +61,7 @@ public  class UserRepository : IRepository<UserDTO>
             user.Email = entity.Email;
             user.RoleId = entity.RoleId;
             user.Password = entity.Password;
-            user.Companyid = entity.Companyid;  
+            user.Companyid = entity.CompanyId;  
             Db.Users .Update(user);
             Db.SaveChanges();
 

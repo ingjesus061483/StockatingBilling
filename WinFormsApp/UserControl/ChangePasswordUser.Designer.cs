@@ -1,16 +1,16 @@
 ﻿namespace WinFormsApp
 {
-    partial class FrmLogin
+    partial class ChangePasswordUser
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,22 +20,24 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de componentes
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordUser));
             customPanel3 = new RoundedBorders.CustomPanel();
             btnSalir = new Button();
-            btnEliminar = new Button();
+            btnUpdate = new Button();
             customPanel2 = new RoundedBorders.CustomPanel();
+            txtConfirmPassword = new TextBox();
+            label3 = new Label();
             label1 = new Label();
-            txtName = new TextBox();
-            txtDescription = new TextBox();
+            txtUserName = new TextBox();
+            txtNewPassword = new TextBox();
             panel2 = new Panel();
             label5 = new Label();
             label2 = new Label();
@@ -50,15 +52,15 @@
             customPanel3.BackColor = Color.White;
             customPanel3.BorderRadius = 30;
             customPanel3.Controls.Add(btnSalir);
-            customPanel3.Controls.Add(btnEliminar);
+            customPanel3.Controls.Add(btnUpdate);
             customPanel3.ForeColor = Color.Black;
             customPanel3.GradientAngle = 90F;
             customPanel3.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel3.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel3.Location = new Point(25, 238);
+            customPanel3.Location = new Point(17, 278);
             customPanel3.Name = "customPanel3";
-            customPanel3.Size = new Size(449, 80);
-            customPanel3.TabIndex = 10;
+            customPanel3.Size = new Size(516, 80);
+            customPanel3.TabIndex = 14;
             // 
             // btnSalir
             // 
@@ -71,38 +73,62 @@
             btnSalir.Size = new Size(57, 67);
             btnSalir.TabIndex = 4;
             btnSalir.UseVisualStyleBackColor = false;
-            btnSalir.Click += btnSalir_Click;
+            btnSalir.Click += this.btnSalir_Click;
             // 
-            // btnEliminar
+            // btnUpdate
             // 
-            btnEliminar.BackColor = Color.Transparent;
-            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
-            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Location = new Point(321, 7);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(57, 67);
-            btnEliminar.TabIndex = 5;
-            btnEliminar.UseVisualStyleBackColor = false;
+            btnUpdate.BackColor = Color.Transparent;
+            btnUpdate.BackgroundImage = (Image)resources.GetObject("btnUpdate.BackgroundImage");
+            btnUpdate.BackgroundImageLayout = ImageLayout.Stretch;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Location = new Point(321, 7);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(57, 67);
+            btnUpdate.TabIndex = 5;
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // customPanel2
             // 
             customPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             customPanel2.BackColor = Color.White;
             customPanel2.BorderRadius = 30;
+            customPanel2.Controls.Add(txtConfirmPassword);
+            customPanel2.Controls.Add(label3);
             customPanel2.Controls.Add(label1);
-            customPanel2.Controls.Add(txtName);
-            customPanel2.Controls.Add(txtDescription);
+            customPanel2.Controls.Add(txtUserName);
+            customPanel2.Controls.Add(txtNewPassword);
             customPanel2.Controls.Add(panel2);
             customPanel2.Controls.Add(label2);
             customPanel2.ForeColor = Color.Black;
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(23, 15);
+            customPanel2.Location = new Point(17, 25);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(451, 208);
-            customPanel2.TabIndex = 9;
+            customPanel2.Size = new Size(518, 236);
+            customPanel2.TabIndex = 13;
+            // 
+            // txtConfirmPassword
+            // 
+            txtConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtConfirmPassword.Location = new Point(223, 170);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.Size = new Size(272, 31);
+            txtConfirmPassword.TabIndex = 22;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(12, 173);
+            label3.Name = "label3";
+            label3.Size = new Size(203, 24);
+            label3.TabIndex = 21;
+            label3.Text = "Confirmar Password";
             // 
             // label1
             // 
@@ -110,28 +136,29 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 10F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(77, 102);
+            label1.Location = new Point(133, 100);
             label1.Name = "label1";
-            label1.Size = new Size(84, 24);
+            label1.Size = new Size(83, 24);
             label1.TabIndex = 0;
-            label1.Text = "Nombre";
+            label1.Text = "Usuario";
             // 
-            // txtName
+            // txtUserName
             // 
-            txtName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtName.Location = new Point(173, 96);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(259, 31);
-            txtName.TabIndex = 1;
+            txtUserName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtUserName.Location = new Point(223, 96);
+            txtUserName.Name = "txtUserName";
+            txtUserName.ReadOnly = true;
+            txtUserName.Size = new Size(272, 31);
+            txtUserName.TabIndex = 1;
             // 
-            // txtDescription
+            // txtNewPassword
             // 
-            txtDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtDescription.Location = new Point(173, 137);
-            txtDescription.Name = "txtDescription";
-            txtDescription.PasswordChar = '*';
-            txtDescription.Size = new Size(259, 31);
-            txtDescription.TabIndex = 3;
+            txtNewPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtNewPassword.Location = new Point(223, 133);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.PasswordChar = '*';
+            txtNewPassword.Size = new Size(272, 31);
+            txtNewPassword.TabIndex = 3;
             // 
             // panel2
             // 
@@ -140,7 +167,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(451, 64);
+            panel2.Size = new Size(518, 64);
             panel2.TabIndex = 20;
             // 
             // label5
@@ -149,11 +176,11 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(174, 12);
+            label5.Location = new Point(69, 12);
             label5.Name = "label5";
-            label5.Size = new Size(115, 43);
+            label5.Size = new Size(382, 43);
             label5.TabIndex = 0;
-            label5.Text = "Login";
+            label5.Text = "Cambio de password";
             // 
             // label2
             // 
@@ -161,24 +188,22 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial", 10F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(59, 140);
+            label2.Location = new Point(48, 136);
             label2.Name = "label2";
-            label2.Size = new Size(103, 24);
+            label2.Size = new Size(168, 24);
             label2.TabIndex = 2;
-            label2.Text = "Password";
+            label2.Text = "Nueva Password";
             // 
-            // FrmLogin
+            // ChangePasswordUser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(499, 337);
             Controls.Add(customPanel3);
             Controls.Add(customPanel2);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "FrmLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Name = "ChangePasswordUser";
+            Size = new Size(552, 380);
+            Load += ChangePasswordUser_Load;
             customPanel3.ResumeLayout(false);
             customPanel2.ResumeLayout(false);
             customPanel2.PerformLayout();
@@ -191,11 +216,13 @@
 
         private RoundedBorders.CustomPanel customPanel3;
         private Button btnSalir;
-        private Button btnEliminar;
+        private Button btnUpdate;
         private RoundedBorders.CustomPanel customPanel2;
+        private TextBox txtConfirmPassword;
+        private Label label3;
         private Label label1;
-        private TextBox txtName;
-        private TextBox txtDescription;
+        private TextBox txtUserName;
+        private TextBox txtNewPassword;
         private Panel panel2;
         private Label label5;
         private Label label2;

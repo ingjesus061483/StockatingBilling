@@ -51,10 +51,10 @@ namespace DataAccess.Repositories
             };
             Db.Pictures. Add(picture);
             Db .SaveChanges();
-            save(entity.Code ,entity.ProductId);
+            Save(entity.Code ,entity.ProductId);
 
         }
-        void save(string code , int productId)
+        void Save(string code , int productId)
         {
             var P = Db.Pictures.Where(x => x.Code == code).FirstOrDefault();
             Db.PictureProducts.Add(new PictureProduct { PictureID = P.Id, ProductID = productId });

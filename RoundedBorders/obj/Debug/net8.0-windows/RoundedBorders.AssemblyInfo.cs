@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoundedBorders")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16435f2abbdc46d4a47beb6cad102253c68d3d42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb108e97c0640430e9015211b3f542a4fc96757c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoundedBorders")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoundedBorders")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

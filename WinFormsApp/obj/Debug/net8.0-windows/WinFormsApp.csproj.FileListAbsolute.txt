@@ -359,7 +359,6 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\bin\Debu
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.AssemblyReference.cache
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmFather.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmImage.resources
-C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmLogin.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmMain.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmPayment.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.FrmReport.resources
@@ -393,3 +392,5 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debu
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.BillingAdministrationUser.resources
 C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.BillingUser.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.LoginUser.resources
+C:\Users\jesus\OneDrive\Documentos\GitHub\StockatingBilling\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.ChangePasswordUser.resources

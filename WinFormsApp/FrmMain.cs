@@ -1,4 +1,5 @@
 ﻿using DataAccess.Repositories;
+using DTO;
 using Factory;
 using MySqlX.XDevAPI;
 using System;
@@ -16,6 +17,7 @@ namespace WinFormsApp
 {
     public partial class FrmMain : Form
     {
+        EmployeeDTO EmployeeDTO { get; set; }
         public FrmMain(CategoryRepository _categoryRepository,
                             ProductRepository _productRepository,
                             UnitMeasurementRepository _unitMeasurementRepository,
@@ -56,18 +58,46 @@ namespace WinFormsApp
             billingRepository = _billingRepository;
             InitializeComponent();
         }
-
+        bool IsCloseAppication(EmployeeDTO employeeDTO)
+        {
+            bool close = false;
+            if (employeeDTO == null)
+            {
+                Application.Exit();
+                close = true;
+            }
+            return close;
+        }
+        LoginUser GetLoginUser(EmployeeRepository employeeRepository, FrmFather frm)
+        {
+            LoginUser loginUser = new()
+            {
+                EmployeeRepository = employeeRepository,
+                frmFather = frm,
+            };
+            return loginUser;
+        }
         private void FrmMain_Shown(object sender, EventArgs e)
         {
             this.Hide();
-            FrmLogin frm = new FrmLogin();
+            FrmFather frm = new();
+            LoginUser loginUser = GetLoginUser(employeeRepository, frm);
+            frm.UserControl = loginUser;
             frm.ShowDialog();
+            EmployeeDTO = loginUser.employeeDTO;
+            if (IsCloseAppication(EmployeeDTO))
+                return;
+            lblUser.Text = EmployeeDTO.User.Name;
+            lblRole.Text = EmployeeDTO.User.Role.Name;
             this.Show();
         }
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var resp = MessageBox.Show("Cerrar Aplicacion?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resp == DialogResult.No)
+            if (EmployeeDTO == null)
+            {
+                e.Cancel = false;
+            }
+            else if (MessageBox.Show("Cerrar Aplicacion?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
             }
@@ -75,7 +105,6 @@ namespace WinFormsApp
             {
                 e.Cancel = false;
             }
-
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -86,7 +115,7 @@ namespace WinFormsApp
         {
             AdministrationUser administration = new AdministrationUser
             {
-                TaxRepository=taxRepository,
+                TaxRepository = taxRepository,
                 companyRepository = companyRepository,
                 roleRepository = roleRepository,
                 IdentificationTypeRepository = IdentificationTypeRepository,
@@ -101,7 +130,7 @@ namespace WinFormsApp
                 userRepository = userRepository,
                 RegimenTypeRepository = RegimenTypeRepository,
                 providerRepository = providerRepository,
-                FrmMain =this,
+                FrmMain = this,
                 Dock = DockStyle.Fill,
             };
             addControl(pnlMain, administration);
@@ -110,26 +139,44 @@ namespace WinFormsApp
 
         private void btnBilling_Click(object sender, EventArgs e)
         {
-            BillingAdministrationUser billingUser =new BillingAdministrationUser 
+            BillingAdministrationUser billingUser = new BillingAdministrationUser
             {
                 Dock = DockStyle.Fill,
                 frmMain = this,
-                StateRepository=stateRepository,
-                DocumetTypeRepository=documetTypeRepository,
-                ProductRepository =productRepository,
+                StateRepository = stateRepository,
+                DocumetTypeRepository = documetTypeRepository,
+                ProductRepository = productRepository,
                 ClientRepository = clientRepository,
                 EmployeeRepository = employeeRepository,
                 WarehouseRepository = warehouseRepository,
-                StockRepository=StockRepository,
-                BillingRepository=billingRepository,
+                StockRepository = StockRepository,
+                BillingRepository = billingRepository,
             };
             addControl(pnlMain, billingUser);
 
         }
-        void addControl(Panel panel,UserControl control )
+        void addControl(Panel panel, UserControl control)
         {
             panel.Controls.Clear();
-            panel.Controls.Add(control );
+            panel.Controls.Add(control);
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            FrmFather frmFather = new FrmFather();
+            ChangePasswordUser changePasswordUser = new() 
+            {
+                FrmFather= frmFather,
+                UserRepository =userRepository ,
+                EmployeeDTO =EmployeeDTO ,
+            };
+            frmFather .UserControl = changePasswordUser;
+            frmFather .ShowDialog();
+            if (changePasswordUser.updated)
+            {
+                EmployeeDTO = null;
+                Application.Restart();
+            }
         }
     }
 }

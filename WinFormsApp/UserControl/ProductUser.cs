@@ -19,7 +19,6 @@ namespace WinFormsApp
     {
         List<PictureDTO> pictureDTOs;
         int idProduct;
-        string path;
        public  ProductDTO productDTO ;
         public Form Form { get; set; }
    

@@ -132,7 +132,7 @@ namespace WinFormsApp
                     Name = txtUserName.Text,
                     Password = Utilities<string>.Encriptar(txtPassword.Text),
                     RoleId = int.Parse(cmbRole.SelectedValue.ToString()),
-                    Companyid =CompanyDTO.Id ,
+                    CompanyId =CompanyDTO.Id ,
                     Email = txtEmail.Text,
                 };
                 UserRepository.Save(userDTO);

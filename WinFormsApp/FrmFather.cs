@@ -27,14 +27,22 @@ namespace WinFormsApp
 
         private void FrmFather_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resp == DialogResult.No)
+            if (UserControl is LoginUser)
             {
-                e.Cancel = true;
+                e.Cancel = false;
+
             }
             else
             {
-                e.Cancel = false;
+                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
             }
         }
     }
