@@ -36,6 +36,7 @@ public        RoleDTO RoleDTO;
 
         private void RoleUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             if(RoleDTO  != null)
             {
                 id = RoleDTO.Id;
@@ -45,6 +46,20 @@ public        RoleDTO RoleDTO;
                 return;
             }
             NewRole();
+        }
+
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
         }
 
         private void btnNevo_Click(object sender, EventArgs e)

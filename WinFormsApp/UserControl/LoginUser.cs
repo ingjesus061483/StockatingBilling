@@ -15,17 +15,22 @@ namespace WinFormsApp
     public partial class LoginUser : UserControl
     {
         public EmployeeDTO employeeDTO;
-        public FrmFather frmFather { get; set; }
+        public Form Form { get; set; }
         public EmployeeRepository EmployeeRepository { get; set; }
 
         public LoginUser()
         {
             InitializeComponent();
         }
-
+        void newlogin()
+        {
+            txtUserName.Clear();
+            txtPassword.Clear();
+            txtUserName .Focus();
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            frmFather.Close();
+           Form.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,16 +46,20 @@ namespace WinFormsApp
                 return;
             }
             this.Cursor = Cursors.WaitCursor;
-            employeeDTO = EmployeeRepository.Values.Where(x => x.User.Name == txtUserName.Text &&
-            x.User.Password == Utilities<string>.Encriptar(txtPassword.Text)).FirstOrDefault();
+            employeeDTO = EmployeeRepository.Values.Where(x => 
+                                                                 x.User.Name == txtUserName.Text &&
+                                                                 x.User.Password == Utilities<string>.Encriptar(txtPassword.Text)).
+                                                                 FirstOrDefault();
             if (employeeDTO == null)
             {
                 ControlForm.GetMessage("usuario o contraseña invalida", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                newlogin();
                 this.Cursor = Cursors.Default;
+
                 return;
             }
             this.Cursor= Cursors.Default;
-            frmFather.Close();
+            Form .Close();
         }
 
         private void txtDescription_KeyPress(object sender, KeyPressEventArgs e)

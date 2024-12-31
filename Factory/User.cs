@@ -24,7 +24,7 @@ namespace Factory
         public int RoleId {  get; set; }
         public Role Role { get; set; }
 
-        public int Companyid {  get; set; }
+        public int CompanyId {  get; set; }
         public Company Company { get; set; }
 
         public List<Employee> Employees { get; set; }

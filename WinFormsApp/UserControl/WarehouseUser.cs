@@ -28,6 +28,7 @@ namespace WinFormsApp
         }
         private void WarehouseUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             if (WarehouseDTO != null)
             {
                 id = WarehouseDTO.Id;
@@ -43,36 +44,21 @@ namespace WinFormsApp
             NewWarehouse();
         }
 
-    /*    private void TxtValue_TextChanged(object? sender, EventArgs e)
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
         {
-            DataGridView.DataSource = warehouseRepository.Values.Select(x => new
-            {
-                x.Id,
-                Codigo = x.Code,
-                Nombre = x.Name,
-                StockMinmo = x.StockMinimo,
-                Stockmaximo = x.StockMaximo,
-                limitado = x.limitado ? "Si" : "No"
-            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList(); ;
-        }*/
+                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
 
-     /*   private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-            id = int.Parse(DataGridView.Rows[e.RowIndex].Cells["id"].Value.ToString());
-            WarehouseDTO = warehouseRepository.GetById(id);
-            txtCode.Text = WarehouseDTO.Code;
-            txtName.Text = WarehouseDTO.Name;
-            txtDescription.Text = WarehouseDTO.Descripcion;
-            txtMin.Text = WarehouseDTO.StockMinimo.ToString();
-            txtMax.Text = WarehouseDTO.StockMaximo.ToString();
-            chkLimit.Checked = WarehouseDTO.limitado;
-            txtCode.Focus();
+        }
 
-        }*/
         void NewWarehouse()
         {
             id = 0;
@@ -84,15 +70,6 @@ namespace WinFormsApp
             txtDescription.Clear();
             chkLimit.Checked = false;
             txtCode.Focus();
-   /*         DataGridView.DataSource = warehouseRepository.Values.Select(x => new
-            {
-                x.Id,
-                Codigo = x.Code,
-                Nombre = x.Name,
-                StockMinmo = x.StockMinimo,
-                Stockmaximo = x.StockMaximo,
-                limitado = x.limitado ? "Si" : "No"
-            }).ToList();*/
 
 
         }

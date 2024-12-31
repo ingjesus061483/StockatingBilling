@@ -31,13 +31,6 @@ namespace WinFormsApp
             txtName.Clear();
             txtDescription.Clear();
             txtName.Focus();
-        /*    DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x=> new {
-                x.Id,
-                Nombre = x.Name,
-                Descripcion = x.Description,
-            }). ToList();           */
-            
-
             unitMeasurementDTO = null;
         }
 
@@ -81,6 +74,7 @@ namespace WinFormsApp
 
         private void UnitMeasurementUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             if(unitMeasurementDTO!= null)
             { 
                 idUnitMeasurement = unitMeasurementDTO.Id;
@@ -91,27 +85,19 @@ namespace WinFormsApp
             newUnit();           
         }
 
-     /*   private void TxtValue_TextChanged(object? sender, EventArgs e)
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
         {
+                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
 
-            DataGridView.DataSource = UnitMeasurementRepository.Values.Select(x => new {
-                x.Id,
-                Nombre = x.Name,
-                Descripcion = x.Description,
-            }).ToList().Where(z => Utilities<object>.GetValue(z, CmbFilter.Text, TxtValue.Text)).ToList();
-        }*/
-
-    /*    private void DataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-            idUnitMeasurement =int.Parse(  DataGridView.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-         unitMeasurementDTO = UnitMeasurementRepository.GetById(idUnitMeasurement);
-            txtDescription.Text = unitMeasurementDTO.Description;   
-            txtName.Text = unitMeasurementDTO.Name; 
-
-        }*/
+        }
     }
 }

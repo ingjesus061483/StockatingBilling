@@ -44,7 +44,8 @@ namespace WinFormsApp
             services.AddScoped<RegimenTypeRepository>();
             services.AddScoped<ProviderRepository>();
             services.AddScoped<TaxRepository>();
-
+            services.AddScoped<PrinterTemplateRepository>();
+            services.AddScoped<ExcelRepository>();
         }
     }
 }

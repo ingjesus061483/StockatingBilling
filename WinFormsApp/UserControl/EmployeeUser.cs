@@ -47,6 +47,7 @@ namespace WinFormsApp
         }
         private void EmployeeUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             Utilities<IdentificationTypeDTO>.FillCombo(IdentificationTypeRepository.Values.ToList(), arr, cmbIdentificationType);
             Utilities<RoleDTO>.FillCombo(RoleRepository.Values.ToList(), arr, cmbRole);
             if (EmployeeDTO != null)
@@ -66,6 +67,21 @@ namespace WinFormsApp
             NewEmployee();
            
         }
+
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
+        }
+
         private void btnuevo_Click(object sender, EventArgs e)
         {
             NewEmployee();
@@ -163,11 +179,12 @@ namespace WinFormsApp
             }
             NewEmployee();
         }
+        SearchUser SearchUser;
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new frmSearch { objects =CompanyRepository .Values.ToList ()};
-            frmSearch.ShowDialog();
-           CompanyDTO= CompanyRepository.GetById( frmSearch .Id );
+            FrmFather frmFather = ControlForm.GetFrmFather(ref  SearchUser, CompanyRepository.Values.ToList());
+            frmFather .ShowDialog();
+           CompanyDTO= CompanyRepository.GetById( SearchUser .Id );
             txtCompany.Text = CompanyDTO != null ? CompanyDTO.Nit + " " + CompanyDTO.Name : string .Empty;
         }
     }

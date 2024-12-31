@@ -25,7 +25,19 @@ namespace WinFormsApp
         {
             InitializeComponent();
         }
-  
+
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resp == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                e.Cancel = false;
+            }
+        }
 
         public void NewCategory()
         {
@@ -74,6 +86,8 @@ namespace WinFormsApp
   
         private void CategoryUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
+
             if (categoryDTO != null)
             {
                 IdCategory = categoryDTO.Id;
@@ -82,10 +96,10 @@ namespace WinFormsApp
                 return;
             }
             NewCategory();
-           
+
 
         }
 
-  
+
     }
 }

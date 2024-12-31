@@ -151,6 +151,7 @@ namespace WinFormsApp
 
         private void ProductUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             Utilities<UnitMeasurementDTO>.FillCombo(unitMeasurementRepository.Values.ToList(), arr, cmbUnitMeasurement);
             Utilities<CategoryDTO>.FillCombo(categoryRepository.Values.ToList(), arr, cmbCategory);
             if (productDTO != null)
@@ -176,7 +177,21 @@ namespace WinFormsApp
             }
             NewProduct();
      
-        }       
-   
+        }
+
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+  
+                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
+        }
     }
 }

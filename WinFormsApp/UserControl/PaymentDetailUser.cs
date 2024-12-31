@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp
 {
-    public partial class FrmPayment : Form
+    public partial class PaymentDetailUser : UserControl
     {
-        public FrmPayment()
+        public PaymentDetailUser()
         {
             InitializeComponent();
         }

@@ -73,7 +73,7 @@ namespace WinFormsApp
             LoginUser loginUser = new()
             {
                 EmployeeRepository = employeeRepository,
-                frmFather = frm,
+                Form  = frm,
             };
             return loginUser;
         }
@@ -164,15 +164,24 @@ namespace WinFormsApp
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             FrmFather frmFather = new FrmFather();
-            ChangePasswordUser changePasswordUser = new() 
+            ChangePasswordUser changePasswordUser = new()
             {
-                FrmFather= frmFather,
-                UserRepository =userRepository ,
-                EmployeeDTO =EmployeeDTO ,
+                Form = frmFather,
+                UserRepository = userRepository,
+                EmployeeDTO = EmployeeDTO,
             };
-            frmFather .UserControl = changePasswordUser;
-            frmFather .ShowDialog();
+            frmFather.UserControl = changePasswordUser;
+            frmFather.ShowDialog();
             if (changePasswordUser.updated)
+            {
+                EmployeeDTO = null;
+                Application.Restart();
+            }
+        }
+
+        private void btnCesionClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Cerrar Cesion?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes )
             {
                 EmployeeDTO = null;
                 Application.Restart();

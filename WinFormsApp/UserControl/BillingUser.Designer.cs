@@ -137,7 +137,7 @@
             customPanel6.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel6.Location = new Point(25, 822);
             customPanel6.Name = "customPanel6";
-            customPanel6.Size = new Size(579, 81);
+            customPanel6.Size = new Size(555, 81);
             customPanel6.TabIndex = 12;
             // 
             // btnSalir
@@ -190,7 +190,7 @@
             customPanel5.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanel5.Location = new Point(32, 314);
             customPanel5.Name = "customPanel5";
-            customPanel5.Size = new Size(579, 81);
+            customPanel5.Size = new Size(555, 81);
             customPanel5.TabIndex = 11;
             // 
             // btnBilllDetail
@@ -199,7 +199,7 @@
             btnBilllDetail.BackgroundImage = (Image)resources.GetObject("btnBilllDetail.BackgroundImage");
             btnBilllDetail.BackgroundImageLayout = ImageLayout.Stretch;
             btnBilllDetail.FlatStyle = FlatStyle.Flat;
-            btnBilllDetail.Location = new Point(488, 5);
+            btnBilllDetail.Location = new Point(472, 7);
             btnBilllDetail.Name = "btnBilllDetail";
             btnBilllDetail.Size = new Size(57, 67);
             btnBilllDetail.TabIndex = 17;
@@ -222,7 +222,7 @@
             customPanelTotal.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanelTotal.Location = new Point(322, 658);
             customPanelTotal.Name = "customPanelTotal";
-            customPanelTotal.Size = new Size(289, 151);
+            customPanelTotal.Size = new Size(265, 151);
             customPanelTotal.TabIndex = 10;
             // 
             // TxtTotalPay
@@ -231,7 +231,7 @@
             TxtTotalPay.Font = new Font("Arial", 10F);
             TxtTotalPay.Location = new Point(145, 102);
             TxtTotalPay.Name = "TxtTotalPay";
-            TxtTotalPay.Size = new Size(120, 30);
+            TxtTotalPay.Size = new Size(96, 30);
             TxtTotalPay.TabIndex = 19;
             // 
             // label9
@@ -252,7 +252,7 @@
             txtSubtotal.Font = new Font("Arial", 10F);
             txtSubtotal.Location = new Point(145, 68);
             txtSubtotal.Name = "txtSubtotal";
-            txtSubtotal.Size = new Size(120, 30);
+            txtSubtotal.Size = new Size(96, 30);
             txtSubtotal.TabIndex = 13;
             // 
             // label6
@@ -274,7 +274,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(289, 48);
+            panel3.Size = new Size(265, 48);
             panel3.TabIndex = 1;
             // 
             // label2
@@ -301,7 +301,7 @@
             customPanelDtagrid.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanelDtagrid.Location = new Point(32, 404);
             customPanelDtagrid.Name = "customPanelDtagrid";
-            customPanelDtagrid.Size = new Size(579, 243);
+            customPanelDtagrid.Size = new Size(555, 243);
             customPanelDtagrid.TabIndex = 9;
             // 
             // dgDetail
@@ -318,8 +318,9 @@
             dgDetail.RowHeadersVisible = false;
             dgDetail.RowHeadersWidth = 62;
             dgDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgDetail.Size = new Size(579, 243);
+            dgDetail.Size = new Size(555, 243);
             dgDetail.TabIndex = 1;
+            dgDetail.CellContentClick += dgDetail_CellContentClick;
             // 
             // Delete
             // 
@@ -362,7 +363,7 @@
             customPanelHeder.GradientTopColor = Color.FromArgb(42, 46, 50);
             customPanelHeder.Location = new Point(30, 27);
             customPanelHeder.Name = "customPanelHeder";
-            customPanelHeder.Size = new Size(581, 275);
+            customPanelHeder.Size = new Size(557, 275);
             customPanelHeder.TabIndex = 8;
             // 
             // chkCredit
@@ -387,7 +388,7 @@
             dtpDate.Format = DateTimePickerFormat.Custom;
             dtpDate.Location = new Point(325, 217);
             dtpDate.Name = "dtpDate";
-            dtpDate.Size = new Size(230, 30);
+            dtpDate.Size = new Size(206, 30);
             dtpDate.TabIndex = 36;
             // 
             // label16
@@ -409,7 +410,7 @@
             cmbDocumentType.FormattingEnabled = true;
             cmbDocumentType.Location = new Point(154, 180);
             cmbDocumentType.Name = "cmbDocumentType";
-            cmbDocumentType.Size = new Size(401, 33);
+            cmbDocumentType.Size = new Size(377, 33);
             cmbDocumentType.TabIndex = 34;
             // 
             // label14
@@ -445,7 +446,7 @@
             txtEmployee.Location = new Point(155, 145);
             txtEmployee.Name = "txtEmployee";
             txtEmployee.ReadOnly = true;
-            txtEmployee.Size = new Size(401, 30);
+            txtEmployee.Size = new Size(377, 30);
             txtEmployee.TabIndex = 31;
             // 
             // btnClient
@@ -469,7 +470,7 @@
             txtClient.Location = new Point(156, 110);
             txtClient.Name = "txtClient";
             txtClient.ReadOnly = true;
-            txtClient.Size = new Size(401, 30);
+            txtClient.Size = new Size(377, 30);
             txtClient.TabIndex = 29;
             // 
             // txtCode
@@ -479,7 +480,7 @@
             txtCode.Location = new Point(156, 75);
             txtCode.Name = "txtCode";
             txtCode.ReadOnly = true;
-            txtCode.Size = new Size(401, 30);
+            txtCode.Size = new Size(377, 30);
             txtCode.TabIndex = 26;
             // 
             // label13
@@ -501,7 +502,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(581, 48);
+            panel1.Size = new Size(557, 48);
             panel1.TabIndex = 0;
             // 
             // label5
@@ -521,15 +522,15 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(customPanelHeder);
+            Controls.Add(customPanel5);
             Controls.Add(customPanelRemark);
             Controls.Add(customPanel6);
-            Controls.Add(customPanel5);
             Controls.Add(customPanelTotal);
             Controls.Add(customPanelDtagrid);
-            Controls.Add(customPanelHeder);
             Name = "BillingUser";
-            Size = new Size(646, 924);
-            Load += this.BillingUser_Load;
+            Size = new Size(622, 924);
+            Load += BillingUser_Load;
             customPanelRemark.ResumeLayout(false);
             customPanelRemark.PerformLayout();
             panel4.ResumeLayout(false);

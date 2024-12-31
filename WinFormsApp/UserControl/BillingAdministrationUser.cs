@@ -45,21 +45,7 @@ namespace WinFormsApp
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
         {
-            
-            BillingUser BillingUser = new ()
-            {
-                DocumetTypeRepository = DocumetTypeRepository,
-                EmployeeRepository = EmployeeRepository,
-                ClientRepository = ClientRepository,
-                ProductRepository = ProductRepository,
-                BillingRepository = BillingRepository,
-                WarehouseRepository = WarehouseRepository,
-                StockRepository = StockRepository,
-            };
-            FrmFather frmFather = new FrmFather
-            {
-                UserControl = BillingUser,
-            };
+            FrmFather frmFather = GetFrmFather(null,1);
             frmFather.ShowDialog();
             Loadgrid();
         }
@@ -134,11 +120,18 @@ namespace WinFormsApp
                 //imprimir
                 case 0:
                     {
+                        BillingRepository.Print(billHeaderDTO);
                         break;
                     }
                 //entregar
                 case 1:
                     {
+                        if(billHeaderDTO.StateId !=1)
+                        {
+                            ControlForm.GetMessage("El producto ya ha sido entregado", "", MessageBoxButtons.OK,
+                                                                                  MessageBoxIcon.Information);
+                            return;
+                        }
                         var resp = MessageBox.Show("Entregar productos?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resp == DialogResult.No)
                         {
@@ -146,22 +139,23 @@ namespace WinFormsApp
                         }
                         BillingRepository.DeliveryProduct(billHeaderDTO);                        
                         BillingRepository .Update (billHeaderDTO ,id);
-                        ControlForm.GetMessage("El producto ha sido entrgado", "", MessageBoxButtons.OK,
+                        ControlForm.GetMessage("El producto ha sido entregado", "", MessageBoxButtons.OK,
                                                         MessageBoxIcon.Information);
                         break;
                     }
                 //Eliminar
                 case 2:
                     {
+                        if (billHeaderDTO.StateId != 1)
+                        {
+                            ControlForm.GetMessage("Solo pueden eliminarse facturas en proceso", "", MessageBoxButtons.OK,
+                                                    MessageBoxIcon.Exclamation);
+                            return;
+                        }
                         var resp = MessageBox.Show("Eliminar Factura?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resp == DialogResult.Yes)
                         {
-                            if (billHeaderDTO.StateId != 1)
-                            {
-                                ControlForm.GetMessage("Solo pueden eliminrse facturas en proceso", "", MessageBoxButtons.OK,
-                                                        MessageBoxIcon.Exclamation);
-                                return;
-                            }
+                          
                             BillingRepository.DeleteById(id);
                         }
                         break ;
@@ -169,27 +163,24 @@ namespace WinFormsApp
                 //ver
                 case 3:
                     {
-                        
-                        BillingUser  BillingUser = new ()
-                        {
-                            DocumetTypeRepository = DocumetTypeRepository,
-                            EmployeeRepository = EmployeeRepository,
-                            ClientRepository = ClientRepository,
-                            ProductRepository = ProductRepository,
-                            BillingRepository = BillingRepository,
-                            WarehouseRepository = WarehouseRepository,
-                            StockRepository = StockRepository,
-                            BillHeaderDTO = billHeaderDTO
-                        };
-                        FrmFather frmFather = new();
-                        frmFather.UserControl = BillingUser;
+                        FrmFather frmFather = GetFrmFather(billHeaderDTO,1);
                         frmFather .ShowDialog();
                         break;
                     }                    
                //pagar
                case 4:
                     {
-                        break ;
+                        if (billHeaderDTO.StateId == 1)
+                        {
+                            BillingRepository.DeliveryProduct(billHeaderDTO);
+                            BillingRepository.Update(billHeaderDTO, id);
+                        }
+                        if (billHeaderDTO.StateId == 2 || billHeaderDTO.StateId == 4)
+                        {
+                            FrmFather frmFather = GetFrmFather(billHeaderDTO, 2);
+                            frmFather.ShowDialog();
+                        }
+                        break;
                     }
             }
             Loadgrid();
@@ -197,10 +188,9 @@ namespace WinFormsApp
 
         private void toolStripButtonExcel_Click(object sender, EventArgs e)
         {   
-            this.Cursor= Cursors.WaitCursor;    
-
-           Array  array= billHeaderDTOs.Select(x => new
-           {
+            this.Cursor= Cursors.WaitCursor;
+            Array  array= billHeaderDTOs.Select(x => new
+            {
                 x.Id,
                 Codigo = x.Code,
                 tipoDocumento = x.DocumentType.Name,
@@ -214,15 +204,47 @@ namespace WinFormsApp
             if(array .Length <=0)
             {
                 ControlForm.GetMessage("No se muestra informacion", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Cursor = Cursors.Default;
                 return;
             }
-            ExcelRepository excelRepository = new ();
             Dictionary<string, Array> keyValues = new Dictionary<string, Array>()
             {
-                {"Facturas",array  }
+                {"Ventas",array  }
             };
-            excelRepository.Export(keyValues  );
+            BillingRepository.Export(keyValues  );
             this.Cursor= Cursors.Default;
+        }
+        FrmFather GetFrmFather(BillHeaderDTO billHeaderDTO,int control )
+        {
+            FrmFather frmFather = new();
+
+            switch (control )
+            {
+                case 1:
+                    {
+                        BillingUser BillingUser = new()
+                        {
+                           Form = frmFather,
+                            DocumetTypeRepository = DocumetTypeRepository,
+                            EmployeeRepository = EmployeeRepository,
+                            ClientRepository = ClientRepository,
+                            ProductRepository = ProductRepository,
+                            BillingRepository = BillingRepository,
+                            WarehouseRepository = WarehouseRepository,
+                            StockRepository = StockRepository,
+                            BillHeaderDTO = billHeaderDTO
+                        };
+                        frmFather.UserControl = BillingUser;
+                        break;
+                    }
+                case 2:
+                    {
+                        PaymentUser PaymentUser = new();
+                        frmFather .UserControl = PaymentUser;
+                        break;
+                    }
+            }
+            return frmFather;
         }
     }
 }

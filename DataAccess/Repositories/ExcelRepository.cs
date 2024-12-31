@@ -7,7 +7,6 @@ namespace DataAccess.Repositories
         Excel.Application ExcelApp;
         public ExcelRepository()
         {
-            ExcelApp = new Excel.Application();
 
         }   
         Excel.Worksheet GetSheet(string Name, Excel.Application ExcelApp, string hoja)
@@ -43,8 +42,9 @@ namespace DataAccess.Repositories
                 iRowCnt += 1;
             }
         }        
-        public void Export( Dictionary< string, Array > values) 
-        {      
+        public void Export( Dictionary< string, Array > values)
+        {
+            ExcelApp = new Excel.Application();
             string hoja = "Hoja";
             Excel.Worksheet WorkSheet;
             ExcelApp.Workbooks.Add();
@@ -64,7 +64,6 @@ namespace DataAccess.Repositories
             WorkSheet.Delete();
             ExcelApp.Visible = true;
             ExcelApp = null;
-            WorkSheet = null;
         }
     }
 }

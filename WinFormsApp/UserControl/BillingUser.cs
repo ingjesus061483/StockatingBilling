@@ -15,7 +15,7 @@ namespace WinFormsApp
 {
     public partial class BillingUser : UserControl
     { 
-        public FrmFather FrmFather { get; set; }   
+        public Form Form { get; set; }   
         string[] arr = ["Id", "Name"];
         public BillHeaderDTO? BillHeaderDTO { get; set; }
         public DocumentTypeRepository DocumetTypeRepository { get; set; }
@@ -52,34 +52,31 @@ namespace WinFormsApp
             BillHeaderDTO.BillDetails = new List<BillDetail>();
             LoadGrid(BillHeaderDTO);
             txtCode.Text = DateTime.Now.ToOADate().ToString();
+            BillHeaderDTO.Code= txtCode.Text;
             txtClient.Clear();
             txtEmployee.Clear();
             cmbDocumentType.SelectedIndex = -1;
             chkCredit.Checked = false;
             dtpDate.Value = DateTime.Now;
             TxtTotalPay.Clear();
+            BillHeaderDTO.StateId = 1;
         }
-
+        SearchUser SearchUser;
         private void btnClient_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new()
-            {
-                objects = ClientRepository.Values.ToList()
-            };
-            frmSearch.ShowDialog();
-            ClientDTO clientDTO = ClientRepository.GetById(frmSearch.Id);
+            FrmFather frmFather = ControlForm.GetFrmFather(ref SearchUser, ClientRepository.Values.ToList());
+
+       frmFather .ShowDialog();
+            ClientDTO clientDTO = ClientRepository.GetById(SearchUser.Id);
             BillHeaderDTO.ClientId = clientDTO != null ? clientDTO.Id : 0;
             txtClient.Text = clientDTO != null ? clientDTO.CompleteName : string.Empty;
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new()
-            {
-                objects = EmployeeRepository.Values.ToList()
-            };
-            frmSearch.ShowDialog();
-            EmployeeDTO employeeDTO = EmployeeRepository.GetById(frmSearch.Id);
+            FrmFather frmFather = ControlForm.GetFrmFather(ref SearchUser, EmployeeRepository.Values.ToList());
+        frmFather .ShowDialog();
+            EmployeeDTO employeeDTO = EmployeeRepository.GetById(SearchUser.Id);
             txtEmployee.Text = employeeDTO != null ? employeeDTO.CompleteName : string.Empty;
             BillHeaderDTO.EmployeeId = employeeDTO != null ? employeeDTO.Id : 0;
 
@@ -89,7 +86,7 @@ namespace WinFormsApp
             FrmFather frmFather = new();
             BillDetailUser detailUser = new()
             {
-                FrmFather = frmFather,
+                Form = frmFather,
                 BillingRepository = BillingRepository,
                 ProductRepository = ProductRepository,
                 WarehouseRepository = WarehouseRepository,
@@ -127,6 +124,13 @@ namespace WinFormsApp
             {
                 case 0:
                     {
+                        if (BillHeaderDTO.StateId != 1)
+                        {
+                            ControlForm.GetMessage("El ya ha sido entrgado", "", MessageBoxButtons.OK,
+                                                                                  MessageBoxIcon.Information);
+                            return;
+                        }
+
                         BillingRepository.RemoveDetail(BillHeaderDTO, id);
                         break;
                     }
@@ -141,7 +145,7 @@ namespace WinFormsApp
             BillHeaderDTO.Remark = txtRemark.Text;
             BillHeaderDTO.Date = dtpDate.Value;
             BillingRepository.Save(BillHeaderDTO);
-            FrmFather .Close();
+           Form .Close();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -150,7 +154,7 @@ namespace WinFormsApp
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-           FrmFather.Close();
+          Form. Close();
         }
     }
 }

@@ -821,7 +821,7 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Companyid")
+                    b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -844,7 +844,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Companyid");
+                    b.HasIndex("CompanyId");
 
                     b.HasIndex("Email")
                         .IsUnique();
@@ -860,7 +860,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Companyid = 1,
+                            CompanyId = 1,
                             Email = "example1@mail.com",
                             Name = "admin",
                             Password = "YQBkAG0AaQBuADEAMgAzADQALgA=",
@@ -1107,7 +1107,7 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("Factory.Company", "Company")
                         .WithMany("Users")
-                        .HasForeignKey("Companyid")
+                        .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

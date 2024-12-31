@@ -33,6 +33,8 @@
             btnSalir = new Button();
             btnAdd = new Button();
             customPanelDetail = new RoundedBorders.CustomPanel();
+            txtUnitPrice = new TextBox();
+            label2 = new Label();
             txtStock = new TextBox();
             txtAmount = new TextBox();
             label3 = new Label();
@@ -70,7 +72,7 @@
             btnSalir.BackgroundImage = (Image)resources.GetObject("btnSalir.BackgroundImage");
             btnSalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Location = new Point(364, 3);
+            btnSalir.Location = new Point(526, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 67);
             btnSalir.TabIndex = 19;
@@ -83,7 +85,7 @@
             btnAdd.BackgroundImage = (Image)resources.GetObject("btnAdd.BackgroundImage");
             btnAdd.BackgroundImageLayout = ImageLayout.Stretch;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Location = new Point(301, 3);
+            btnAdd.Location = new Point(463, 3);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(57, 67);
             btnAdd.TabIndex = 18;
@@ -95,6 +97,8 @@
             customPanelDetail.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             customPanelDetail.BackColor = Color.White;
             customPanelDetail.BorderRadius = 30;
+            customPanelDetail.Controls.Add(txtUnitPrice);
+            customPanelDetail.Controls.Add(label2);
             customPanelDetail.Controls.Add(txtStock);
             customPanelDetail.Controls.Add(txtAmount);
             customPanelDetail.Controls.Add(label3);
@@ -113,11 +117,33 @@
             customPanelDetail.Size = new Size(599, 187);
             customPanelDetail.TabIndex = 6;
             // 
+            // txtUnitPrice
+            // 
+            txtUnitPrice.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtUnitPrice.Font = new Font("Arial", 10F);
+            txtUnitPrice.Location = new Point(478, 100);
+            txtUnitPrice.Name = "txtUnitPrice";
+            txtUnitPrice.ReadOnly = true;
+            txtUnitPrice.Size = new Size(92, 30);
+            txtUnitPrice.TabIndex = 15;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(364, 139);
+            label2.Name = "label2";
+            label2.Size = new Size(107, 24);
+            label2.TabIndex = 14;
+            label2.Text = "Existencia";
+            // 
             // txtStock
             // 
             txtStock.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtStock.Font = new Font("Arial", 10F);
-            txtStock.Location = new Point(478, 101);
+            txtStock.Location = new Point(478, 135);
             txtStock.Name = "txtStock";
             txtStock.ReadOnly = true;
             txtStock.Size = new Size(92, 30);
@@ -125,11 +151,10 @@
             // 
             // txtAmount
             // 
-            txtAmount.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtAmount.Font = new Font("Arial", 10F);
             txtAmount.Location = new Point(125, 136);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(445, 30);
+            txtAmount.Size = new Size(237, 30);
             txtAmount.TabIndex = 11;
             // 
             // label3
@@ -219,20 +244,20 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 10F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(364, 104);
+            label4.Location = new Point(370, 105);
             label4.Name = "label4";
-            label4.Size = new Size(107, 24);
+            label4.Size = new Size(102, 24);
             label4.TabIndex = 12;
-            label4.Text = "Existencia";
+            label4.Text = "Valor Unit";
             // 
-            // DetailUser
+            // BillDetailUser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             Controls.Add(customPanel5);
             Controls.Add(customPanelDetail);
-            Name = "DetailUser";
+            Name = "BillDetailUser";
             Size = new Size(648, 314);
             customPanel5.ResumeLayout(false);
             customPanelDetail.ResumeLayout(false);
@@ -258,5 +283,7 @@
         private Label label1;
         private Label label4;
         private Button btnSalir;
+        private TextBox txtUnitPrice;
+        private Label label2;
     }
 }

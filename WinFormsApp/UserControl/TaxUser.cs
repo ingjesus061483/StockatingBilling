@@ -32,6 +32,7 @@ namespace WinFormsApp
         }
         private void TaxUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             if (taxDTO != null)
             {
                 txtDescription.Text = taxDTO.Description;
@@ -42,7 +43,20 @@ namespace WinFormsApp
             NewTax();
         }
 
- 
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+               var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             decimal.TryParse(txtValue.Text, out decimal value);

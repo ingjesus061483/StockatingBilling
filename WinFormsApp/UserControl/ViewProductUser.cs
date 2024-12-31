@@ -19,7 +19,7 @@ namespace WinFormsApp
         List<StockDTO >Exits;
        List< PictureDTO> PictureDTOs {  get; set; }
         WarehouseDTO warehouseDTO;
-        public FrmFather FrmFather {  get; set; }
+        public Form Form {  get; set; }
         public  ProductDTO  ProductDTO { get; set; }
         public StockRepository StockRepository { get; set; }
         public PictureRepository PictureRepository { get; set; }
@@ -51,11 +51,13 @@ namespace WinFormsApp
                 return;
             }
         }
+        SearchUser SearchUser;
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new() { objects = WarehouseRepository.Values.ToList(), Text = "Busqueda - bodega" };
-            frmSearch.ShowDialog();
-            warehouseDTO = WarehouseRepository.GetById(frmSearch.Id);
+            FrmFather frmFather = ControlForm.GetFrmFather(ref SearchUser, WarehouseRepository.Values.ToList());
+
+            frmFather .ShowDialog();
+            warehouseDTO = WarehouseRepository.GetById(SearchUser.Id);
             txtWarehouse.Text = warehouseDTO != null ? warehouseDTO.Code + " - " + warehouseDTO.Name : "";
            Entrances= StockRepository.GetStockDTOs(ProductDTO.Id, warehouseDTO.Id).ToList ();
             Exits = StockRepository.GetStockDTOs(ProductDTO.Id, warehouseDTO.Id, false).ToList ();
@@ -83,7 +85,7 @@ namespace WinFormsApp
         }
         void btnExit_Click(object sender, EventArgs e)
         {
-            FrmFather .Close ();
+           Form .Close ();
         }
         void btnExcel_Click(object sender, EventArgs e)
         {

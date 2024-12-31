@@ -392,10 +392,11 @@ namespace WinFormsApp
                 case 2:
                     {
                         if (FrmFather.UserControl is ProductUser)
-                        {
+                        {            FrmFather = new();
+
                             StockUser stockUser = new()
                             {
-                                FrmFather = FrmFather,
+                                Form = FrmFather,
                                 ProductDTO = productRepository.GetById(id),
                                 Repository = StockRepository,
                                 WarehouseRepository = warehouseRepository
@@ -411,9 +412,11 @@ namespace WinFormsApp
                     {
                         if (FrmFather.UserControl is ProductUser)
                         {
+                            FrmFather = new();
+
                             ViewProductUser ViewProductUser = new()
                             {
-                                FrmFather = FrmFather,
+                                Form = FrmFather,
                                 ProductDTO = productRepository.GetById(id),
                                 StockRepository = StockRepository,
                                 PictureRepository = pictureRepository,

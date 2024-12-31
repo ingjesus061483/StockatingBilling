@@ -9,27 +9,31 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class BillingRepository : IRepository<BillHeaderDTO>
+    public class BillingRepository : IRepository<BillHeaderDTO>, IOperation<BillHeaderDTO>
     {
-        public StockatingDbContext Db { get ; set ; }
+        public StockatingDbContext Db { get; set; }
         StockRepository StockRepository;
-        ProductRepository ProductRepository;
-        public IQueryable<BillHeaderDTO> Values => Db.BillHeaders.Include(x=>x.Client).
-                                                                  Include(x=>x.Employee).
-                                                                  Include(x=>x.State ).            
-                                                                  Include (x=>x.DocumentType).
-                                                                  Include (x=>x.BillDetails).           
+        PrinterTemplateRepository PrinterTemplateRepository;
+        ExcelRepository ExcelRepository;
+        public IQueryable<BillHeaderDTO> Values => Db.BillHeaders.Include(x => x.Client).
+                                                                  Include(x => x.Employee).
+                                                                  Include(x => x.Employee.User).
+                                                                  Include(x => x.Employee.User.Company).
+                                                                  Include(x => x.Employee.User.Company.RegimenType).
+                                                                  Include(x => x.State).
+                                                                  Include(x => x.DocumentType).
+                                                                  Include(x => x.BillDetails).        
                                                                   Select(x=>new BillHeaderDTO
                                                                   {
                                                                       Id = x.Id,
                                                                       ClientId = x.ClientId,
-                                                                      Client =x.Client,
+                                                                      Client = x.Client,
                                                                       DocumentType = x.DocumentType,
                                                                       Date = x.Date,
                                                                       Code = x.Code,
                                                                       DocumentTypeId = x.DocumentTypeId,
                                                                       EmployeeId = x.EmployeeId,
-                                                                      Employee=x.Employee,
+                                                                      Employee = x.Employee,
                                                                       State = x.State,
                                                                       StateId = x.StateId,
                                                                       Credit = x.Credit,
@@ -37,10 +41,13 @@ namespace DataAccess.Repositories
                                                                       BillDetails = x.BillDetails,
                                                                   });
 
-        public BillingRepository(StockatingDbContext db,ProductRepository _productRepository , StockRepository  _stockRepository)
+        public BillingRepository(StockatingDbContext db, StockRepository  _stockRepository,PrinterTemplateRepository _printerTemplateRepository,
+        ExcelRepository _excelRepository)
         {
             Db = db;
             StockRepository = _stockRepository;
+            PrinterTemplateRepository = _printerTemplateRepository;
+            ExcelRepository = _excelRepository;
         }
         public void DeleteById(int id)
         {
@@ -88,20 +95,14 @@ namespace DataAccess.Repositories
         {
            var BillDetails= billHeaderDTO .BillDetails ;
             if (BillDetails.Count   != 0)
-            {
+            {                
                 var billDetail =BillDetails .Where (z=>z.Id ==id).FirstOrDefault();
-               BillDetails .Remove(billDetail );
+                BillDetails .Remove(billDetail );
             }
         }
         int GetId(List< BillDetail> BillDetails)
         {
-            BillDetail last = null;
-            if (BillDetails.Count > 0)
-            {
-                last = BillDetails.Last();
-            }
-            int id = 0;      
-            return  last!=null ?last .Id +1 : 1;
+            return  BillDetails .Count >0?BillDetails .Last().Id +1:1;          
         }
         void GetExists(List<BillDetail> BillDetails, ProductDTO productDTO)
         {
@@ -113,13 +114,11 @@ namespace DataAccess.Repositories
         public void DeliveryProduct(BillHeaderDTO billHeaderDTO )
         {
             List<Stock> stocks = [];
-            
-
             foreach (BillDetail billDetail in billHeaderDTO.BillDetails)
             {
-               decimal Totalstock= StockRepository.GetTotalStock(billDetail.ProductId, int.Parse(billDetail.WarehouseId.ToString()));
-              decimal TotalAmount= Totalstock -billDetail.Amount;
-                if (TotalAmount < 0)
+                decimal Totalstock= StockRepository.GetTotalStock(billDetail.ProductId, int.Parse(billDetail.WarehouseId.ToString()));
+                decimal TotalAmount= Totalstock -billDetail.Amount;
+                if (TotalAmount <= 0)
                 {
                     break;
                 }
@@ -135,8 +134,6 @@ namespace DataAccess.Repositories
             }
             StockRepository.Save(stocks );
             billHeaderDTO .StateId = 2;
-
-
         }
         public void AddDetails(ProductDTO Articulo,BillHeaderDTO billHeaderDTO,WarehouseDTO warehouseDTO, decimal amount)
         {
@@ -162,6 +159,16 @@ namespace DataAccess.Repositories
             {
                 throw ex;
             }
+        }
+
+        public void Print(BillHeaderDTO entity)
+        {
+            PrinterTemplateRepository.BillingTemplate(entity);
+        }
+
+        public void Export(Dictionary<string, Array> entities)
+        {
+            ExcelRepository.Export(entities);   
         }
     }
 }

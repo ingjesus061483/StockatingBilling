@@ -17,7 +17,7 @@ namespace WinFormsApp
     {
         public bool updated {  get; set; }
        public  EmployeeDTO EmployeeDTO { get; set; }
-        public FrmFather FrmFather { get; set; }
+        public Form  Form { get; set; }
         public UserRepository UserRepository { get; set; }
         UserDTO UserDTO { get; set; }
         public ChangePasswordUser()
@@ -41,18 +41,18 @@ namespace WinFormsApp
             {
                 Name = txtUserName.Text,
                 Password = Utilities<string>.Encriptar(txtNewPassword.Text),
-                CompanyId = EmployeeDTO.User.Companyid,
+                CompanyId = EmployeeDTO.User.CompanyId,
                 RoleId = EmployeeDTO.User.RoleId,
                 Email = EmployeeDTO.User.Email,
             };
             UserRepository.Update(UserDTO, EmployeeDTO.UserId);
             updated = true;
-            FrmFather .Close();
+            Form .Close();
         }
         void btnSalir_Click(object sender, EventArgs e)
         {
             updated=false;
-            FrmFather .Close ();
+            Form .Close ();
         }
     }
 }

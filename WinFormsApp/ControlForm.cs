@@ -12,6 +12,19 @@ namespace WinFormsApp
 {
     public abstract class ControlForm
     {
+
+       public static  FrmFather GetFrmFather( ref SearchUser searchUser, object objects)
+        {
+            FrmFather frmFather = new ();
+            searchUser = new()
+            {
+                objects = objects,
+                Form=frmFather,
+            };
+            frmFather.UserControl = searchUser;
+            return frmFather;
+
+        }
         public static DataGridViewCellStyle GetGridViewCellStyle(Color back,Color fore )
         {
             DataGridViewCellStyle DefaultCellStyle = new () { BackColor =back , ForeColor = fore  };

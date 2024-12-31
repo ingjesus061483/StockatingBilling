@@ -23,6 +23,7 @@ namespace WinFormsApp
             UserControl.Dock = DockStyle.Fill;
             this.Controls.Clear();
             this.Controls.Add(this.UserControl);
+            this.Size=UserControl .Size;
         }
 
         private void FrmFather_FormClosing(object sender, FormClosingEventArgs e)
@@ -34,15 +35,7 @@ namespace WinFormsApp
             }
             else
             {
-                var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resp == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-                else
-                {
-                    e.Cancel = false;
-                }
+    
             }
         }
     }

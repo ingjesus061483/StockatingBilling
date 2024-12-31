@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class StockRepository : IRepository<StockDTO>
+    public class StockRepository : IRepository<StockDTO>, IOperation<StockDTO>
     {
         public StockatingDbContext Db { get; set; }
 
@@ -24,9 +24,11 @@ namespace DataAccess.Repositories
             WarehouseId = x.WarehouseId,
             Warehouse = x.Warehouse,
         });
-        public StockRepository(StockatingDbContext db)
+        ExcelRepository ExcelRepository { get; set; }
+        public StockRepository(StockatingDbContext db,ExcelRepository _excelRepository )
         {
             Db = db;
+            ExcelRepository = _excelRepository;
         }
 
         public void DeleteById(int id)
@@ -78,6 +80,16 @@ namespace DataAccess.Repositories
             stock .Amount = entity.Amount;
             Db.Stocks.Update(stock);
             Db.SaveChanges ();  
+        }
+
+        public void Print(StockDTO entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Export(Dictionary<string, Array> entities)
+        {
+            ExcelRepository.Export(entities);
         }
     }
 }

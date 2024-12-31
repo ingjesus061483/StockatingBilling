@@ -1,5 +1,6 @@
 ﻿using DataAccess.Repositories;
 using DTO;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,19 +24,19 @@ namespace WinFormsApp
         public WarehouseRepository WarehouseRepository { get; set; }   
 
         public  BillHeaderDTO BillHeaderDTO { get; set; }   
-        public FrmFather FrmFather { get; set; }
+        public Form  Form  { get; set; }
         public BillDetailUser()
         {
             InitializeComponent();
+     //       Form.FormClosing += Form_FormClosing;
         }
+        SearchUser SearchUser;
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new frmSearch
-            {
-                objects = WarehouseRepository.Values.ToList()
-            };
-            frmSearch.ShowDialog();
-            WarehouseDTO = WarehouseRepository.GetById(frmSearch.Id);
+
+            FrmFather frmFather = ControlForm.GetFrmFather(ref SearchUser ,WarehouseRepository.Values.ToList());
+            frmFather.ShowDialog();
+            WarehouseDTO = WarehouseRepository.GetById(SearchUser .Id);
 
             if (WarehouseDTO == null)
             {
@@ -47,12 +48,10 @@ namespace WinFormsApp
         }
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            frmSearch frmSearch = new frmSearch
-            {
-                objects = ProductRepository.Values.ToList()
-            };
-            frmSearch.ShowDialog();
-            ProductDTO = ProductRepository.GetById(frmSearch.Id);
+            FrmFather frmFather = ControlForm.GetFrmFather(ref SearchUser, ProductRepository.Values.ToList());
+            frmFather.ShowDialog();
+
+            ProductDTO = ProductRepository.GetById(SearchUser.Id);
             if (ProductDTO == null)
             {
                 txtProduc.Clear();
@@ -60,6 +59,7 @@ namespace WinFormsApp
                 return;
             }
             txtProduc.Text = ProductDTO != null ? ProductDTO.Reference : string.Empty;
+            txtUnitPrice.Text = ProductDTO.Price.ToString();
             txtStock.Text = ControlForm.GetStock(ProductDTO, WarehouseDTO).ToString();
             txtAmount.Focus();
             txtAmount.Text = "1";
@@ -70,16 +70,23 @@ namespace WinFormsApp
             if (ProductDTO == null)
             {
                 return;
-            }
+            }            
             decimal.TryParse(txtAmount.Text, out decimal amount);
-            if (ProductRepository  . GetTotalAmount(ProductDTO , amount))
+            if (amount <= 0)
+            {
+                txtAmount.Text = string.Empty;
+                ControlForm.GetMessage("El campo no puede ser vacio", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtAmount.Focus();
+                return ;    
+            }
+                if (ProductRepository  . GetTotalAmount(ProductDTO , amount))
             {
                 ControlForm.GetMessage("La cantidad ha sobrepasado el limite minimo en el inventario ","",MessageBoxButtons.OK,MessageBoxIcon.Exclamation );
                 return;
             }
      
             BillingRepository.AddDetails(ProductDTO, BillHeaderDTO, WarehouseDTO, amount);      
-            FrmFather.Close();
+            Form .Close();
         }
         void newDetail()
         {
@@ -93,7 +100,7 @@ namespace WinFormsApp
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-           FrmFather.Close();
+           Form .Close();
         }
 
     }

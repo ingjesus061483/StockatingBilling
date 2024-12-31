@@ -35,7 +35,7 @@ namespace WinFormsApp
             customPanel1 = new RoundedBorders.CustomPanel();
             lblUser = new Label();
             btnChangePassword = new Button();
-            button1 = new Button();
+            btnCesionClose = new Button();
             lblRole = new Label();
             btnBilling = new Button();
             btnAdministration = new Button();
@@ -62,7 +62,7 @@ namespace WinFormsApp
             customPanel1.BorderRadius = 30;
             customPanel1.Controls.Add(lblUser);
             customPanel1.Controls.Add(btnChangePassword);
-            customPanel1.Controls.Add(button1);
+            customPanel1.Controls.Add(btnCesionClose);
             customPanel1.Controls.Add(lblRole);
             customPanel1.ForeColor = Color.Black;
             customPanel1.GradientAngle = 90F;
@@ -97,16 +97,17 @@ namespace WinFormsApp
             btnChangePassword.UseVisualStyleBackColor = true;
             btnChangePassword.Click += btnChangePassword_Click;
             // 
-            // button1
+            // btnCesionClose
             // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(21, 68);
-            button1.Name = "button1";
-            button1.Size = new Size(58, 44);
-            button1.TabIndex = 31;
-            button1.UseVisualStyleBackColor = true;
+            btnCesionClose.BackgroundImage = (Image)resources.GetObject("btnCesionClose.BackgroundImage");
+            btnCesionClose.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCesionClose.FlatStyle = FlatStyle.Flat;
+            btnCesionClose.Location = new Point(21, 68);
+            btnCesionClose.Name = "btnCesionClose";
+            btnCesionClose.Size = new Size(58, 44);
+            btnCesionClose.TabIndex = 31;
+            btnCesionClose.UseVisualStyleBackColor = true;
+            btnCesionClose.Click += btnCesionClose_Click;
             // 
             // lblRole
             // 
@@ -196,12 +197,12 @@ namespace WinFormsApp
         private Button btnAdministration;
         private Panel pnlMain;
         private Button btnBilling;
-        private RoundedBorders.CustomPanel customPanel1;
-        private Button button1;
         private Label label1;
         private TextBox txtUserName;
-        private Label lblRole;
-        private Button btnChangePassword;
+        private RoundedBorders.CustomPanel customPanel1;
         private Label lblUser;
+        private Button btnChangePassword;
+        private Button btnCesionClose;
+        private Label lblRole;
     }
 }

@@ -39,6 +39,7 @@ namespace WinFormsApp
 
         private void ProviderUser_Load(object sender, EventArgs e)
         {
+            Form.FormClosing += Form_FormClosing;
             Utilities<IdentificationTypeDTO>.FillCombo(IdentificationTypeRepository.Values.ToList(), arr, cmbIdentificationType);
             if (providerDTO != null)
             {                
@@ -54,6 +55,19 @@ namespace WinFormsApp
             NewProvider();           
         }
 
+        private void Form_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+              var resp = MessageBox.Show("Cerrar Modal?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

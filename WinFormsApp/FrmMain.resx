@@ -220,7 +220,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCesionClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoBAMAAACIy3zmAAAABGdBTUEAALGPC/xhBQAAABtQTFRFG4rb
         D1GC7u/v////GHi+FGWhfbfiuNbtVoiwxXb8WAAAFyJJREFUeNrVnc2P3Dh6xjnVbNU1QqBkjpvS7voa

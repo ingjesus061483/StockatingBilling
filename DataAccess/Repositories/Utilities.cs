@@ -61,6 +61,62 @@ namespace DataAccess.Repositories
             return !Regex.IsMatch(email.ToString(), expresion) ? false :
                    Regex.Replace(email.ToString(), expresion, string.Empty).Length == 0;
         }
-    
+      public static   StreamWriter Createfile(T path,T file )
+        {
+            try
+            {
+                CreateDirectory(path);
+                if (File.Exists(path.ToString ()+file.ToString()))
+                {
+                    File.Delete(path.ToString() + file.ToString());
+                }
+                FileStream fs = File.Create(path.ToString()  + file.ToString ());
+                StreamWriter sWriter = new(fs);
+                return sWriter;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static void CreateDirectory(T path)
+        {
+            if (!Directory.Exists(path.ToString ()))
+            {
+                Directory.CreateDirectory(path.ToString());
+            }
+        }
+        public static StreamReader ReadFile(T path, T file)
+        {
+            try
+            {
+                StreamReader sReader = null;
+                if (File.Exists(path.ToString() + file.ToString()))
+                {
+                    FileStream fs = File.OpenRead(path.ToString() + file.ToString ());
+                    sReader = new StreamReader(fs);
+                }
+                return sReader;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static void DeleteFile(T path, T file)
+        {
+            try
+            {
+
+                if (File.Exists(path.ToString() + file.ToString()))
+                    File.Delete(path.ToString() + file.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }
